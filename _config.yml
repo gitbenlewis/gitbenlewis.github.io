@@ -42,7 +42,7 @@ repo_trophies:
 # will use title and url fields
 # Take a look to https://github.com/jekyll/jekyll-feed for more customization
 
-rss_icon: true
+# rss_icon: true
 
 # -----------------------------------------------------------------------------
 # Layout
@@ -122,13 +122,13 @@ disqus_shortname: gitBenLewis # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: 
-  - name: Google Blog
-    posts:
-      - url:
-        published_date: 
+#external_sources:
+#  - name: medium.com
+#    rss_url: 
+#  - name: Google Blog
+#    posts:
+#      - url:
+#        published_date: 
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -202,6 +202,7 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - _bibliography/paperscopy.bib
 keep_files:
   - CNAME
   - .nojekyll
