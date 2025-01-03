@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Benjamin Mark Lewis joins Actio Bioscience as a Bioinformatics Scientist.
+Benjamin Mark Lewis joins Actio Biosciences as a Bioinformatics Scientist II.
