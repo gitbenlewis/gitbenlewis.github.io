@@ -203,6 +203,8 @@ exclude:
   - readme_preview/
   - vendor
   - _bibliography/paperscopy.bib
+  - _projectscopy/
+  - _postcopy/
 keep_files:
   - CNAME
   - .nojekyll
