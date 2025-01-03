@@ -25,9 +25,7 @@
       "endDate": "present",
       "summary": "Single cell transcriptomics/multiomics",
       "highlights": ["Single cell transcriptomics/multiomics"]
-    }
-  ],
-  "work": [
+    },
     {
       "name": "Aspen Neuroscience",
       "position": "Scientist I, R&D",
@@ -36,9 +34,7 @@
       "endDate": "2024-03-29",
       "summary": "Single cell transcriptomics/multiomics",
       "highlights": ["Single cell transcriptomics/multiomics"]
-    }
-  ],
-  "work": [
+    },
     {
       "name": "Hardy Diagnostics,",
       "position": "Research and Development Intern",
@@ -154,15 +150,24 @@
       ]
     }
   ],
-  "certifications": [
+  "certificates": [
     {
-      "name": "IBM Data Science Professional Certificate"
+      "name": "IBM Data Science Professional Certificate",
+      "date": "2023-06-15",
+      "issuer": "IBM",
+      "url": "https://coursera.org/verify/professional-cert/Y9M6RFY4NCCY"
     },
     {
-      "name": "IBM AI Engineering Professional Certificate"
+      "name": "IBM AI Engineering Professional Certificate",
+      "date": "2024-01-19",
+      "issuer": "IBM",
+      "url": "https://coursera.org/verify/professional-cert/7NMH5QT7Q4XF"
     },
     {
-      "name": "DeepLearning.AI TensorFlow Developer Professional Certificate"
+      "name": "DeepLearning.AI TensorFlow Developer Professional Certificate",
+      "date": "2024-05-14",
+      "issuer": "DeepLearning.AI",
+      "url": "https://coursera.org/verify/professional-cert/U96RULUPAKP6"
     }
   ],
   "languages": [
