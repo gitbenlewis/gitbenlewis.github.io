@@ -2,7 +2,9 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle:  >
+    <p>Bioinformatics Scientist</p>
+    <p>Cal Poly> UCSD > San Diego Biotech</p>
 
 profile:
   align: right
