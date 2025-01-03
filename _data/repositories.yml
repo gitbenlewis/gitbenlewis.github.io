@@ -1,14 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - megadesk
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - megadesk/adata_and_scanpy_tools
+  - megadesk/ARCHS4_bulk_RNAseq_project
+  - megadesk/MD_coursera_nbs
+ 

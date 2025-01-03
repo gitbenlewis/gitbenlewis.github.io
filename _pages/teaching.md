@@ -7,6 +7,15 @@ nav: true
 nav_order: 6
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+## Teaching Experience
 
-Organize your courses by years, topics, or universities, however you like!
+### University of California, San Diego, CA
+- **Discussion Section Instructor**  
+  - *“Our Energy Future”* (Spring 2019)  
+  - *“Computational Neurobiology”* (Spring 2018)
+- **Lab Instructor**  
+  - *“Biochemical Techniques”* (Fall 2016)
+
+### California Polytechnic State University, San Luis Obispo, CA
+- **Lab Instructor**  
+  - *“Introduction to Cell and Molecular Biology”* (Fall 2013)
