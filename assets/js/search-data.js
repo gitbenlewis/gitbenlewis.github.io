@@ -431,16 +431,14 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+    },{id: "news-benjamin-mark-lewis-phd-successfully-completes-thesis-defense-in-molecular-biology-at-university-of-california-san-diego-in-the-labs-of-gene-yeo-and-tony-hunter",
+          title: 'Benjamin Mark Lewis, PhD, Successfully Completes Thesis Defense in Molecular Biology at University...',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-benjamin-mark-lewis-joins-aspen-neuroscience-as-a-scientist-in-research-and-development",
+          title: 'Benjamin Mark Lewis joins Aspen Neuroscience as a Scientist in Research and Development....',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          section: "News",},{id: "news-benjamin-mark-lewis-joins-actio-bioscience-as-a-bioinformatics-scientist",
+          title: 'Benjamin Mark Lewis joins Actio Bioscience as a Bioinformatics Scientist.',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
