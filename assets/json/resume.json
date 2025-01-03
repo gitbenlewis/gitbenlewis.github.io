@@ -152,14 +152,17 @@
         "Brightfield microscopy",
         "Plate scanning"
       ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "IBM Data Science Professional Certificate"
     },
     {
-      "name": "Certifications",
-      "keywords": [
-        "IBM Data Science Professional Certificate",
-        "IBM AI Engineering Professional Certificate",
-        "DeepLearning.AI TensorFlow Developer Professional Certificate",
-      ]
+      "name": "IBM AI Engineering Professional Certificate"
+    },
+    {
+      "name": "DeepLearning.AI TensorFlow Developer Professional Certificate"
     }
   ],
   "languages": [
