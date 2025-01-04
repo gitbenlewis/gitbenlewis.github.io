@@ -4,7 +4,7 @@ title: about
 permalink: /
 subtitle:  >
     <p>Bioinformatics Scientist</p>
-    <p>Cal Poly> UCSD > San Diego Biotech</p>
+    <p>Cal Poly> UCSD | Salk Institute > San Diego Biotech</p>
 
 profile:
   align: right
