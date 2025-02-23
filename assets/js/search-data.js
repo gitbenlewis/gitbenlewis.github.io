@@ -144,7 +144,7 @@ ninja.data = [{
         title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("https://github.com/megadesk", "_blank");
+          window.open("https://github.com/gitbenlewis", "_blank");
         },
       },{
         id: 'social-linkedin',
