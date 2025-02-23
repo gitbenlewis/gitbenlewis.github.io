@@ -1,10 +1,11 @@
 github_users:
-  - megadesk
+  - gitbenlewis
 
 repo_description_lines_max: 2
 
 github_repos:
-  - megadesk/adata_and_scanpy_tools
-  - megadesk/ARCHS4_bulk_RNAseq_project
-  - megadesk/MD_coursera_nbs
+  - gitbenlewis/adata_and_scanpy_tools
+  - gitbenlewis/anndata_tools
+  - gitbenlewis/ARCHS4_bulk_RNAseq_project
+  - gitbenlewis/MD_coursera_nbs
  
