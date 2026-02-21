@@ -5,7 +5,8 @@ repo_description_lines_max: 2
 
 github_repos:
   - gitbenlewis/adata_science_tools
+  - gitbenlewis/run_GSEApy_wrapper
+  - gitbenlewis/RNAseq_analysis
   - gitbenlewis/single_cell_python_tools
   - gitbenlewis/ARCHS4_bulk_RNAseq_project
-  - gitbenlewis/MD_coursera_nbs
  
