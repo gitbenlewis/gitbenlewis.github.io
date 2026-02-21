@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Benjamin Lewis",
-    "label": "Scientist",
+    "label": "Senior Scientist | Multi-Omic Discovery",
     "image": "",
     "email": "benlewis.biology @ gmail.com",
     "phone": "",
     "url": "https://gitbenlewis.github.io/",
-    "summary": "I am a biological data scientist, with a strong wet lab prior.",
+    "summary": "Neuro-data scientist specializing in multi-omic biomarker discovery, integrative transcriptomics, and therapeutic target identification in biotech R&D.",
     "location": {
       "address": "Torrey Pines",
       "postalCode": "CA 92037",
@@ -19,29 +19,53 @@
   "work": [
     {
       "name": "Actio Biosciences",
-      "position": "Bioinformatics Scientist II",
-      "url": "https://actiobiosciences.com/",
-      "startDate": "2024-04-01",
-      "endDate": "present",
-      "summary": "Single cell transcriptomics/multiomics",
-      "highlights": ["Single cell transcriptomics/multiomics, Target Triage, Biomarker Discovery"]
+      "location": "San Diego, CA",
+      "url": "https://www.actiobiosciences.com/",
+      "position": "Senior Scientist - Bioinformatics, Research and Development",
+      "startDate": "2026-01",
+      "endDate": "",
+      "summary": "Promoted to Senior Scientist in January 2026 in recognition of scientific leadership, cross-program impact, and strategic contributions to portfolio advancement.",
+      "highlights": [
+        "Partnered with biology, translational, and executive stakeholders to guide data-driven portfolio decisions.",
+        "Led multi-omic biomarker discovery and novel target identification across therapeutic programs.",
+        "Drove target identification efforts resulting in multiple assets advancing to nomination and portfolio prioritization.",
+        "Scientific lead for single-cell and bulk transcriptomic strategy across multiple therapeutic programs.",
+        "Designed and deployed a production-grade RNA-seq pipeline (Nextflow, Python, AWS), reducing turnaround time from 2 weeks to <48 hours and standardizing analytics across R&D."
+      ]
     },
     {
+      "name": "Actio Biosciences",
+      "location": "San Diego, CA",
+      "url": "https://www.actiobiosciences.com/",
+      "position": "Bioinformatics Scientist II, Research and Development",
+      "startDate": "2024-04",
+      "endDate": "2025-12",
+      "summary": "Multi-omic biomarker discovery and integrative transcriptomics supporting early-stage therapeutic programs."
+    }
+    ,
+    {
       "name": "Aspen Neuroscience",
-      "position": "Scientist I, R&D",
+      "position": "Scientist I, Research and Development",
+      "location": "San Diego, CA",
       "url": "https://aspenneuroscience.com/",
       "startDate": "2022-04-25",
       "endDate": "2024-03-29",
-      "summary": "Single cell transcriptomics/multiomics",
-      "highlights": ["Single cell transcriptomics/multiomics"]
-    },
+      "summary": "Cross-functional single-cell and multiomic discovery supporting pipeline and IND-enabling programs.",
+       "highlights": [
+      "Single-cell transcriptomics/multiomics: project design and data analysis lead.",
+      "Functional genomics for pipeline development: project design and data analysis lead.",
+      "Contributed to preclinical and IND-enabling studies to support regulatory filings and clinical progression."]
+    }
+    ,
     {
-      "name": "Hardy Diagnostics,",
+      "name": "Hardy Diagnostics",
       "position": "Research and Development Intern",
+      "location": "Santa Maria, CA",
       "url": "https://hardydiagnostics.com/",
       "startDate": "2013-06-01",
       "endDate": "2013-12-01",
-      "summary": "Designed and developed chromogenic diagnostic media formulations"
+      "summary": "Developed chromogenic diagnostic media formulations and authored protocols for 510(k) validation studies.",
+      "highlights": []
     }
   ],
   "education": [
