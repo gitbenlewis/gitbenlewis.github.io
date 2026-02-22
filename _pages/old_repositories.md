@@ -1,9 +1,9 @@
 ---
 layout: page
-permalink: /repositories/
-title: repositories
+permalink: /old-repositories/
+title: old repositories
 description: 
-nav: true
+nav: false
 nav_order: 3
 ---
 
