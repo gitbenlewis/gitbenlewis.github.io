@@ -7,3 +7,4 @@ file:///input/\.github/instructions/
 https://www.amazon.com/Godfather-Deluxe-Mario-Puzo/dp/0593542592
 https://dblp.org/db/contrib/
 https://github.com/alshedivat/al-folio/blob/main/_sass/_base.scss
+^https?://
