@@ -171,6 +171,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-rgb-matrix-clock",
+          title: 'RGB Matrix Clock',
+          description: "CircuitPython firmware for a 64x32 matrix clock with RTC, sensors, and menu controls.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/rgb-matrix-clock/";
             },},{
         id: 'social-bluesky',
         title: 'Bluesky',
