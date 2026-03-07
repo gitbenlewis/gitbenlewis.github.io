@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of your cool projects.
 nav: true
 nav_order: 4
-display_categories: [work]
+display_categories: [fun]
 featured_projects: [RGB Matrix Clock]
 horizontal: false
 ---

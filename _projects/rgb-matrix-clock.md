@@ -4,7 +4,7 @@ title: RGB Matrix Clock
 description: CircuitPython firmware for a 64x32 matrix clock with RTC, sensors, and menu controls.
 img: assets/img/projects/rgb-matrix-clock.jpg
 importance: 1
-category: work
+category: fun
 github: https://github.com/gitbenlewis/RGB_Matrix_Clock_waveshare_64_32_pi_pico
 ---
 
