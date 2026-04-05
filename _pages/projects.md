@@ -5,8 +5,8 @@ permalink: /projects/
 description: A growing collection of your cool projects.
 nav: true
 nav_order: 4
-display_categories: [fun]
-featured_projects: [RGB Matrix Clock]
+display_categories: [work, fun]
+featured_projects: [Blood Collection Dashboard, RGB Matrix Clock]
 horizontal: false
 ---
 
