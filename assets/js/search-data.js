@@ -126,22 +126,7 @@ ninja.data = [{
           section: "News",},{id: "news-ben-promoted-to-senior-scientist-bioinformatics-at-actio-biosciences-in-recognition-of-scientific-leadership-cross-program-impact-and-strategic-contributions-to-portfolio-advancement",
           title: 'Ben promoted to Senior Scientist, Bioinformatics at Actio Biosciences in recognition of scientific...',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
+          section: "News",},{id: "projects-project-4",
           title: 'project 4',
           description: "another without an image",
           section: "Projects",handler: () => {
@@ -156,21 +141,16 @@ ninja.data = [{
           description: "a project with no image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
             },},{id: "projects-project-9",
           title: 'project 9',
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-blood-collection-dashboard",
+          title: 'Blood Collection Dashboard',
+          description: "Interactive Plotly Dash app for monitoring biomarker collection progress in clinical trials.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/blood-collection-dashboard/";
             },},{id: "projects-rgb-matrix-clock",
           title: 'RGB Matrix Clock',
           description: "CircuitPython firmware for a 64x32 matrix clock with RTC, sensors, and menu controls.",
