@@ -146,6 +146,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-adata-science-tools",
+          title: 'adata_science_tools',
+          description: "Python data science toolkit for differential analysis and visualization on AnnData objects.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/adata-science-tools/";
             },},{id: "projects-blood-collection-dashboard",
           title: 'Blood Collection Dashboard',
           description: "Interactive Plotly Dash app for monitoring biomarker collection progress in clinical trials.",
