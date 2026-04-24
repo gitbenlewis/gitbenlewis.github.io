@@ -48,6 +48,10 @@ The `generate_data.py` script creates reproducible test datasets using seeded ra
 2. Creates a source mask recording which participant-visit combinations have blood collected
 3. Generates three derived CSVs (plasma, serum, PBMC) where collection is only possible where the source mask is `True`
 
+## Live Demo
+
+[blood-collection-dashboard.onrender.com](https://blood-collection-dashboard.onrender.com/)
+
 ## Repository
 
 Source code and documentation:
