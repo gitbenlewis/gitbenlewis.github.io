@@ -48,6 +48,23 @@ The `generate_data.py` script creates reproducible test datasets using seeded ra
 2. Creates a source mask recording which participant-visit combinations have blood collected
 3. Generates three derived CSVs (plasma, serum, PBMC) where collection is only possible where the source mask is `True`
 
+## Deployment Options
+
+The dashboard ships with three distribution modes:
+
+| Option | File | Size | Notes |
+|--------|------|------|-------|
+| **Web (Render/Heroku)** | `app_dash.py` + Procfile | — | Reads `PORT` from env, defaults to 8050 |
+| **Desktop — native window** | `flask_app.py` + PyInstaller | ~50 MB | Opens in a native WebGUI window, works offline |
+| **Desktop — browser** | `run_dash_app.py` + PyInstaller | ~57 MB | Opens in your default browser, works offline |
+| **Static HTML** | [`export_static_html.py`](https://github.com/gitbenlewis/blood_collection_dashboard/blob/main/export_static_html.py) | ~219 KB | Self-contained snapshot; Plotly.js inlined; shareable via email or cloud storage |
+
+To generate the static HTML snapshot locally:
+```bash
+python3 export_static_html.py
+# outputs: Blood_Collection_Dashboard_Static.html
+```
+
 ## Live Demo
 
 [blood-collection-dashboard.onrender.com](https://blood-collection-dashboard.onrender.com/)
