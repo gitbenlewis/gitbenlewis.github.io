@@ -50,24 +50,68 @@ The `generate_data.py` script creates reproducible test datasets using seeded ra
 
 ## Deployment Options
 
-The dashboard ships with three distribution modes:
+The dashboard ships with three distribution modes to fit different use cases.
 
-| Option | File | Size | Notes |
-|--------|------|------|-------|
-| **Web (Render/Heroku)** | `app_dash.py` + Procfile | — | Reads `PORT` from env, defaults to 8050 |
-| **Desktop — native window** | `flask_app.py` + PyInstaller | ~50 MB | Opens in a native WebGUI window, works offline |
-| **Desktop — browser** | `run_dash_app.py` + PyInstaller | ~57 MB | Opens in your default browser, works offline |
-| **Static HTML** | [`Blood_Collection_Dashboard_Static.html`](https://github.com/gitbenlewis/blood_collection_dashboard/blob/main/Blood_Collection_Dashboard_Static.html) | ~219 KB | Self-contained snapshot; Plotly.js inlined; shareable via email or cloud storage |
+### Option 1 — Web deploy (Render / Heroku)
 
-A current snapshot is committed to the repo and available for direct download. To regenerate from the latest data:
+Heroku/Render-ready via the `Procfile`. The app reads `PORT` from the environment or defaults to `8050`. Lean dependency footprint — only `requirements.txt` needed.
+
 ```bash
-python3 export_static_html.py
-# outputs: Blood_Collection_Dashboard_Static.html
+heroku create
+git push heroku main
 ```
 
-## Live Demo
+**Live instance:** [blood-collection-dashboard.onrender.com](https://blood-collection-dashboard.onrender.com/)
 
-[blood-collection-dashboard.onrender.com](https://blood-collection-dashboard.onrender.com/)
+---
+
+### Option 2 — Desktop executable (.app / .exe)
+
+Bundles the dashboard plus a Python runtime into a double-clickable executable via PyInstaller. No Python installation required on the end user's machine. Two flavours:
+
+| Flavour | Entry point | UX | Output size |
+|---------|------------|-----|-------------|
+| Dash-in-browser | `run_dash_app.py` | Opens in default browser at `http://127.0.0.1:8050` | ~57 MB |
+| Flask-WebGUI | `flask_app.py` | Native desktop window via pywebview | ~50 MB |
+
+```bash
+# Build browser flavour (default requirements.txt)
+./build_dash_executable.sh
+
+# Build native-window flavour (needs requirements-desktop.txt)
+pip install -r requirements.txt -r requirements-desktop.txt
+./build_flask_executable.sh
+
+# Build both at once
+./build_both_executables.sh
+```
+
+PyInstaller specs (`Blood_Collection_Dashboard.spec`, `Blood_Collection_Dashboard_Web.spec`) are checked into the repo for reproducible builds.
+
+---
+
+### Option 3 — Static HTML snapshot
+
+Self-contained single-file export for email or cloud-storage sharing. Plotly.js is fully inlined — no Python or network connection required on the receiving end.
+
+A current snapshot is committed to the repo:
+[`Blood_Collection_Dashboard_Static.html`](https://github.com/gitbenlewis/blood_collection_dashboard/blob/main/Blood_Collection_Dashboard_Static.html) (~219 KB)
+
+To regenerate from the latest data:
+```bash
+python3 export_static_html.py
+# → Blood_Collection_Dashboard_Static.html
+```
+
+---
+
+### Which option to pick?
+
+| Use case | Recommended |
+|----------|-------------|
+| Public demo / live hosted dashboard | Option 1 — Web (Render/Heroku) |
+| Coworker who needs a standalone app, no Python | Option 2 — Desktop executable |
+| Email attachment, grant report, air-gapped viewing | Option 3 — Static HTML |
 
 ## Repository
 
