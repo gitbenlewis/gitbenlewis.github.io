@@ -156,11 +156,21 @@ ninja.data = [{
           description: "Interactive Plotly Dash app for monitoring biomarker collection progress in clinical trials.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/blood-collection-dashboard/";
+            },},{id: "projects-gseapy-wrapper",
+          title: 'GSEApy Wrapper',
+          description: "Reproducible preranked gene set enrichment analysis across human and mouse with FDR-controlled scoring and multi-collection support.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/gsea-wrapper/";
             },},{id: "projects-rgb-matrix-clock",
           title: 'RGB Matrix Clock',
           description: "CircuitPython firmware for a 64x32 matrix clock with RTC, sensors, and menu controls.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/rgb-matrix-clock/";
+            },},{id: "projects-single-cell-python-tools",
+          title: 'Single-Cell Python Tools',
+          description: "Scanpy wrappers and utility functions for end-to-end single-cell RNA-seq analysis on AnnData objects.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/single-cell-python-tools/";
             },},{
         id: 'social-bluesky',
         title: 'Bluesky',
