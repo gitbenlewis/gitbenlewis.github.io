@@ -57,9 +57,9 @@ The dashboard ships with three distribution modes:
 | **Web (Render/Heroku)** | `app_dash.py` + Procfile | — | Reads `PORT` from env, defaults to 8050 |
 | **Desktop — native window** | `flask_app.py` + PyInstaller | ~50 MB | Opens in a native WebGUI window, works offline |
 | **Desktop — browser** | `run_dash_app.py` + PyInstaller | ~57 MB | Opens in your default browser, works offline |
-| **Static HTML** | [`export_static_html.py`](https://github.com/gitbenlewis/blood_collection_dashboard/blob/main/export_static_html.py) | ~219 KB | Self-contained snapshot; Plotly.js inlined; shareable via email or cloud storage |
+| **Static HTML** | [`Blood_Collection_Dashboard_Static.html`](https://github.com/gitbenlewis/blood_collection_dashboard/blob/main/Blood_Collection_Dashboard_Static.html) | ~219 KB | Self-contained snapshot; Plotly.js inlined; shareable via email or cloud storage |
 
-To generate the static HTML snapshot locally:
+A current snapshot is committed to the repo and available for direct download. To regenerate from the latest data:
 ```bash
 python3 export_static_html.py
 # outputs: Blood_Collection_Dashboard_Static.html
