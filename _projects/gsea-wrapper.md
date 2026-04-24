@@ -2,13 +2,13 @@
 layout: page
 title: GSEApy Wrapper
 description: Reproducible preranked gene set enrichment analysis across human and mouse with FDR-controlled scoring and multi-collection support.
-img: assets/img/projects/baseline.png
+img: assets/img/projects/gsea_enrichment_plot.png
 importance: 3
 category: work
 github: https://github.com/gitbenlewis/run_GSEApy_wrapper
 ---
 
-{% include figure.liquid loading="eager" path="assets/img/projects/baseline.png" title="GSEApy Wrapper" class="img-fluid rounded z-depth-1" %}
+{% include figure.liquid loading="eager" path="assets/img/projects/gsea_enrichment_plot.png" title="Preranked GSEA enrichment plot — Glioma (hsa05214, Homo sapiens). NES: 1.907, FDR: 0.000" class="img-fluid rounded z-depth-1" %}
 
 ## Overview
 
