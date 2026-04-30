@@ -1,0 +1,192 @@
+{
+  "basics": {
+    "name": "Benjamin Lewis",
+    "label": "Senior Scientist | Multi-Omic Discovery",
+    "email": "benlewis.biology@gmail.com",
+    "summary": "Neuro-data scientist specializing in multi-omic biomarker discovery, integrative transcriptomics, and therapeutic target identification in biotech R&D.",
+    "location": {
+      "city": "San Diego",
+      "region": "California",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "gitbenlewis"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "benmarklewis"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Actio Biosciences",
+      "position": "Senior Scientist \u2014 Bioinformatics, R&D",
+      "url": "https://www.actiobiosciences.com/",
+      "location": "San Diego, CA",
+      "startDate": "2026-01",
+      "endDate": "present",
+      "summary": "Promoted January 2026 in recognition of scientific leadership, cross-program impact, and strategic contributions to portfolio advancement.",
+      "highlights": [
+        "Led multi-omic biomarker discovery and novel target identification across therapeutic programs.",
+        "Scientific lead for single-cell and bulk transcriptomic strategy across multiple therapeutic programs.",
+        "Designed and deployed a production-grade RNA-seq pipeline (Nextflow, Python, AWS), reducing turnaround from 2 weeks to <48 hours.",
+        "Partnered with biology, translational, and executive stakeholders to guide data-driven portfolio decisions."
+      ]
+    },
+    {
+      "name": "Actio Biosciences",
+      "position": "Bioinformatics Scientist II, R&D",
+      "url": "https://www.actiobiosciences.com/",
+      "location": "San Diego, CA",
+      "startDate": "2024-04",
+      "endDate": "2025-12",
+      "summary": "Multi-omic biomarker discovery and integrative transcriptomics supporting early-stage therapeutic programs.",
+      "highlights": []
+    },
+    {
+      "name": "Aspen Neuroscience",
+      "position": "Scientist I, R&D",
+      "url": "https://aspenneuroscience.com/",
+      "location": "San Diego, CA",
+      "startDate": "2022-04",
+      "endDate": "2024-03",
+      "summary": "Cross-functional single-cell and multiomic discovery supporting pipeline and IND-enabling programs.",
+      "highlights": [
+        "Single-cell transcriptomics and multiomics project design and data analysis lead.",
+        "Functional genomics for pipeline development.",
+        "Contributed to preclinical and IND-enabling studies supporting regulatory filings and clinical progression."
+      ]
+    },
+    {
+      "name": "Hardy Diagnostics",
+      "position": "Research and Development Intern",
+      "url": "https://hardydiagnostics.com/",
+      "location": "Santa Maria, CA",
+      "startDate": "2013-06",
+      "endDate": "2013-12",
+      "summary": "Developed chromogenic diagnostic media formulations and authored protocols for 510(k) validation studies.",
+      "highlights": []
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of California, San Diego",
+      "url": "https://www.ucsd.edu/",
+      "area": "Molecular Biology",
+      "studyType": "PhD",
+      "startDate": "2016",
+      "endDate": "2022",
+      "summary": "Research focused on RNA-binding protein functions in mitochondrial regulation, under the mentorship of Gene Yeo and Tony Hunter."
+    },
+    {
+      "institution": "California Polytechnic State University",
+      "url": "https://www.calpoly.edu/",
+      "area": "Stem Cell Research",
+      "studyType": "MS",
+      "startDate": "2013",
+      "endDate": "2015",
+      "summary": "Stem cell research with extensive molecular biology techniques and stem cell-based disease modeling."
+    },
+    {
+      "institution": "California Polytechnic State University",
+      "url": "https://www.calpoly.edu/",
+      "area": "Biochemistry and Microbiology (Double Major)",
+      "studyType": "BS",
+      "startDate": "2008",
+      "endDate": "2013",
+      "summary": null
+    }
+  ],
+  "publications": [
+    {
+      "name": "LARP4 is an RNA-binding protein that binds nuclear-encoded mitochondrial mRNAs to promote mitochondrial function",
+      "publisher": "RNA",
+      "releaseDate": "2024-02-16",
+      "url": "https://doi.org/10.1261/rna.079799.123",
+      "summary": "Identifies LARP4 as a critical RNA-binding protein regulating nuclear-encoded mitochondrial mRNAs and ensuring proper mitochondrial biogenesis."
+    },
+    {
+      "name": "Autologous and Heterologous Cell Therapy for Hemophilia B toward Functional Restoration of Factor IX",
+      "publisher": "Cell Reports",
+      "releaseDate": "2018-05-01",
+      "url": "https://doi.org/10.1016/j.celrep.2018.03.121",
+      "summary": "Cell-based therapies for Hemophilia B using corrected iPSCs differentiated into hepatocyte-like cells."
+    },
+    {
+      "name": "Functional Gene Correction for Cystic Fibrosis in Lung Epithelial Cells Generated from Patient iPSCs",
+      "publisher": "Cell Reports",
+      "releaseDate": "2015-09-01",
+      "url": "https://doi.org/10.1016/j.celrep.2015.07.062",
+      "summary": "CRISPR correction of the CFTR gene mutation in iPSCs from cystic fibrosis patients, restoring normal CFTR expression and function."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Bioinformatics & Statistical Analysis",
+      "keywords": [
+        "Single-cell transcriptomics",
+        "Bulk RNA-seq",
+        "Proteomics",
+        "ATAC-seq",
+        "CLIP-seq",
+        "Machine learning",
+        "Data visualization"
+      ]
+    },
+    {
+      "name": "Programming & Computation",
+      "keywords": [
+        "Python (pandas",
+        "matplotlib",
+        "scanpy",
+        "PyTorch",
+        "scikit-learn)",
+        "R",
+        "Nextflow",
+        "Linux",
+        "AWS",
+        "GitHub"
+      ]
+    },
+    {
+      "name": "Molecular & Cellular Biology",
+      "keywords": [
+        "CRISPR/Cas9",
+        "iPSC disease modeling",
+        "Viral vector design",
+        "NGS/qPCR",
+        "Immunofluorescence",
+        "Flow cytometry"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "DeepLearning.AI TensorFlow Developer Professional Certificate",
+      "date": "2024-05-14",
+      "issuer": "DeepLearning.AI",
+      "url": "https://coursera.org/verify/professional-cert/U96RULUPAKP6"
+    },
+    {
+      "name": "IBM AI Engineering Professional Certificate",
+      "date": "2024-01-19",
+      "issuer": "IBM",
+      "url": "https://coursera.org/verify/professional-cert/7NMH5QT7Q4XF"
+    },
+    {
+      "name": "IBM Data Science Professional Certificate",
+      "date": "2023-06-15",
+      "issuer": "IBM",
+      "url": "https://coursera.org/verify/professional-cert/Y9M6RFY4NCCY"
+    }
+  ],
+  "languages": [
+    {
+      "name": "English",
+      "summary": "Native speaker"
+    }
+  ]
+}

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benjamin Mark Lewis — Bioinformatics Scientist</title>
+  <meta name="description" content="Benjamin Mark Lewis is a San Diego bioinformatics scientist specializing in multi-omic biomarker discovery, RNA biology, single-cell genomics, and scientific software." />
+  <meta name="theme-color" content="#0f3d4c" />
+  <meta name="color-scheme" content="light" />
+  <link rel="canonical" href="https://benjaminmarklewis.com/" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23eef7f6'/%3E%3Cpath d='M14 41c10-20 25-25 36-22-3 16-14 27-32 28l12-14' fill='none' stroke='%230f3d4c' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='23' cy='24' r='4' fill='%23d9822b'/%3E%3C/svg%3E" />
+
+  <meta property="og:title" content="Benjamin Mark Lewis — Bioinformatics Scientist" />
+  <meta property="og:description" content="Multi-omic discovery, RNA biology, single-cell genomics, and scientific software for biotech R&D." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://benjaminmarklewis.com/" />
+  <meta property="og:image" content="https://benjaminmarklewis.com/assets/img/benjamin-lewis.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add('js');</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Benjamin Mark Lewis",
+    "jobTitle": "Senior Scientist — Bioinformatics, R&D",
+    "email": "mailto:benlewis.biology@gmail.com",
+    "url": "https://benjaminmarklewis.com/",
+    "image": "https://benjaminmarklewis.com/assets/img/benjamin-lewis.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "San Diego", "addressRegion": "CA", "addressCountry": "US" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of California, San Diego" },
+      { "@type": "CollegeOrUniversity", "name": "California Polytechnic State University" }
+    ],
+    "sameAs": [
+      "https://github.com/gitbenlewis",
+      "https://bsky.app/profile/gitbenlewis.bsky.social",
+      "https://www.linkedin.com/in/benmarklewis/",
+      "https://orcid.org/0000-0002-4135-3967"
+    ],
+    "knowsAbout": ["Bioinformatics", "Multi-omic biomarker discovery", "Single-cell transcriptomics", "RNA biology", "CRISPR", "Python", "Nextflow"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav class="nav" id="nav" aria-label="Primary navigation">
+    <a class="nav__logo" href="#hero" aria-label="Benjamin Mark Lewis home">BML</a>
+    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()">☰</button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#methods">Methods &amp; tools</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#repositories">Repos</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#consulting">Consulting</a></li>
+      <li><a href="#contact" class="nav__cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="hero" aria-label="Introduction">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Bioinformatics · Multi-omics · RNA biology</p>
+          <h1>Turning complex biology into decisive data products.</h1>
+          <p class="hero__sub">I’m Benjamin Mark Lewis, a San Diego bioinformatics scientist working across single-cell and bulk transcriptomics, multi-omic biomarker discovery, therapeutic target identification, and production-grade scientific software.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">Explore projects</a>
+            <a class="btn btn--ghost" href="mailto:benlewis.biology@gmail.com">Email Ben</a>
+          </div>
+          <div class="hero__meta" aria-label="Highlights">
+            <span>Senior Scientist, Bioinformatics R&amp;D</span>
+            <span>San Diego, CA</span>
+            <span>PhD, Molecular Biology</span>
+          </div>
+        </div>
+        <div class="hero__portrait-card">
+          <img src="assets/img/benjamin-lewis.jpg" alt="Benjamin Mark Lewis" width="520" height="650" />
+          <div class="portrait__caption">
+            <strong>Wet-lab trained. Computation-forward.</strong>
+            <span>Building the bridge from assays to insight.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section signal" aria-label="Scientific focus summary">
+      <div class="container signal__grid">
+        <div>
+          <span class="section__label">The throughline</span>
+          <h2>Biology-aware computation for teams making hard R&amp;D decisions.</h2>
+        </div>
+        <p>I’ve spent more than a decade at the interface of experimental and computational biology: CRISPR and iPSC disease models, RNA-binding protein biology, single-cell genomics, translational biomarker strategy, and reproducible analysis systems that move quickly without losing scientific rigor.</p>
+      </div>
+    </section>
+
+
+
+    <section class="section experience" id="experience">
+      <div class="container experience__grid">
+        <div>
+          <span class="section__label">Experience</span>
+          <h2>From stem cell biology to biotech data strategy</h2>
+          <p class="section__intro">A wet-lab foundation gives the computational work teeth: better experimental design, sharper interpretation, and analysis outputs built for real scientific decisions.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline__item">
+            <span>2026–present</span>
+            <h3>Senior Scientist — Bioinformatics, R&amp;D · Actio Biosciences</h3>
+            <p>Multi-omic biomarker discovery, novel target identification, transcriptomic strategy, and production analysis systems.</p>
+          </article>
+          <article class="timeline__item">
+            <span>2024–2025</span>
+            <h3>Bioinformatics Scientist II · Actio Biosciences</h3>
+            <p>Integrative transcriptomics and biomarker analysis supporting therapeutic programs.</p>
+          </article>
+          <article class="timeline__item">
+            <span>2022–2024</span>
+            <h3>Scientist I, R&amp;D · Aspen Neuroscience</h3>
+            <p>Single-cell and multiomic discovery across pipeline and IND-enabling programs.</p>
+          </article>
+          <article class="timeline__item">
+            <span>UCSD Biology PhD</span>
+            <h3>Advisors · Gene Yeo and Tony Hunter</h3>
+            <p>Doctoral training in Molecular Biology at UC San Diego, focused on RNA-binding protein function in mitochondrial regulation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section education" id="education">
+      <div class="container">
+        <span class="section__label">Education</span>
+        <h2>Training across molecular biology, stem cells, and computation</h2>
+        <div class="education-grid">
+          <article class="education-card">
+            <span>2016–2022</span>
+            <h3>PhD, Molecular Biology</h3>
+            <p>University of California, San Diego</p>
+            <p>RNA-binding protein functions in mitochondrial regulation with Gene Yeo and Tony Hunter.</p>
+          </article>
+          <article class="education-card">
+            <span>2013–2015</span>
+            <h3>MS, Stem Cell Research</h3>
+            <p>California Polytechnic State University</p>
+            <p>Stem cell research, molecular biology techniques, and stem cell-based disease modeling.</p>
+          </article>
+          <article class="education-card">
+            <span>2008–2013</span>
+            <h3>BS, Biochemistry and Microbiology</h3>
+            <p>California Polytechnic State University</p>
+            <p>Double-major foundation in biochemistry, microbiology, and experimental biology.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section publications" id="publications">
+      <div class="container">
+        <span class="section__label">Selected publications</span>
+        <h2>RNA biology, CRISPR disease models, and cell therapy</h2>
+        <div class="publication-list">
+          <article class="publication publication--with-figure">
+            <figure class="publication__figure">
+              <img src="assets/img/publications/larp4-graphical-abstract.png" alt="Graphical abstract for LARP4 mitochondrial RNA biology publication" loading="lazy" width="1400" height="787" />
+            </figure>
+            <div class="publication__body">
+              <time>2024 · RNA</time>
+              <h3>LARP4 is an RNA-binding protein that binds nuclear-encoded mitochondrial mRNAs to promote mitochondrial function</h3>
+              <p>Identifies LARP4 as an RNA-binding regulator of mitochondrial mRNA programs and respiratory function.</p>
+              <a href="https://doi.org/10.1261/rna.079799.123" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </article>
+          <article class="publication publication--with-figure">
+            <figure class="publication__figure">
+              <img src="assets/img/publications/hemophilia-b-graphical-abstract.png" alt="Graphical abstract for Hemophilia B cell therapy publication" loading="lazy" width="1400" height="787" />
+            </figure>
+            <div class="publication__body">
+              <time>2018 · Cell Reports</time>
+              <h3>Autologous and Heterologous Cell Therapy for Hemophilia B toward Functional Restoration of Factor IX</h3>
+              <p>Cell-based therapy approaches using hepatocytes and corrected iPSC-derived hepatocyte-like cells.</p>
+              <a href="https://doi.org/10.1016/j.celrep.2018.03.121" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </article>
+          <article class="publication publication--with-figure">
+            <figure class="publication__figure">
+              <img src="assets/img/publications/cystic-fibrosis-graphical-abstract.png" alt="Graphical abstract for cystic fibrosis iPSC gene-correction publication" loading="lazy" width="1400" height="787" />
+            </figure>
+            <div class="publication__body">
+              <time>2015 · Cell Reports</time>
+              <h3>Functional Gene Correction for Cystic Fibrosis in Lung Epithelial Cells Generated from Patient iPSCs</h3>
+              <p>CRISPR correction of CFTR mutation in patient iPSCs and differentiation toward airway epithelial cells.</p>
+              <a href="https://doi.org/10.1016/j.celrep.2015.07.062" target="_blank" rel="noopener">DOI</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section work" id="methods">
+      <div class="container">
+        <span class="section__label">Methods &amp; tools</span>
+        <h2>How I turn biological data into decisions</h2>
+        <div class="card-grid card-grid--four">
+          <article class="focus-card">
+            <span class="card__number">01</span>
+            <h3>Precision medicine / biomarkers</h3>
+            <p>Connecting molecular readouts, patient stratification, and translational evidence into biomarker strategies that support therapeutic decisions.</p>
+          </article>
+          <article class="focus-card">
+            <span class="card__number">02</span>
+            <h3>Multi-omic discovery</h3>
+            <p>Integrating transcriptomic, proteomic, and functional datasets to prioritize biomarkers, mechanisms, and therapeutic hypotheses.</p>
+          </article>
+          <article class="focus-card">
+            <span class="card__number">03</span>
+            <h3>Single-cell &amp; bulk RNA-seq</h3>
+            <p>Designing analysis strategies that connect cell states, pathway shifts, target biology, and experimental context.</p>
+          </article>
+          <article class="focus-card">
+            <span class="card__number">04</span>
+            <h3>Scientific software</h3>
+            <p>Python, Nextflow, Dash, and reproducible workflows that turn one-off analyses into durable team infrastructure.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section stack" aria-label="Technical stack">
+      <div class="container">
+        <span class="section__label">Stack</span>
+        <h2>Methods and tools</h2>
+        <div class="tag-cloud">
+          <span>Python</span><span>Pandas</span><span>Scanpy</span><span>AnnData</span><span>PyTorch</span><span>scikit-learn</span><span>R</span><span>Nextflow</span><span>AWS</span><span>Linux</span><span>Dash</span><span>Plotly</span><span>Bulk RNA-seq</span><span>Single-cell RNA-seq</span><span>Proteomics</span><span>ATAC-seq</span><span>CRISPR</span><span>iPSC models</span><span>Flow cytometry</span><span>NGS/qPCR</span>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <span class="section__label">Selected projects</span>
+            <h2>Work projects and fun builds</h2>
+          </div>
+          <a class="text-link" href="https://github.com/gitbenlewis" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+
+        <div class="project-list">
+          <div class="project-group" id="work-projects">
+            <div class="project-group__header">
+              <p class="project-group__eyebrow">Work projects</p>
+              <h3>Bioinformatics tools, dashboards, and analysis workflows</h3>
+            </div>
+
+            <article class="project-card project-card--featured">
+              <div class="project-card__image"><img src="assets/img/projects/baseline.png" alt="adata_science_tools project thumbnail from the original site" loading="lazy" width="3799" height="2108" /></div>
+              <div class="project-card__body">
+                <p class="project-card__tag">AnnData · Python · Visualization</p>
+                <h3>adata_science_tools</h3>
+                <p>Python data science toolkit for differential analysis and visualization on AnnData objects.</p>
+                <a href="https://github.com/gitbenlewis/adata_science_tools" target="_blank" rel="noopener">View repository</a>
+              </div>
+            </article>
+
+            <div class="project-grid">
+              <article class="project-card">
+                <div class="project-card__image"><img src="assets/img/projects/blood-collection-dashboard.png" alt="Blood Collection Dashboard screenshot" loading="lazy" width="960" height="540" /></div>
+                <div class="project-card__body">
+                  <p class="project-card__tag">Clinical operations · Dash · Plotly</p>
+                  <h3>Blood Collection Dashboard</h3>
+                  <p>Interactive dashboard for monitoring biomarker collection progress in clinical trials, designed to make sample status, cohort coverage, and operational gaps visible at a glance.</p>
+                  <a href="https://github.com/gitbenlewis/blood_collection_dashboard" target="_blank" rel="noopener">View repository</a>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-card__image"><img src="assets/img/projects/sctl-umap-clusters.png" alt="UMAP clustering visualization from single-cell tools" loading="lazy" width="960" height="540" /></div>
+                <div class="project-card__body">
+                  <p class="project-card__tag">Single-cell · Scanpy · AnnData</p>
+                  <h3>Single-Cell Python Tools</h3>
+                  <p>Scanpy wrappers and utility functions for end-to-end single-cell RNA-seq workflows.</p>
+                  <a href="https://github.com/gitbenlewis/single_cell_python_tools" target="_blank" rel="noopener">View repository</a>
+                </div>
+              </article>
+              <article class="project-card">
+                <div class="project-card__image"><img src="assets/img/projects/gsea-enrichment-plot.png" alt="Gene set enrichment plot" loading="lazy" width="960" height="540" /></div>
+                <div class="project-card__body">
+                  <p class="project-card__tag">Pathways · GSEApy · Reproducibility</p>
+                  <h3>GSEApy Wrapper</h3>
+                  <p>Reproducible preranked gene set enrichment analysis across human and mouse collections.</p>
+                  <a href="https://github.com/gitbenlewis/run_GSEApy_wrapper" target="_blank" rel="noopener">View repository</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="project-group" id="fun-projects">
+            <div class="project-group__header">
+              <p class="project-group__eyebrow">Fun projects</p>
+              <h3>Hardware experiments and side quests</h3>
+            </div>
+
+            <div class="project-grid project-grid--fun">
+              <article class="project-card">
+                <div class="project-card__image"><img src="assets/img/projects/rgb-matrix-clock.jpg" alt="RGB matrix clock hardware project" loading="lazy" width="960" height="540" /></div>
+                <div class="project-card__body">
+                  <p class="project-card__tag">CircuitPython · Hardware</p>
+                  <h3>RGB Matrix Clock</h3>
+                  <p>CircuitPython firmware for a 64×32 matrix clock with RTC, sensors, and menu controls.</p>
+                  <a href="https://github.com/gitbenlewis/RGB_Matrix_Clock_waveshare_64_32_pi_pico" target="_blank" rel="noopener">View repository</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="section repositories" id="repositories">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <span class="section__label">Repositories</span>
+            <h2>Selected GitHub projects and tools</h2>
+          </div>
+          <a class="text-link" href="https://github.com/gitbenlewis" target="_blank" rel="noopener">GitHub profile →</a>
+        </div>
+
+        <div class="repo-profile">
+          <img src="https://github.com/gitbenlewis.png?size=320" alt="GitHub avatar for gitbenlewis" loading="lazy" width="96" height="96" />
+          <div>
+            <p class="repo-profile__label">GitHub user</p>
+            <h3>gitbenlewis</h3>
+            <p>Selected repositories from the original site, focused on computational biology workflows, reproducible analysis, and hardware side projects.</p>
+          </div>
+        </div>
+
+        <div class="repo-grid repo-grid--github">
+          <a class="repo-panel" href="https://github.com/gitbenlewis/adata_science_tools" target="_blank" rel="noopener" aria-label="Open gitbenlewis/adata_science_tools on GitHub">
+            <div class="repo-panel__top">
+              <div>
+                <span class="repo-panel__owner">gitbenlewis/</span>
+                <strong>adata_science_tools</strong>
+              </div>
+              <img src="https://github.com/gitbenlewis.png?size=160" alt="" loading="lazy" width="76" height="76" />
+            </div>
+            <p>data science tools that operate on anndata objects</p>
+            <div class="repo-panel__meta">
+              <span>Python</span>
+            </div>
+            <div class="repo-panel__stats" aria-label="Repository stats">
+              <span><b>1</b><small>Contributor</small></span>
+              <span><b>0</b><small>Issues</small></span>
+              <span><b>1</b><small>Star</small></span>
+              <span><b>0</b><small>Forks</small></span>
+              <span class="repo-panel__mark"><svg aria-hidden="true" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></span>
+            </div>
+          </a>
+          <a class="repo-panel" href="https://github.com/gitbenlewis/run_GSEApy_wrapper" target="_blank" rel="noopener" aria-label="Open gitbenlewis/run_GSEApy_wrapper on GitHub">
+            <div class="repo-panel__top">
+              <div>
+                <span class="repo-panel__owner">gitbenlewis/</span>
+                <strong>run_GSEApy_wrapper</strong>
+              </div>
+              <img src="https://github.com/gitbenlewis.png?size=160" alt="" loading="lazy" width="76" height="76" />
+            </div>
+            <p>wrapper to run GSEApy with reproducible FDR</p>
+            <div class="repo-panel__meta">
+              <span>Python</span>
+            </div>
+            <div class="repo-panel__stats" aria-label="Repository stats">
+              <span><b>1</b><small>Contributor</small></span>
+              <span><b>0</b><small>Issues</small></span>
+              <span><b>0</b><small>Star</small></span>
+              <span><b>0</b><small>Forks</small></span>
+              <span class="repo-panel__mark"><svg aria-hidden="true" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></span>
+            </div>
+          </a>
+          <a class="repo-panel" href="https://github.com/gitbenlewis/RNAseq_analysis" target="_blank" rel="noopener" aria-label="Open gitbenlewis/RNAseq_analysis on GitHub">
+            <div class="repo-panel__top">
+              <div>
+                <span class="repo-panel__owner">gitbenlewis/</span>
+                <strong>RNAseq_analysis</strong>
+              </div>
+              <img src="https://github.com/gitbenlewis.png?size=160" alt="" loading="lazy" width="76" height="76" />
+            </div>
+            <p>RNAseq_analysis helpers etc</p>
+            <div class="repo-panel__meta">
+              <span>Python</span>
+            </div>
+            <div class="repo-panel__stats" aria-label="Repository stats">
+              <span><b>1</b><small>Contributor</small></span>
+              <span><b>0</b><small>Issues</small></span>
+              <span><b>0</b><small>Star</small></span>
+              <span><b>0</b><small>Forks</small></span>
+              <span class="repo-panel__mark"><svg aria-hidden="true" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></span>
+            </div>
+          </a>
+          <a class="repo-panel" href="https://github.com/gitbenlewis/single_cell_python_tools" target="_blank" rel="noopener" aria-label="Open gitbenlewis/single_cell_python_tools on GitHub">
+            <div class="repo-panel__top">
+              <div>
+                <span class="repo-panel__owner">gitbenlewis/</span>
+                <strong>single_cell_python_tools</strong>
+              </div>
+              <img src="https://github.com/gitbenlewis.png?size=160" alt="" loading="lazy" width="76" height="76" />
+            </div>
+            <p>Mostly scanpy wrappers and tools that use adata objects to streamline single-cell analysis</p>
+            <div class="repo-panel__meta">
+              <span>Jupyter Notebook</span>
+            </div>
+            <div class="repo-panel__stats" aria-label="Repository stats">
+              <span><b>1</b><small>Contributor</small></span>
+              <span><b>3</b><small>Issues</small></span>
+              <span><b>0</b><small>Star</small></span>
+              <span><b>0</b><small>Forks</small></span>
+              <span class="repo-panel__mark"><svg aria-hidden="true" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></span>
+            </div>
+          </a>
+          <a class="repo-panel" href="https://github.com/gitbenlewis/ARCHS4_bulk_RNAseq_project" target="_blank" rel="noopener" aria-label="Open gitbenlewis/ARCHS4_bulk_RNAseq_project on GitHub">
+            <div class="repo-panel__top">
+              <div>
+                <span class="repo-panel__owner">gitbenlewis/</span>
+                <strong>ARCHS4_bulk_RNAseq_project</strong>
+              </div>
+              <img src="https://github.com/gitbenlewis.png?size=160" alt="" loading="lazy" width="76" height="76" />
+            </div>
+            <p>Example notebooks and tools for working with the ARCHS4 dataset</p>
+            <div class="repo-panel__meta">
+              <span>Jupyter Notebook</span>
+            </div>
+            <div class="repo-panel__stats" aria-label="Repository stats">
+              <span><b>1</b><small>Contributor</small></span>
+              <span><b>0</b><small>Issues</small></span>
+              <span><b>0</b><small>Star</small></span>
+              <span><b>0</b><small>Forks</small></span>
+              <span class="repo-panel__mark"><svg aria-hidden="true" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></span>
+            </div>
+          </a>
+          <a class="repo-panel repo-panel--fun" href="https://github.com/gitbenlewis/RGB_Matrix_Clock_waveshare_64_32_pi_pico" target="_blank" rel="noopener" aria-label="Open gitbenlewis/RGB_Matrix_Clock_waveshare_64_32_pi_pico on GitHub">
+            <div class="repo-panel__top">
+              <div>
+                <span class="repo-panel__owner">gitbenlewis/</span>
+                <strong>RGB_Matrix_Clock_waveshare_64_32_pi_pico</strong>
+              </div>
+              <img src="https://github.com/gitbenlewis.png?size=160" alt="" loading="lazy" width="76" height="76" />
+            </div>
+            <p>CircuitPython RGB matrix clock firmware for a Raspberry Pi Pico build.</p>
+            <div class="repo-panel__meta">
+              <span>Python</span>
+            </div>
+            <div class="repo-panel__stats" aria-label="Repository stats">
+              <span><b>1</b><small>Contributor</small></span>
+              <span><b>0</b><small>Issues</small></span>
+              <span><b>0</b><small>Star</small></span>
+              <span><b>0</b><small>Forks</small></span>
+              <span class="repo-panel__mark"><svg aria-hidden="true" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cv" id="cv">
+      <div class="container">
+        <div class="section__header">
+          <div>
+            <span class="section__label">CV</span>
+            <h2>Curriculum vitae</h2>
+          </div>
+          <div class="section__actions">
+            <a class="btn btn--primary" href="assets/pdf/BL_CV_2026.pdf" target="_blank" rel="noopener">Download PDF CV</a>
+            <a class="text-link" href="assets/data/cv.yml" target="_blank" rel="noopener">YAML</a>
+            <a class="text-link" href="assets/data/cv.json" target="_blank" rel="noopener">JSON</a>
+          </div>
+        </div>
+
+        <div class="cv-layout">
+          <aside class="cv-card cv-card--summary">
+            <p class="cv-card__label">Structured CV</p>
+            <h3>Benjamin Lewis</h3>
+            <p>Senior Scientist · Multi-Omic Discovery</p>
+            <p>San Diego, CA · <a href="https://bsky.app/profile/gitbenlewis.bsky.social" target="_blank" rel="noopener">@gitbenlewis.bsky.social</a></p>
+            <p class="cv-card__note">The downloadable data files mirror an industry-standard structured resume/CV format for machine-readable profiles, portfolio sites, and automated recruiting systems.</p>
+          </aside>
+
+          <div class="cv-content">
+            <div class="cv-block">
+              <h3>Experience</h3>
+              <article class="cv-entry">
+                <div><strong>Senior Scientist — Bioinformatics, R&amp;D</strong><span>Actio Biosciences · 2026–present</span></div>
+                <p>Scientific leadership across multi-omic biomarker discovery, single-cell and bulk transcriptomic strategy, and production-grade RNA-seq infrastructure.</p>
+              </article>
+              <article class="cv-entry">
+                <div><strong>Bioinformatics Scientist II, R&amp;D</strong><span>Actio Biosciences · 2024–2025</span></div>
+                <p>Multi-omic biomarker discovery and integrative transcriptomics supporting early-stage therapeutic programs.</p>
+              </article>
+              <article class="cv-entry">
+                <div><strong>Scientist I, R&amp;D</strong><span>Aspen Neuroscience · 2022–2024</span></div>
+                <p>Cross-functional single-cell and multiomic discovery supporting pipeline and IND-enabling programs.</p>
+              </article>
+            </div>
+
+            <div class="cv-block cv-block--split">
+              <div>
+                <h3>Education</h3>
+                <ul class="cv-list">
+                  <li><strong>PhD, Molecular Biology</strong><span>UC San Diego · 2016–2022</span></li>
+                  <li><strong>MS, Stem Cell Research</strong><span>Cal Poly · 2013–2015</span></li>
+                  <li><strong>BS, Biochemistry and Microbiology</strong><span>Cal Poly · 2008–2013</span></li>
+                </ul>
+              </div>
+              <div>
+                <h3>Certificates</h3>
+                <ul class="cv-list">
+                  <li><strong>TensorFlow Developer Professional Certificate</strong><span>DeepLearning.AI · 2024</span></li>
+                  <li><strong>AI Engineering Professional Certificate</strong><span>IBM · 2024</span></li>
+                  <li><strong>Data Science Professional Certificate</strong><span>IBM · 2023</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <details class="cv-data-preview">
+              <summary>Preview structured CV data</summary>
+              <pre><code>{
+  "basics": {
+    "name": "Benjamin Lewis",
+    "label": "Senior Scientist | Multi-Omic Discovery",
+    "location": "San Diego, CA"
+  },
+  "work": ["Actio Biosciences", "Aspen Neuroscience"],
+  "education": ["UC San Diego", "Cal Poly"],
+  "skills": ["Bioinformatics", "Python", "Nextflow", "Single-cell RNA-seq"]
+}</code></pre>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section news" id="news">
+      <div class="container">
+        <span class="section__label">News</span>
+        <h2>Recent milestones</h2>
+        <div class="news-list">
+          <article class="news-item">
+            <time datetime="2026-01-01">Jan 01, 2026</time>
+            <p>Ben promoted to Senior Scientist, Bioinformatics at Actio Biosciences in recognition of scientific leadership, cross-program impact, and strategic contributions to portfolio advancement.</p>
+          </article>
+          <article class="news-item">
+            <time datetime="2024-09-01">Sep 01, 2024</time>
+            <p>Ben becomes a dad.</p>
+          </article>
+          <article class="news-item">
+            <time datetime="2024-04-01">Apr 01, 2024</time>
+            <p>Benjamin Mark Lewis joins Actio Biosciences as a Bioinformatics Scientist II.</p>
+          </article>
+          <article class="news-item">
+            <time datetime="2022-04-25">Apr 25, 2022</time>
+            <p>Benjamin Mark Lewis joins Aspen Neuroscience as a Scientist in Research and Development.</p>
+          </article>
+          <article class="news-item">
+            <time datetime="2022-03-14">Mar 14, 2022</time>
+            <p>Benjamin Mark Lewis, PhD, successfully completes thesis defense in Molecular Biology at University of California, San Diego, in the labs of Gene Yeo and Tony Hunter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section consulting" id="consulting">
+      <div class="container consulting__grid">
+        <div class="consulting__intro">
+          <span class="section__label">Consulting</span>
+          <h2>Bioinformatics and translational data consulting</h2>
+          <p>Targeted help for teams that need biological context, computational rigor, and practical deliverables — from biomarker strategy to RNA-seq workflows and scientific dashboards.</p>
+          <div class="consulting__offers">
+            <article>
+              <h3>Biomarker &amp; precision medicine strategy</h3>
+              <p>Study design, patient stratification, assay interpretation, and translational evidence packages.</p>
+            </article>
+            <article>
+              <h3>Transcriptomics analysis</h3>
+              <p>Bulk and single-cell RNA-seq analysis, pathway interpretation, and reproducible handoff materials.</p>
+            </article>
+            <article>
+              <h3>Scientific software &amp; dashboards</h3>
+              <p>Python, Dash, Nextflow, and data products that make complex biological programs easier to run.</p>
+            </article>
+          </div>
+        </div>
+
+        <form class="consulting__form" name="consulting" action="https://submit-form.com/c2eeHTGTN" method="post" onsubmit="handleFormsparkSubmit(event)" data-fallback-email="benlewis.biology@gmail.com">
+          <input type="hidden" name="_subject" value="New Benjamin Mark Lewis consulting inquiry" />
+          <input type="text" name="_gotcha" class="form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-group">
+            <label for="consulting-name">Your name</label>
+            <input type="text" id="consulting-name" name="name" autocomplete="name" placeholder="Jane Smith" required />
+          </div>
+          <div class="form-group">
+            <label for="consulting-email">Email address</label>
+            <input type="email" id="consulting-email" name="email" autocomplete="email" inputmode="email" placeholder="jane@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="consulting-org">Organization</label>
+            <input type="text" id="consulting-org" name="organization" autocomplete="organization" placeholder="Company, lab, or project" />
+          </div>
+          <div class="form-group">
+            <label for="consulting-topic">What kind of help do you need?</label>
+            <select id="consulting-topic" name="topic" required>
+              <option value="">Select a focus area...</option>
+              <option value="biomarker-strategy">Biomarker / precision medicine strategy</option>
+              <option value="bulk-rnaseq">Bulk RNA-seq analysis</option>
+              <option value="single-cell">Single-cell analysis</option>
+              <option value="pipeline-workflow">Pipeline or workflow development</option>
+              <option value="dashboard-data-product">Dashboard or scientific data product</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="consulting-message">Project context</label>
+            <textarea id="consulting-message" name="message" rows="5" placeholder="Tell me about the biological question, data type, timeline, and what decision this work needs to support."></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send consulting inquiry</button>
+          <p class="form__note">I typically respond within 1–2 business days.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact__card">
+        <div>
+          <span class="section__label">Contact</span>
+          <h2>Want to talk biology, data, or scientific software?</h2>
+          <p>Reach out for collaborations, project conversations, or pointers to the code behind this work. For consulting inquiries, use the form above.</p>
+        </div>
+        <div class="contact__actions">
+          <a class="btn btn--ghost" href="https://bsky.app/profile/gitbenlewis.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+          <a class="btn btn--ghost" href="https://github.com/gitbenlewis" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn--ghost" href="https://www.linkedin.com/in/benmarklewis/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn--ghost" href="https://orcid.org/0000-0002-4135-3967" target="_blank" rel="noopener">ORCID</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Benjamin Mark Lewis</p>
+      <a href="#hero">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const navLinks = document.getElementById('navLinks');
+    const navToggle = document.querySelector('.nav__toggle');
+
+    function toggleMenu() {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
+    }
+
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.tagName === 'A') {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 12);
+    });
+
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.14 });
+    sections.forEach((section) => observer.observe(section));
+
+    async function handleFormsparkSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const button = form.querySelector('button[type="submit"]');
+      const note = form.querySelector('.form__note');
+      const fallbackEmail = form.dataset.fallbackEmail || 'benlewis.biology@gmail.com';
+      const originalText = button.textContent;
+
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      if (note) note.textContent = 'Sending your inquiry securely…';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) throw new Error('Form submission failed');
+        form.reset();
+        button.textContent = 'Inquiry sent';
+        if (note) note.textContent = 'Thank you — your consulting inquiry was sent.';
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = originalText;
+        if (note) note.innerHTML = `Something went wrong. Please email <a href="mailto:${fallbackEmail}">${fallbackEmail}</a> directly.`;
+      }
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

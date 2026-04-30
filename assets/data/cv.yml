@@ -1,0 +1,151 @@
+cv:
+  name: Benjamin Lewis
+  label: Senior Scientist | Multi-Omic Discovery
+  email: benlewis.biology@gmail.com
+  location: San Diego, CA
+  image: ""
+  summary: Neuro-data scientist specializing in multi-omic biomarker discovery, integrative transcriptomics, and therapeutic target identification in biotech R&D.
+
+  social_networks:
+    - network: GitHub
+      username: gitbenlewis
+    - network: LinkedIn
+      username: benmarklewis
+
+  address:
+    city: San Diego
+    region: California
+    postalCode: CA 92037
+    countryCode: US
+
+  sections:
+    Education:
+      - institution: University of California, San Diego
+        location: San Diego, California, USA
+        url: https://www.ucsd.edu/
+        area: Molecular Biology
+        studyType: PhD
+        start_date: 2016
+        end_date: 2022
+        summary: Research focused on RNA-binding protein functions in mitochondrial regulation, under the mentorship of Gene Yeo and Tony Hunter.
+        courses: "Quantitative Methods in Genetics and Genomics, Statistical Methods in Bioinformatics"
+
+      - institution: California Polytechnic State University
+        location: San Luis Obispo, California, USA
+        url: https://www.calpoly.edu/
+        area: Stem Cell Research
+        studyType: MS
+        start_date: 2013
+        end_date: 2015
+        summary: Stem cell research with extensive molecular biology techniques and stem cell-based disease modeling.
+
+      - institution: California Polytechnic State University
+        location: San Luis Obispo, California, USA
+        url: https://www.calpoly.edu/
+        area: Biochemistry and Microbiology (Double Major)
+        studyType: BS
+        start_date: 2008
+        end_date: 2013
+
+    Experience:
+      - company: Actio Biosciences
+        position: Senior Scientist — Bioinformatics, R&D
+        location: San Diego, CA
+        url: https://www.actiobiosciences.com/
+        start_date: 2026-01
+        end_date: present
+        summary: Promoted January 2026 in recognition of scientific leadership, cross-program impact, and strategic contributions to portfolio advancement.
+        highlights:
+          - Led multi-omic biomarker discovery and novel target identification across therapeutic programs.
+          - Scientific lead for single-cell and bulk transcriptomic strategy across multiple therapeutic programs.
+          - Designed and deployed a production-grade RNA-seq pipeline (Nextflow, Python, AWS), reducing turnaround from 2 weeks to <48 hours.
+          - Partnered with biology, translational, and executive stakeholders to guide data-driven portfolio decisions.
+
+      - company: Actio Biosciences
+        position: Bioinformatics Scientist II, R&D
+        location: San Diego, CA
+        url: https://www.actiobiosciences.com/
+        start_date: 2024-04
+        end_date: 2025-12
+        summary: Multi-omic biomarker discovery and integrative transcriptomics supporting early-stage therapeutic programs.
+
+      - company: Aspen Neuroscience
+        position: Scientist I, R&D
+        location: San Diego, CA
+        url: https://aspenneuroscience.com/
+        start_date: 2022-04
+        end_date: 2024-03
+        summary: Cross-functional single-cell and multiomic discovery supporting pipeline and IND-enabling programs.
+        highlights:
+          - Single-cell transcriptomics and multiomics project design and data analysis lead.
+          - Functional genomics for pipeline development.
+          - Contributed to preclinical and IND-enabling studies supporting regulatory filings and clinical progression.
+
+      - company: Hardy Diagnostics
+        position: Research and Development Intern
+        location: Santa Maria, CA
+        url: https://hardydiagnostics.com/
+        start_date: 2013-06
+        end_date: 2013-12
+        summary: Developed chromogenic diagnostic media formulations and authored protocols for 510(k) validation studies.
+
+    Publications:
+      - title: "LARP4 is an RNA-binding protein that binds nuclear-encoded mitochondrial mRNAs to promote mitochondrial function"
+        authors:
+          - Benjamin Lewis
+        publisher: RNA
+        releaseDate: 2024-02-16
+        url: https://doi.org/10.1261/rna.079799.123
+        summary: Identifies LARP4 as a critical RNA-binding protein regulating nuclear-encoded mitochondrial mRNAs and ensuring proper mitochondrial biogenesis.
+
+      - title: "Autologous and Heterologous Cell Therapy for Hemophilia B toward Functional Restoration of Factor IX"
+        authors:
+          - Benjamin Lewis
+        publisher: Cell Reports
+        releaseDate: 2018-05-01
+        url: https://doi.org/10.1016/j.celrep.2018.03.121
+        summary: Cell-based therapies for Hemophilia B using corrected iPSCs differentiated into hepatocyte-like cells.
+
+      - title: "Functional Gene Correction for Cystic Fibrosis in Lung Epithelial Cells Generated from Patient iPSCs"
+        authors:
+          - Benjamin Lewis
+        publisher: Cell Reports
+        releaseDate: 2015-09-01
+        url: https://doi.org/10.1016/j.celrep.2015.07.062
+        summary: CRISPR correction of the CFTR gene mutation in iPSCs from cystic fibrosis patients, restoring normal CFTR expression and function.
+
+    Skills:
+      - name: Bioinformatics & Statistical Analysis
+        icon: fa-solid fa-chart-line
+        keywords: "Single-cell transcriptomics, Bulk RNA-seq, Proteomics, ATAC-seq, CLIP-seq, Machine learning, Data visualization"
+
+      - name: Programming & Computation
+        icon: fa-solid fa-code
+        keywords: "Python (pandas, matplotlib, scanpy, PyTorch, scikit-learn), R, Nextflow, Linux, AWS, GitHub"
+
+      - name: Molecular & Cellular Biology
+        icon: fa-solid fa-flask
+        keywords: "CRISPR/Cas9, iPSC disease modeling, Viral vector design, NGS/qPCR, Immunofluorescence, Flow cytometry"
+
+    Certificates:
+      - name: DeepLearning.AI TensorFlow Developer Professional Certificate
+        date: 2024-05-14
+        issuer: DeepLearning.AI
+        url: https://coursera.org/verify/professional-cert/U96RULUPAKP6
+        icon: fa-solid fa-brain
+
+      - name: IBM AI Engineering Professional Certificate
+        date: 2024-01-19
+        issuer: IBM
+        url: https://coursera.org/verify/professional-cert/7NMH5QT7Q4XF
+        icon: fa-solid fa-robot
+
+      - name: IBM Data Science Professional Certificate
+        date: 2023-06-15
+        issuer: IBM
+        url: https://coursera.org/verify/professional-cert/Y9M6RFY4NCCY
+        icon: fa-solid fa-database
+
+    Languages:
+      - name: English
+        summary: Native speaker

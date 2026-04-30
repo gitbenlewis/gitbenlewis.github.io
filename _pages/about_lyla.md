@@ -1,1 +1,0 @@
-Lyla-bear Lewis is rescue sable german shepherd, and very good girl.

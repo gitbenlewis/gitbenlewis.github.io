@@ -1,0 +1,59 @@
+# Example Caddy config for self-hosting benjaminmarklewis.com on larrys-pi4.
+# Copy this into /etc/caddy/Caddyfile on the Pi after creating /var/www/benjaminmarklewis.
+
+:8083 {
+    root * /var/www/benjaminmarklewis
+    file_server
+    encode zstd gzip
+
+    @hidden path_regexp (^|/)\.[^/]*
+    respond @hidden 404
+
+    handle_errors {
+        @404 expression {err.status_code} == 404
+        rewrite @404 /404.html
+        file_server
+    }
+}
+
+benjaminmarklewis.com, www.benjaminmarklewis.com {
+    root * /var/www/benjaminmarklewis
+    file_server
+    encode zstd gzip
+
+    @hidden path_regexp (^|/)\.[^/]*
+    respond @hidden 404
+
+    @static path *.css *.js *.svg *.woff2 *.woff *.ttf *.png *.jpg *.jpeg *.webp *.avif *.ico
+    header @static Cache-Control "public, max-age=31536000, immutable"
+
+    @html path *.html /
+    header @html Cache-Control "public, max-age=0, must-revalidate"
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "SAMEORIGIN"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "geolocation=(), microphone=(), camera=()"
+        -Server
+    }
+
+    @www host www.benjaminmarklewis.com
+    redir @www https://benjaminmarklewis.com{uri} permanent
+
+    handle_errors {
+        @404 expression {err.status_code} == 404
+        rewrite @404 /404.html
+        file_server
+    }
+
+    log {
+        output file /var/log/caddy/benjaminmarklewis.log {
+            roll_size 10MiB
+            roll_keep 5
+            roll_keep_for 720h
+        }
+        format console
+    }
+}
