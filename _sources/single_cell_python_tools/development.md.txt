@@ -1,0 +1,28 @@
+# Development
+
+## Repository Layout
+
+- [`pyproject.toml`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/pyproject.toml): package metadata and install requirements.
+- [`sctl.yaml`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/sctl.yaml): conda environment for the Scanpy stack.
+- [`src/single_cell_python_tools`](https://github.com/gitbenlewis/single_cell_python_tools/tree/main/src/single_cell_python_tools): package source.
+- [`Example_notebooks`](https://github.com/gitbenlewis/single_cell_python_tools/tree/main/Example_notebooks): notebook examples and generated example outputs.
+- [`docs`](https://github.com/gitbenlewis/single_cell_python_tools/tree/main/docs): canonical Markdown docs for the GitHub Pages docs hub.
+
+## Documentation Maintenance
+
+The docs are static Markdown. When public functions, signatures, or exported
+names change, update the relevant docs page and [API Reference](api-reference.md)
+in the same change.
+
+The docs hub stages these files into the Sphinx site at build time. Do not copy
+large notebook outputs or example data into the docs directory.
+
+## Public API Notes
+
+Current public names include several legacy spellings. Preserve them in docs and
+examples unless the package code changes intentionally:
+
+- `basic_filitering`
+- `filter_cells_by_anotated_QC_gene`
+- `_plots_depreciated`
+

@@ -1,0 +1,61 @@
+# single_cell_python_tools docs
+
+`single_cell_python_tools` is a collection of Scanpy-oriented wrappers and
+utilities for single-cell `AnnData` workflows. The package is commonly imported
+as:
+
+```python
+import single_cell_python_tools as sctl
+```
+
+The public API is organized around:
+
+- `sctl.DATASET_class`: a chainable dataset workflow object.
+- `sctl.pp`: preprocessing helpers for IO, QC, normalization, PCA, and clustering.
+- `sctl.pl`: plotting helpers for QC, clustering, batch summaries, and row-count distributions.
+- `sctl.tl`: general Scanpy and `AnnData` utilities.
+
+## Documentation Pages
+
+- [Installation](installation.md): conda and editable install setup.
+- [Quickstart](quickstart.md): notebook setup and common workflow patterns.
+- [DATASET_class](DATASET_class.md): chainable high-level workflow object.
+- [Preprocessing IO](preprocessing-io.md): `adata.var` name cleanup and layer downcasting.
+- [Preprocessing QC](preprocessing-qc.md): gene annotation, QC metrics, filtering, and gene removal.
+- [Preprocessing Transform Data](preprocessing-transform-data.md): normalization, HVG selection, regression, scaling, and PCA.
+- [Preprocessing Clustering](preprocessing-clustering.md): neighbors, UMAP, Leiden, renaming, and silhouette walks.
+- [Plotting](plotting.md): current plotting helpers.
+- [Deprecated Plotting Helpers](plotting-depreciated.md): legacy plotting functions preserved for compatibility.
+- [Scanpy Tools](tools-functions-4-scanpy.md): marker annotation, differential expression, enrichment, and data extraction helpers.
+- [Ingest Verbose](ingest-verbose.md): modified Scanpy ingest implementation.
+- [Example Notebooks](example-notebooks.md): PBMC3k notebook entry points.
+- [API Reference](api-reference.md): full static function inventory.
+- [Development](development.md): repo layout and docs maintenance notes.
+- [Troubleshooting](troubleshooting.md): common setup and runtime issues.
+
+## Source Links
+
+Core source files live under [`src/single_cell_python_tools`](https://github.com/gitbenlewis/single_cell_python_tools/tree/main/src/single_cell_python_tools).
+Example notebooks live under [`Example_notebooks`](https://github.com/gitbenlewis/single_cell_python_tools/tree/main/Example_notebooks).
+
+
+```{toctree}
+:maxdepth: 2
+:caption: single_cell_python_tools
+
+installation
+quickstart
+DATASET_class
+preprocessing-io
+preprocessing-qc
+preprocessing-transform-data
+preprocessing-clustering
+plotting
+plotting-depreciated
+tools-functions-4-scanpy
+ingest-verbose
+example-notebooks
+api-reference
+development
+troubleshooting
+```

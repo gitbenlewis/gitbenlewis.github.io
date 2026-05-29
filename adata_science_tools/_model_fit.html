@@ -1,0 +1,920 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>_model_fit &mdash; gitbenlewis docs</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://gitbenlewis.github.io/adata_science_tools/_model_fit.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="_plots" href="_plots.html" />
+    <link rel="prev" title="_metab_IO" href="_metab_IO.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            gitbenlewis docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Available Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../pyoncoplot/index.html">pyoncoplot Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../pyoncoplot/index.html#start-here">Start Here</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyoncoplot/index.html#minimal-example">Minimal Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pyoncoplot/index.html#documentation-map">Documentation Map</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/installation.html">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/installation.html#development-install">Development Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/installation.html#runtime-dependencies">Runtime Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/installation.html#verify-the-install">Verify The Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/installation.html#next-step">Next Step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/quickstart.html">Quickstart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/quickstart.html#input-data">Input Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/quickstart.html#interactive-plotly-plot">Interactive Plotly Plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/quickstart.html#static-matplotlib-plot">Static Matplotlib Plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/quickstart.html#result-object">Result Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/quickstart.html#where-to-go-next">Where To Go Next</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/data-inputs.html">Data Inputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/data-inputs.html#required-columns">Required Columns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/data-inputs.html#example-mutation-table">Example Mutation Table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/data-inputs.html#multi-hit-behavior">Multi-Hit Behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/data-inputs.html#gene-selection">Gene Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/data-inputs.html#sample-selection">Sample Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/data-inputs.html#row-and-sample-filters">Row and Sample Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/data-inputs.html#validation-rules">Validation Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/api-reference.html">API Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/api-reference.html#oncoplot"><code class="docutils literal notranslate"><span class="pre">oncoplot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/api-reference.html#merge-oncoplot-params"><code class="docutils literal notranslate"><span class="pre">merge_oncoplot_params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/api-reference.html#oncoplotresult"><code class="docutils literal notranslate"><span class="pre">OncoplotResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/api-reference.html#prepare-oncoplot-data"><code class="docutils literal notranslate"><span class="pre">prepare_oncoplot_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/api-reference.html#identify-top-genes"><code class="docutils literal notranslate"><span class="pre">identify_top_genes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/api-reference.html#score-sample-by-gene-rank"><code class="docutils literal notranslate"><span class="pre">score_sample_by_gene_rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/api-reference.html#rank-genes-by-pathway"><code class="docutils literal notranslate"><span class="pre">rank_genes_by_pathway</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/api-reference.html#prettify"><code class="docutils literal notranslate"><span class="pre">prettify</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/api-reference.html#palette-helpers">Palette Helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/options-reference.html">Options Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#size-and-layout">Size and Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#labels-and-axes">Labels and Axes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#legends">Legends</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#tile-styling">Tile Styling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#fonts">Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#titles">Titles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#tmb-and-gene-bar">TMB and Gene Bar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#pathways">Pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#metadata">Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#text-prettification">Text Prettification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/options-reference.html#common-bundles">Common Bundles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/palettes.html">Palettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/palettes.html#mutation-palette">Mutation Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/palettes.html#metadata-palette">Metadata Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/palettes.html#variant-value-palette">Variant Value Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/palettes.html#tmb-palette">TMB Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/palettes.html#default-palettes">Default Palettes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/palettes.html#practical-color-guidance">Practical Color Guidance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/metadata-and-tmb.html">Metadata and TMB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/metadata-and-tmb.html#metadata-table-schema">Metadata Table Schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/metadata-and-tmb.html#metadata-columns-in-mutation-data">Metadata Columns in Mutation Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/metadata-and-tmb.html#metadata-filtering">Metadata Filtering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/metadata-and-tmb.html#numeric-metadata">Numeric Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/metadata-and-tmb.html#categorical-metadata-order">Categorical Metadata Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/metadata-and-tmb.html#tmb-inference">TMB Inference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/metadata-and-tmb.html#custom-tmb-data">Custom TMB Data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/pathways-and-sorting.html">Pathways and Sorting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/pathways-and-sorting.html#default-gene-ranking">Default Gene Ranking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/pathways-and-sorting.html#explicit-gene-order">Explicit Gene Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/pathways-and-sorting.html#pathway-input">Pathway Input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/pathways-and-sorting.html#sample-ordering">Sample Ordering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/pathways-and-sorting.html#metadata-sorting">Metadata Sorting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/pathways-and-sorting.html#showing-all-samples">Showing All Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/rendering-backends.html">Rendering Backends</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/rendering-backends.html#plotly">Plotly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/rendering-backends.html#matplotlib">Matplotlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/rendering-backends.html#choosing-a-backend">Choosing A Backend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/rendering-backends.html#backend-support-matrix">Backend Support Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/gallery.html">Example Gallery</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/gallery.html#render-the-clean-gallery">Render The Clean Gallery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/gallery.html#regenerate-gallery-inputs">Regenerate Gallery Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/gallery.html#brca-comparison-sheets">BRCA Comparison Sheets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/gallery.html#accepted-clean-baselines">Accepted Clean Baselines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/gallery.html#presets">Presets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/gallery.html#config-driven-runs">Config-Driven Runs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/gallery.html#input-families">Input Families</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/gallery.html#related-examples">Related Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html">Example Plot Source Citations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#plot-to-source-map">Plot-To-Source Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#directly-used-papers">Directly Used Papers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#tcga-and-xena-data-sources">TCGA And Xena Data Sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#documentation-and-source-image-pages">Documentation And Source Image Pages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#supporting-visualization-references">Supporting Visualization References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/examples/basic.html">Basic Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/examples/metadata.html">Metadata Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/examples/brca-gallery.html">BRCA Gallery Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/brca-gallery.html#render-the-default-brca-outputs">Render The Default BRCA Outputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/brca-gallery.html#render-comparison-sheets">Render Comparison Sheets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/brca-gallery.html#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/brca-gallery.html#inspect-the-preset-code">Inspect The Preset Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/examples/structural-variation-panel.html">Structural Variation Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/structural-variation-panel.html#render-it">Render It</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/structural-variation-panel.html#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/structural-variation-panel.html#input-shapes">Input Shapes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/migration-from-ggoncoplot.html">Migration From ggoncoplot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/migration-from-ggoncoplot.html#argument-mapping">Argument Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/migration-from-ggoncoplot.html#options-mapping">Options Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/migration-from-ggoncoplot.html#r-style-concept">R-Style Concept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/migration-from-ggoncoplot.html#python-version">Python Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/migration-from-ggoncoplot.html#important-differences">Important Differences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/migration-from-ggoncoplot.html#ggoncoplot-parity-status">ggoncoplot Parity Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/migration-from-ggoncoplot.html#recommended-migration-path">Recommended Migration Path</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/development.html">Development</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/development.html#local-setup">Local Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/development.html#repository-layout">Repository Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/development.html#regenerate-gallery-inputs">Regenerate Gallery Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/development.html#regenerate-gallery-images">Regenerate Gallery Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/development.html#adding-a-gallery-preset">Adding A Gallery Preset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/development.html#documentation-changes">Documentation Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/troubleshooting.html#missing-column-errors">Missing Column Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/troubleshooting.html#empty-or-missing-sample-gene-identifiers">Empty Or Missing Sample/Gene Identifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/troubleshooting.html#palette-coverage-errors">Palette Coverage Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/troubleshooting.html#metadata-duplicate-sample-errors">Metadata Duplicate Sample Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/troubleshooting.html#samples-disappear">Samples Disappear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/troubleshooting.html#plotly-image-export-fails">Plotly Image Export Fails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/troubleshooting.html#matplotlib-font-warnings">Matplotlib Font Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/troubleshooting.html#very-large-cohorts">Very Large Cohorts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">adata_science_tools docs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#available-pages">Available pages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#notes">Notes</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="_IO.html"><code class="docutils literal notranslate"><span class="pre">_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_IO.html#save-dataset"><code class="docutils literal notranslate"><span class="pre">save_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_IO.html#make-df-obs-adatax"><code class="docutils literal notranslate"><span class="pre">make_df_obs_adataX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_IO.html#data-source-selection">Data source selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_IO.html#column-labeling">Column labeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_IO.html#row-indexing">Row indexing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_IO.html#include-obs"><code class="docutils literal notranslate"><span class="pre">include_obs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_IO.html#dense-conversion-and-scale">Dense conversion and scale</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_IO.html#current-limitations-and-caveats">Current limitations and caveats</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_column_plots.html"><code class="docutils literal notranslate"><span class="pre">_column_plots</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_column_plots.html#public-entry-points">Public entry points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_column_plots.html#shared-data-model">Shared data model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_column_plots.html#barh-column"><code class="docutils literal notranslate"><span class="pre">barh_column</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_column_plots.html#l2fc-dotplot-single"><code class="docutils literal notranslate"><span class="pre">l2fc_dotplot_single</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_column_plots.html#l2fc-dotplot-column"><code class="docutils literal notranslate"><span class="pre">l2fc_dotplot_column</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_column_plots.html#barh-l2fc-dotplot-column"><code class="docutils literal notranslate"><span class="pre">barh_l2fc_dotplot_column</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_column_plots.html#advanced-composite-variants">Advanced composite variants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_column_plots.html#common-caveats">Common caveats</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_corr_dotplots.html"><code class="docutils literal notranslate"><span class="pre">_corr_dotplots</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_corr_dotplots.html#main-entry-points">Main entry points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_corr_dotplots.html#corr-dotplot"><code class="docutils literal notranslate"><span class="pre">corr_dotplot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_corr_dotplots.html#corr-dotplot-dev"><code class="docutils literal notranslate"><span class="pre">corr_dotplot_dev</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_corr_dotplots.html#spearman-cor-dotplot"><code class="docutils literal notranslate"><span class="pre">spearman_cor_dotplot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_corr_dotplots.html#secondary-helpers">Secondary helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_corr_dotplots.html#example-with-plain-dataframe">Example with plain <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#examples-by-workflow">Examples by workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#output-table-shape">Output table shape</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#save-and-storage-behavior">Save and storage behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#validation-and-edge-cases">Validation and edge cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#practical-notes">Practical notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_expectation_based_covar_correction.html"><code class="docutils literal notranslate"><span class="pre">_expectation_based_covar_correction</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#core-model">Core model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#calculate-expectations"><code class="docutils literal notranslate"><span class="pre">calculate_expectations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#expectation-table-schema">Expectation table schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#model-spec"><code class="docutils literal notranslate"><span class="pre">model_spec</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#saving-and-reloading-artifacts">Saving and reloading artifacts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#predict-expectation"><code class="docutils literal notranslate"><span class="pre">predict_expectation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#regress-out"><code class="docutils literal notranslate"><span class="pre">regress_out</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#excess-expectation"><code class="docutils literal notranslate"><span class="pre">excess_expectation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#convert-ols-summary-to-expectation-df"><code class="docutils literal notranslate"><span class="pre">convert_ols_summary_to_expectation_df</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#reconstruct-expectation-model-spec"><code class="docutils literal notranslate"><span class="pre">reconstruct_expectation_model_spec</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#wrapper-workflow">Wrapper workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#common-validation-errors">Common validation errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#practical-workflow-summary">Practical workflow summary</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#save-behavior">Save behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#external-metadata-merge">External metadata merge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#example-with-external-metadata">Example with external metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#current-implementation-caveats">Current implementation caveats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#when-to-use-this-module">When to use this module</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">_model_fit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ols-workflow">OLS workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mixedlm-workflow">MixedLM workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filtering-before-fit">Filtering before fit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#low-level-wide-apis">Low-level <code class="docutils literal notranslate"><span class="pre">*_wide(...)</span></code> APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#result-table-schema">Result table schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sidecar-yaml-model-specs">Sidecar YAML model specs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#adata-uns-storage"><code class="docutils literal notranslate"><span class="pre">adata.uns</span></code> storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#behavior-and-constraints">Behavior and constraints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#feature-annotation-merge">Feature annotation merge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#practical-guidance">Practical guidance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_plots.html"><code class="docutils literal notranslate"><span class="pre">_plots</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_plots.html#volcano-plot-generic"><code class="docutils literal notranslate"><span class="pre">volcano_plot_generic</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_plots.html#qqplot"><code class="docutils literal notranslate"><span class="pre">qqplot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_plots.html#timeseries-paired-datapoints"><code class="docutils literal notranslate"><span class="pre">timeseries_paired_datapoints</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_plots.html#coverage-note">Coverage note</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_plots_depreciated.html"><code class="docutils literal notranslate"><span class="pre">_plots_depreciated</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_plots_depreciated.html#legacy-entry-points">Legacy entry points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_plots_depreciated.html#preferred-replacements">Preferred replacements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_plots_depreciated.html#important-differences-from-the-modern-apis">Important differences from the modern APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_plots_depreciated.html#recommendation">Recommendation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_plots_depreciated.html#coverage-note">Coverage note</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_row_plots.html"><code class="docutils literal notranslate"><span class="pre">_row_plots</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_row_plots.html#plot-columns"><code class="docutils literal notranslate"><span class="pre">plot_columns</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_row_plots.html#coverage-note">Coverage note</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_simulate_data.html"><code class="docutils literal notranslate"><span class="pre">_simulate_data</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_simulate_data.html#main-entry-points">Main entry points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_simulate_data.html#sim-observations-covars"><code class="docutils literal notranslate"><span class="pre">sim_observations_covars</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_simulate_data.html#sim-covar-dependent-features"><code class="docutils literal notranslate"><span class="pre">sim_covar_dependent_features</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_simulate_data.html#sim-covar-dependent-dataset"><code class="docutils literal notranslate"><span class="pre">sim_covar_dependent_dataset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_simulate_data.html#repo-example-workflow">Repo example workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_somascan_IO.html"><code class="docutils literal notranslate"><span class="pre">_somascan_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_somascan_IO.html#read-adat-2-anndata"><code class="docutils literal notranslate"><span class="pre">read_adat_2_AnnData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_somascan_IO.html#soma-fill-sampletype-obs-values"><code class="docutils literal notranslate"><span class="pre">soma_fill_sampletype_obs_values</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_somascan_IO.html#soma-make-adata-index-unique-by-merge"><code class="docutils literal notranslate"><span class="pre">soma_make_adata_index_unique_by_merge</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_somascan_IO.html#make-df-obs-adatax-soma"><code class="docutils literal notranslate"><span class="pre">make_df_obs_adataX_soma</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_somascan_IO.html#practical-guidance">Practical guidance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_somascan_IO.html#current-caveats">Current caveats</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_utils.html"><code class="docutils literal notranslate"><span class="pre">_utils</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_utils.html#public-entry-points">Public entry points</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_utils.html#show-tol-colors"><code class="docutils literal notranslate"><span class="pre">show_tol_colors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_utils.html#show-colors"><code class="docutils literal notranslate"><span class="pre">show_colors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_utils.html#coverage-note">Coverage note</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_venn_plots.html"><code class="docutils literal notranslate"><span class="pre">_venn_plots</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_venn_plots.html#public-functions">Public functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_venn_plots.html#venn-plot-2list"><code class="docutils literal notranslate"><span class="pre">venn_plot_2list</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_venn_plots.html#venn-plot-3list"><code class="docutils literal notranslate"><span class="pre">venn_plot_3list</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_venn_plots.html#geneset-enrichment-venn"><code class="docutils literal notranslate"><span class="pre">geneset_enrichment_venn</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_venn_plots.html#geneset-enrichemnt-ol-ven-m-n-n-x"><code class="docutils literal notranslate"><span class="pre">geneset_enrichemnt_ol_ven_M_n_N_x</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_venn_plots.html#coverage-note">Coverage note</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="palettes.html"><code class="docutils literal notranslate"><span class="pre">palettes</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#main-palette-constants">Main palette constants</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#typical-usage">Typical usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#internal-helper">Internal helper</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#coverage-note">Coverage note</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../single_cell_python_tools/index.html">single_cell_python_tools docs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../single_cell_python_tools/index.html#documentation-pages">Documentation Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../single_cell_python_tools/index.html#source-links">Source Links</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/installation.html">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/installation.html#conda-environment">Conda Environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/installation.html#editable-install">Editable Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/installation.html#verify-import">Verify Import</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/quickstart.html">Quickstart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/quickstart.html#notebook-path-setup">Notebook Path Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/quickstart.html#function-based-workflow">Function-Based Workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/quickstart.html#dataset-class-workflow">DATASET_class Workflow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/DATASET_class.html">DATASET_class</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/DATASET_class.html#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/DATASET_class.html#data-and-output-methods">Data And Output Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/DATASET_class.html#qc-and-filtering-methods">QC And Filtering Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/DATASET_class.html#transform-methods">Transform Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/DATASET_class.html#clustering-methods">Clustering Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/DATASET_class.html#plotting-methods">Plotting Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/DATASET_class.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/preprocessing-io.html">Preprocessing IO</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-io.html#reset-cellxgene-var-names"><code class="docutils literal notranslate"><span class="pre">reset_cellxgene_var_names</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-io.html#downcast-layers-to-float32"><code class="docutils literal notranslate"><span class="pre">downcast_layers_to_float32</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html">Preprocessing QC</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html#annotate-qc-genes"><code class="docutils literal notranslate"><span class="pre">annotate_QC_genes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html#calculate-qc-metrics"><code class="docutils literal notranslate"><span class="pre">calculate_qc_metrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html#plot-qc-metrics-scatter"><code class="docutils literal notranslate"><span class="pre">plot_QC_metrics_scatter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html#plot-qc-metrics-violin"><code class="docutils literal notranslate"><span class="pre">plot_QC_metrics_violin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html#plot-qc-metrics"><code class="docutils literal notranslate"><span class="pre">plot_qc_metrics</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html#annotate-n-view-adata-raw-counts"><code class="docutils literal notranslate"><span class="pre">annotate_n_view_adata_raw_counts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html#basic-filitering"><code class="docutils literal notranslate"><span class="pre">basic_filitering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html#filter-cells-by-anotated-qc-gene"><code class="docutils literal notranslate"><span class="pre">filter_cells_by_anotated_QC_gene</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-qc.html#remove-genes"><code class="docutils literal notranslate"><span class="pre">remove_genes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html">Preprocessing Transform Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#process2scaledpca"><code class="docutils literal notranslate"><span class="pre">process2scaledPCA</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#norm-log"><code class="docutils literal notranslate"><span class="pre">norm_log</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#hvg-selection-log-norm-seurat"><code class="docutils literal notranslate"><span class="pre">HVG_selection_log_norm_seurat</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#hvg-selection-log-norm-seurat-v3"><code class="docutils literal notranslate"><span class="pre">HVG_selection_log_norm_seurat_v3</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#hvg-removal"><code class="docutils literal notranslate"><span class="pre">HVG_removal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#regress-out-anotated-qc-genes"><code class="docutils literal notranslate"><span class="pre">regress_out_anotated_QC_genes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#scale-func"><code class="docutils literal notranslate"><span class="pre">scale_func</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#pca-func"><code class="docutils literal notranslate"><span class="pre">PCA_func</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#calc-cell-cycle-score"><code class="docutils literal notranslate"><span class="pre">calc_cell_cycle_score</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-transform-data.html#regress-cell-cycle-score-func"><code class="docutils literal notranslate"><span class="pre">regress_cell_cycle_score_func</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/preprocessing-clustering.html">Preprocessing Clustering</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-clustering.html#leiden-clustering"><code class="docutils literal notranslate"><span class="pre">leiden_clustering</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-clustering.html#rename-leiden-clusters"><code class="docutils literal notranslate"><span class="pre">rename_leiden_clusters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-clustering.html#legacy-rename-helpers">Legacy Rename Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-clustering.html#leiden-cluster-sil-score"><code class="docutils literal notranslate"><span class="pre">leiden_cluster_sil_score</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-clustering.html#silhouette-walk-largest-drop"><code class="docutils literal notranslate"><span class="pre">silhouette_walk_Largest_drop</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/preprocessing-clustering.html#silhouette-walk-4-largest-drops"><code class="docutils literal notranslate"><span class="pre">silhouette_walk_4_Largest_drops</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/plotting.html">Plotting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/plotting.html#silhouette-score-n-plot"><code class="docutils literal notranslate"><span class="pre">silhouette_score_n_plot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/plotting.html#silhouette-score-of-obs-key-n-plot"><code class="docutils literal notranslate"><span class="pre">silhouette_score_of_obs_key_n_plot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/plotting.html#plot-batch-obs-key-of-obs-key2"><code class="docutils literal notranslate"><span class="pre">plot_batch_obs_key_of_obs_key2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/plotting.html#plot-adata-row-total-dist"><code class="docutils literal notranslate"><span class="pre">plot_adata_row_total_dist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/plotting.html#plot-adata-raw-and-x-rowdist-old"><code class="docutils literal notranslate"><span class="pre">plot_adata_raw_and_X_rowdist_old</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/plotting.html#plot-adata-raw-and-x-rowdist"><code class="docutils literal notranslate"><span class="pre">plot_adata_raw_and_X_rowdist</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/plotting-depreciated.html">Deprecated Plotting Helpers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/plotting-depreciated.html#plot-batch-obs-key-of-obs-key2-old"><code class="docutils literal notranslate"><span class="pre">plot_batch_obs_key_of_obs_key2_old</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/plotting-depreciated.html#plot-percent-obs-key2-per-batch-obs-key"><code class="docutils literal notranslate"><span class="pre">plot_percent_obs_key2_per_batch_obs_key</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/tools-functions-4-scanpy.html">Scanpy Tools</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/tools-functions-4-scanpy.html#general-utilities">General Utilities</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/tools-functions-4-scanpy.html#annotation-helpers">Annotation Helpers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/tools-functions-4-scanpy.html#differential-expression-and-enrichment">Differential Expression And Enrichment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/tools-functions-4-scanpy.html#filtering-and-summaries">Filtering And Summaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/tools-functions-4-scanpy.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/ingest-verbose.html">Ingest Verbose</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/ingest-verbose.html#id1"><code class="docutils literal notranslate"><span class="pre">ingest_verbose</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/ingest-verbose.html#ingest"><code class="docutils literal notranslate"><span class="pre">Ingest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/ingest-verbose.html#export-note">Export Note</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/example-notebooks.html">Example Notebooks</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/example-notebooks.html#pbmc3k">PBMC3k</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/example-notebooks.html#publishing-policy">Publishing Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/api-reference.html">API Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/api-reference.html#top-level-namespace">Top-Level Namespace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/api-reference.html#dataset-class"><code class="docutils literal notranslate"><span class="pre">DATASET_class</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/api-reference.html#sctl-pp"><code class="docutils literal notranslate"><span class="pre">sctl.pp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/api-reference.html#sctl-pl"><code class="docutils literal notranslate"><span class="pre">sctl.pl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/api-reference.html#sctl-tl"><code class="docutils literal notranslate"><span class="pre">sctl.tl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/api-reference.html#direct-module-apis">Direct Module APIs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/development.html">Development</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/development.html#repository-layout">Repository Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/development.html#documentation-maintenance">Documentation Maintenance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/development.html#public-api-notes">Public API Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../single_cell_python_tools/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/troubleshooting.html#import-fails-with-missing-scanpy">Import Fails With Missing Scanpy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/troubleshooting.html#python-version-mismatch">Python Version Mismatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/troubleshooting.html#notebook-cannot-find-the-package">Notebook Cannot Find The Package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/troubleshooting.html#output-directories-are-missing">Output Directories Are Missing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../single_cell_python_tools/troubleshooting.html#links-in-published-docs-go-to-github">Links In Published Docs Go To GitHub</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cheatsheets/index.html">Coding Cheatsheets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheets/index.html#full-cheatsheets">Full Cheatsheets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheets/index.html#fast-project-startup">Fast Project Startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheets/index.html#github-and-git">GitHub and Git</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#clone-status-and-history">Clone, Status, and History</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#stage-commit-and-push">Stage, Commit, and Push</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#branches-remotes-and-pull-requests">Branches, Remotes, and Pull Requests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#submodules">Submodules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheets/index.html#conda-environments">Conda Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#setup-and-channels">Setup and Channels</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#create-use-and-remove-environments">Create, Use, and Remove Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#packages-environment-files-and-jupyter">Packages, Environment Files, and Jupyter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheets/index.html#bash">Bash</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#navigation-and-files">Navigation and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#view-search-and-redirect">View, Search, and Redirect</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#permissions-environment-and-processes">Permissions, Environment, and Processes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheets/index.html#python">Python</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#run-python-and-manage-packages">Run Python and Manage Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#script-pattern-paths-and-files">Script Pattern, Paths, and Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#arguments-testing-and-debugging">Arguments, Testing, and Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheets/index.html#r">R</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#run-r-and-manage-packages">Run R and Manage Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#files-and-data-frames">Files and Data Frames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#dplyr-ggplot2-and-jupyter">dplyr, ggplot2, and Jupyter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheets/index.html#sql-and-postgresql">SQL and PostgreSQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#connect-and-navigate">Connect and Navigate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#query-data">Query Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#join-group-and-modify">Join, Group, and Modify</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/index.html#import-export-and-back-up">Import, Export, and Back Up</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cheatsheets/index.html#legacy-material">Legacy Material</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html">GitHub and Git Cheatsheet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html#repository-setup">Repository Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html#status-and-history">Status and History</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html#stage-commit-and-push">Stage, Commit, and Push</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html#pull-and-sync">Pull and Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html#branches">Branches</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html#merge-basics">Merge Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html#undo-common-mistakes">Undo Common Mistakes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/github.html#github-cli">GitHub CLI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/cheatsheets/conda-environments.html">Conda Environments Cheatsheet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/conda-environments.html#setup">Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/conda-environments.html#create-and-activate">Create and Activate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/conda-environments.html#install-and-update-packages">Install and Update Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/conda-environments.html#environment-files">Environment Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/conda-environments.html#jupyter-kernels">Jupyter Kernels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/conda-environments.html#clean-up">Clean Up</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/cheatsheets/bash.html">Bash Cheatsheet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/bash.html#navigation">Navigation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/bash.html#files-and-directories">Files and Directories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/bash.html#view-files">View Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/bash.html#search">Search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/bash.html#pipes-and-redirects">Pipes and Redirects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/bash.html#permissions">Permissions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/bash.html#environment-and-history">Environment and History</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/bash.html#processes">Processes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html">Python Cheatsheet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html#run-python">Run Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html#virtual-environments-and-packages">Virtual Environments and Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html#basic-script-pattern">Basic Script Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html#imports-and-paths">Imports and Paths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html#file-i-o">File I/O</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html#lists-and-dictionaries">Lists and Dictionaries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html#functions-and-errors">Functions and Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html#command-line-arguments">Command Line Arguments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/python.html#debugging">Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/cheatsheets/r.html">R Cheatsheet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/r.html#run-r">Run R</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/r.html#packages">Packages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/r.html#working-directory-and-files">Working Directory and Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/r.html#vectors-lists-and-factors">Vectors, Lists, and Factors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/r.html#data-frames">Data Frames</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/r.html#dplyr">dplyr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/r.html#plotting">Plotting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/r.html#jupyter-and-rstudio">Jupyter and RStudio</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html">SQL and PostgreSQL Cheatsheet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html#connect-with-psql">Connect with psql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html#psql-navigation">psql Navigation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html#databases-and-tables">Databases and Tables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html#select-and-filter">Select and Filter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html#joins-and-grouping">Joins and Grouping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html#insert-update-and-delete">Insert, Update, and Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html#csv-import-and-export">CSV Import and Export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html#backup-and-restore">Backup and Restore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cheatsheets/cheatsheets/sql-postgres.html#admin">Admin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gitbenlewis docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">adata_science_tools docs</a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">_model_fit</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/gitbenlewis/adata_science_tools/blob/main/docs/_model_fit.md" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="model-fit">
+<h1><code class="docutils literal notranslate"><span class="pre">_model_fit</span></code><a class="headerlink" href="#model-fit" title="Link to this heading"></a></h1>
+<p>Model-fitting utilities for feature-wise OLS and MixedLM summaries on <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> objects.</p>
+<p>This module provides two levels of API:</p>
+<ul class="simple">
+<li><p>low-level <code class="docutils literal notranslate"><span class="pre">*_wide(...)</span></code> functions that fit models from a combined observation-plus-feature <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>;</p></li>
+<li><p>higher-level <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers that build that table from <code class="docutils literal notranslate"><span class="pre">AnnData</span></code>, optionally filter observations first, and handle saving or <code class="docutils literal notranslate"><span class="pre">adata.uns</span></code> storage.</p></li>
+</ul>
+<p>The current primary APIs are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_wide</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_adata</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_wide</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_adata</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">old_fit_smf_ols_models_and_summarize_adata</span></code> and <code class="docutils literal notranslate"><span class="pre">old_fit_smf_mixedlm_models_and_summarize_adata</span></code> helpers are legacy compatibility wrappers. They do not expose the newer filter or model-spec sidecar features and should not be treated as the preferred interface.</p>
+<section id="ols-workflow">
+<h2>OLS workflow<a class="headerlink" href="#ols-workflow" title="Link to this heading"></a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_adata(...)</span></code> to fit one OLS model per feature.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adata_science_tools</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">adtl</span>
+
+<span class="n">ols_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
+    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NHS_Case&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender&quot;</span><span class="p">],</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;ols_unit&quot;</span><span class="p">,</span>
+    <span class="n">save_table</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_model_spec_yaml</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;results/ols_results.csv&quot;</span><span class="p">,</span>
+    <span class="n">save_result_to_adata_uns_as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">include_fdr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Important behavior:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">predictors</span></code> is normalized through a YAML-friendly list validator.</p></li>
+<li><p>Numeric-like predictor columns are coerced to numeric dtype before fitting so continuous covariates do not become dummy-coded categories.</p></li>
+<li><p>Per-feature OLS p-value columns use the <code class="docutils literal notranslate"><span class="pre">P&gt;|t|</span></code> naming pattern.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">include_fdr=True</span></code>, per-term FDR columns are added with the <code class="docutils literal notranslate"><span class="pre">_FDR</span></code> suffix.</p></li>
+</ul>
+</section>
+<section id="mixedlm-workflow">
+<h2>MixedLM workflow<a class="headerlink" href="#mixedlm-workflow" title="Link to this heading"></a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_adata(...)</span></code> to fit one mixed-effects model per feature.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mixedlm_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_mixedlm_models_and_summarize_adata</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
+    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NHS_Case&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender&quot;</span><span class="p">],</span>
+    <span class="n">group</span><span class="o">=</span><span class="s2">&quot;Batch&quot;</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;mixedlm_unit&quot;</span><span class="p">,</span>
+    <span class="n">reml</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">save_table</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_model_spec_yaml</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;results/mixedlm_results.csv&quot;</span><span class="p">,</span>
+    <span class="n">save_result_to_adata_uns_as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">include_fdr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Important behavior:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">group</span></code> is required.</p></li>
+<li><p>MixedLM also expects a non-empty <code class="docutils literal notranslate"><span class="pre">predictors</span></code> list.</p></li>
+<li><p>Per-term MixedLM p-value columns use the <code class="docutils literal notranslate"><span class="pre">P&gt;|z|</span></code> naming pattern.</p></li>
+<li><p>The summary includes grouping-specific fields such as <code class="docutils literal notranslate"><span class="pre">n_groups</span></code>, <code class="docutils literal notranslate"><span class="pre">Method</span></code>, random-effect variances, and, when available, per-group random effects.</p></li>
+</ul>
+</section>
+<section id="filtering-before-fit">
+<h2>Filtering before fit<a class="headerlink" href="#filtering-before-fit" title="Link to this heading"></a></h2>
+<p>Both <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers can create a filtered working <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> through:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dataset_cfg</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter_obs_boolean_column</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter_obs_column_key</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">filter_obs_column_values_list</span></code></p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filtered_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="n">dataset_cfg</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;filter_obs_boolean_column&quot;</span><span class="p">:</span> <span class="s2">&quot;use_for_expectation&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
+    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">],</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;ols_filtered&quot;</span><span class="p">,</span>
+    <span class="n">return_filtered_adata</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Wrapper behavior:</p>
+<ul class="simple">
+<li><p>if any filter inputs are provided, the wrapper creates <code class="docutils literal notranslate"><span class="pre">work_adata</span></code> with <code class="docutils literal notranslate"><span class="pre">CFG_filter_adata_by_obs(...)</span></code>;</p></li>
+<li><p>the fit is run against <code class="docutils literal notranslate"><span class="pre">work_adata</span></code>, not the original <code class="docutils literal notranslate"><span class="pre">adata</span></code>;</p></li>
+<li><p>when <code class="docutils literal notranslate"><span class="pre">return_filtered_adata=True</span></code> and a filtered copy was created, the wrapper returns <code class="docutils literal notranslate"><span class="pre">(results,</span> <span class="pre">work_adata)</span></code> instead of only <code class="docutils literal notranslate"><span class="pre">results</span></code>.</p></li>
+</ul>
+</section>
+<section id="low-level-wide-apis">
+<h2>Low-level <code class="docutils literal notranslate"><span class="pre">*_wide(...)</span></code> APIs<a class="headerlink" href="#low-level-wide-apis" title="Link to this heading"></a></h2>
+<p>The wide functions operate on a single <code class="docutils literal notranslate"><span class="pre">obs_X_df</span></code> table that contains:</p>
+<ul class="simple">
+<li><p>one column per feature, and</p></li>
+<li><p>one column per predictor, plus <code class="docutils literal notranslate"><span class="pre">group</span></code> for MixedLM.</p></li>
+</ul>
+<p>Use them when the combined table already exists or when you want to bypass <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> handling:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_wide(obs_X_df,</span> <span class="pre">feature_columns,</span> <span class="pre">predictors,</span> <span class="pre">...)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_wide(obs_X_df,</span> <span class="pre">feature_columns,</span> <span class="pre">predictors,</span> <span class="pre">group=...,</span> <span class="pre">...)</span></code></p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers build this table internally with <code class="docutils literal notranslate"><span class="pre">make_df_obs_adataX(...)</span></code>, so most users should start with the <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> APIs unless they already have the combined matrix.</p>
+</section>
+<section id="result-table-schema">
+<h2>Result table schema<a class="headerlink" href="#result-table-schema" title="Link to this heading"></a></h2>
+<p>Both OLS and MixedLM result tables are indexed by feature name and include <code class="docutils literal notranslate"><span class="pre">var_names</span></code> as the first column.</p>
+<p>Column names are prefixed with <code class="docutils literal notranslate"><span class="pre">model_name</span></code>, so changing <code class="docutils literal notranslate"><span class="pre">model_name</span></code> changes the entire result schema namespace.</p>
+<p>Representative OLS column patterns include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Formula</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Converged</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Warnings</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_nobs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_R-squared</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Coef_&lt;term&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_StdErr_&lt;term&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_tStat_&lt;term&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_P&gt;|t|_&lt;term&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_P&gt;|t|_&lt;term&gt;_FDR</span></code></p></li>
+</ul>
+<p>Representative MixedLM column patterns include:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Formula</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Converged</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Warnings</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_nobs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_n_groups</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Method</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Var_RE_&lt;term&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Var_Residual</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Coef_&lt;term&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_StdErr_&lt;term&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_tStat_&lt;term&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_P&gt;|z|_&lt;term&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_P&gt;|z|_&lt;term&gt;_FDR</span></code></p></li>
+</ul>
+<p>The exact set of columns depends on:</p>
+<ul class="simple">
+<li><p>the fitted design terms,</p></li>
+<li><p>the chosen <code class="docutils literal notranslate"><span class="pre">model_name</span></code>,</p></li>
+<li><p>whether warnings or random effects are present,</p></li>
+<li><p>whether <code class="docutils literal notranslate"><span class="pre">include_fdr=True</span></code>.</p></li>
+</ul>
+</section>
+<section id="sidecar-yaml-model-specs">
+<h2>Sidecar YAML model specs<a class="headerlink" href="#sidecar-yaml-model-specs" title="Link to this heading"></a></h2>
+<p>The current <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers can write a sibling <code class="docutils literal notranslate"><span class="pre">.model_spec.yaml</span></code> file when:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">save_table=True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">save_path</span></code> is provided</p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code> is requested without <code class="docutils literal notranslate"><span class="pre">save_table=True</span></code> and <code class="docutils literal notranslate"><span class="pre">save_path</span></code>, the wrappers raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ols_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
+    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NHS_Case&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender&quot;</span><span class="p">],</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;ols_unit&quot;</span><span class="p">,</span>
+    <span class="n">save_table</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_model_spec_yaml</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;results/ols_results.csv&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This writes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">results/ols_results.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">results/ols_results.model_spec.yaml</span></code></p></li>
+</ul>
+<p>The YAML captures the fitting contract for downstream consumers, including:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fit_method</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model_name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predictors</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">layer</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">use_raw</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">formula_rhs</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coefficient_terms</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coefficient_columns</span></code></p></li>
+</ul>
+<p>For MixedLM sidecars, the YAML also includes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">group</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reml</span></code></p></li>
+</ul>
+<p>This is the metadata used by the expectation-correction workflow documented in <a class="reference internal" href="_expectation_based_covar_correction.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_expectation_based_covar_correction.md</span></code></span></a>, which can consume OLS summary outputs and derived coefficient tables.</p>
+</section>
+<section id="adata-uns-storage">
+<h2><code class="docutils literal notranslate"><span class="pre">adata.uns</span></code> storage<a class="headerlink" href="#adata-uns-storage" title="Link to this heading"></a></h2>
+<p>When <code class="docutils literal notranslate"><span class="pre">save_result_to_adata_uns_as_dict=True</span></code>, the wrappers store results under model-type-specific namespaces.</p>
+<p>OLS storage:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">work_adata.uns[&quot;ols_model_results&quot;][f&quot;OLS_model_results_{model_name}&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">work_adata.uns[&quot;ols_model_specs&quot;][f&quot;OLS_model_results_{model_name}&quot;]</span></code> when <code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code></p></li>
+</ul>
+<p>MixedLM storage:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">work_adata.uns[&quot;mixedlm_model_results&quot;][f&quot;mixedlm_model_results_{model_name}&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">work_adata.uns[&quot;mixedlm_model_specs&quot;][f&quot;mixedlm_model_results_{model_name}&quot;]</span></code> when <code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code></p></li>
+</ul>
+<p>If filtering created a new <code class="docutils literal notranslate"><span class="pre">work_adata</span></code> and <code class="docutils literal notranslate"><span class="pre">save_results_to_original_adata_uns=True</span></code>, the same results and model specs are also written into the original <code class="docutils literal notranslate"><span class="pre">adata.uns</span></code>.</p>
+</section>
+<section id="behavior-and-constraints">
+<h2>Behavior and constraints<a class="headerlink" href="#behavior-and-constraints" title="Link to this heading"></a></h2>
+<p>The current implementation locks in these behaviors.</p>
+<section id="predictor-handling">
+<h3>Predictor handling<a class="headerlink" href="#predictor-handling" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Wrapper inputs such as <code class="docutils literal notranslate"><span class="pre">predictors</span></code> and <code class="docutils literal notranslate"><span class="pre">add_adata_var_column_key_list</span></code> are normalized with <code class="docutils literal notranslate"><span class="pre">_ensure_list(...)</span></code>.</p></li>
+<li><p>YAML-style lists are expected.</p></li>
+<li><p>Passing a single string instead of a list raises a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p></li>
+<li><p>Numeric-like predictors are coerced to numeric dtype before fitting.</p></li>
+</ul>
+</section>
+<section id="ols-specific-notes">
+<h3>OLS-specific notes<a class="headerlink" href="#ols-specific-notes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>OLS treats missing and infinite values as <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and fits only complete-case rows for each feature.</p></li>
+<li><p>If a feature has no complete-case rows after that cleanup, the OLS wide function does not raise.</p></li>
+<li><p>Instead, it records a summary row with <code class="docutils literal notranslate"><span class="pre">Converged=False</span></code> and a warning message explaining why the fit was skipped.</p></li>
+</ul>
+</section>
+<section id="mixedlm-specific-notes">
+<h3>MixedLM-specific notes<a class="headerlink" href="#mixedlm-specific-notes" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>MixedLM raises early when required fit conditions are not met.</p></li>
+<li><p>Missing feature, predictor, or group columns raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p></li>
+<li><p>Zero complete-case rows for a feature raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p></li>
+<li><p>Fewer than two non-empty groups after filtering also raises a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p></li>
+<li><p>MixedLM tries to collect random effects, but if covariance inversion fails it records that failure in the warnings field and continues building the summary row.</p></li>
+</ul>
+</section>
+</section>
+<section id="feature-annotation-merge">
+<h2>Feature annotation merge<a class="headerlink" href="#feature-annotation-merge" title="Link to this heading"></a></h2>
+<p>Both <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers can merge selected <code class="docutils literal notranslate"><span class="pre">adata.var</span></code> columns into the result table through <code class="docutils literal notranslate"><span class="pre">add_adata_var_column_key_list</span></code>.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ols_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
+    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">],</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;ols_with_var&quot;</span><span class="p">,</span>
+    <span class="n">add_adata_var_column_key_list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;gene_name&quot;</span><span class="p">,</span> <span class="s2">&quot;feature_class&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Missing <code class="docutils literal notranslate"><span class="pre">adata.var</span></code> keys are skipped with a warning or print message, depending on the code path.</p>
+</section>
+<section id="practical-guidance">
+<h2>Practical guidance<a class="headerlink" href="#practical-guidance" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers for most workflows.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">*_wide(...)</span></code> functions when you already have an <code class="docutils literal notranslate"><span class="pre">obs_X_df</span></code> table.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code> only when you also want a saved CSV artifact.</p></li>
+<li><p>Use OLS outputs as the upstream summary source for expectation-model workflows described in <a class="reference internal" href="_expectation_based_covar_correction.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_expectation_based_covar_correction.md</span></code></span></a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="_metab_IO.html" class="btn btn-neutral float-left" title="_metab_IO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="_plots.html" class="btn btn-neutral float-right" title="_plots" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Ben Lewis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

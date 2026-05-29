@@ -1,0 +1,101 @@
+# Preprocessing Clustering
+
+Source: [`src/single_cell_python_tools/preprocessing/_clustering.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/preprocessing/_clustering.py)
+
+These helpers are exported through `sctl.pp`.
+
+## `leiden_clustering`
+
+```python
+sctl.pp.leiden_clustering(
+    adata,
+    number_of_neighbors=10,
+    number_of_PC=40,
+    leiden_res=1,
+    key_added="leiden",
+    **parameters,
+)
+```
+
+Build a neighbor graph, run UMAP, and calculate Leiden clusters.
+
+## `rename_leiden_clusters`
+
+```python
+sctl.pp.rename_leiden_clusters(
+    adata,
+    rename_cluster=False,
+    new_cluster_names=None,
+    new_obs_key="Cell_Clusters",
+    make_new_obs_key_categorical=True,
+    reorder_cluster_names=False,
+    new_cluster_names_order=None,
+    **parameters,
+)
+```
+
+Map Leiden cluster IDs to provided cluster names and optionally reorder the
+resulting categorical labels.
+
+## Legacy Rename Helpers
+
+- `rename_leiden_clusters_old_old(...)`
+- `rename_leiden_clusters_old(...)`
+
+These legacy helpers remain importable from the current source.
+
+## `leiden_cluster_sil_score`
+
+```python
+sctl.pp.leiden_cluster_sil_score(
+    adata,
+    leiden_res=1,
+    n_jobs=8,
+    savefig=False,
+    output_dir="./figures/",
+    output_prefix="adata",
+    **parameters,
+)
+```
+
+Calculate silhouette scores for a Leiden resolution and optionally save the
+resulting figure.
+
+## `silhouette_walk_Largest_drop`
+
+```python
+sctl.pp.silhouette_walk_Largest_drop(
+    adata,
+    leiden_res_start=0.025,
+    leiden_res_end=2,
+    leiden_res_step=0.025,
+    print_per_step=False,
+    n_jobs=8,
+    savetable=False,
+    savefig=False,
+    output_dir="./figures/",
+    output_prefix="adata",
+)
+```
+
+Scan Leiden resolutions and report the largest silhouette-score drop.
+
+## `silhouette_walk_4_Largest_drops`
+
+```python
+sctl.pp.silhouette_walk_4_Largest_drops(
+    adata,
+    leiden_res_start=0.025,
+    leiden_res_end=2,
+    leiden_res_step=0.025,
+    print_per_step=False,
+    n_jobs=8,
+    savetable=False,
+    savefig=False,
+    output_dir="./figures/",
+    output_prefix="adata",
+)
+```
+
+Scan Leiden resolutions and report the four largest silhouette-score drops.
+

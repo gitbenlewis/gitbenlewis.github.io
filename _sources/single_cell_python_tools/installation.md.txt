@@ -1,0 +1,36 @@
+# Installation
+
+The package targets Python `>=3.10,<3.11` and depends on the Scanpy single-cell
+analysis stack. The repository includes both a conda environment file and a
+standard editable Python package setup.
+
+## Conda Environment
+
+From the repository root:
+
+```bash
+conda env remove -n sctl
+conda env create -f sctl.yaml
+conda activate sctl
+```
+
+The conda environment installs the package in editable mode through the `pip`
+section of [`sctl.yaml`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/sctl.yaml).
+
+## Editable Install
+
+If the Scanpy stack is already available in your active environment:
+
+```bash
+pip install -e .
+```
+
+## Verify Import
+
+```bash
+python -c "import single_cell_python_tools as sctl; print(sctl.__all__)"
+```
+
+The package import requires dependencies such as `scanpy`, `anndata`, `gseapy`,
+`leidenalg`, and `bbknn` to be installed.
+

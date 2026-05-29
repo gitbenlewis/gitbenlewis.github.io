@@ -1,0 +1,38 @@
+# Scanpy Tools
+
+Source: [`src/single_cell_python_tools/tools/_functions_4_scanpy.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/tools/_functions_4_scanpy.py)
+
+These helpers are exported through `sctl.tl`.
+
+## General Utilities
+
+- `print_size_in_MB(obj)`: print object size in megabytes.
+- `df_loadings_ordered_byPC(adata, ascending=True, save_table=False, output_dir="./", output_prefix="adata")`: return PCA loadings ordered by principal component.
+- `cef_to_adata(data_dir, data_prefix, n_obs=None, n_skiprows=0, cef_delimiter_tab=True, save_to_h5ad=False)`: create an `AnnData` object from CEF-style inputs.
+
+## Annotation Helpers
+
+- `annotate_marker_genes(adata, gene_names, min_n_counts, obs_key)`: annotate cells with marker-gene labels.
+- `label_cells_by_single_gene_expression(adata, gene_name1, min_n_counts1=0, use_raw=True, use_percentile=False)`: label cells by one gene.
+- `label_cells_by_double_gene_expression(adata, gene_name1, gene_name2, min_n_counts1=0, min_n_counts2=0, use_raw=True, use_percentile=False)`: label cells by two genes.
+
+## Differential Expression And Enrichment
+
+- `rank_genes(adata, output_dir="./adata_output/", output_prefix="adata_", save_output=True, wilcox=True, logreg=True, t_test=True, rank_use_raw=False, obs_key="leiden", n_jobs=1, **parameters)`: run Scanpy rank-gene tests and optionally write tables.
+- `rank_genes_obscat1_vs_obscat2(adata, output_dir="./adata_output/", output_prefix="adata_", save_output=True, wilcox=True, logreg=True, t_test=True, rank_use_raw=False, n_jobs=1, obs_key="leiden", obscat1=None, obscat2=None, **parameters)`: rank genes between two categories.
+- `diff_exp(adata, groupby, group1, group2, layer=None)`: compare expression between two groups.
+- `GSEA_enrichr_all_clusters(output_dir="./adata_output/", output_prefix="adata_", test_library_names=None, top_nth=0.10, n_jobs=1, **parameters)`: run Enrichr analysis from rank-gene output tables.
+
+## Filtering And Summaries
+
+- `filter_obs(data, var, func=None)`: filter observations in place using `.obs` columns or expression values.
+- `average_feature_expression(adata, groupby_key, layer=None, use_raw=False, log1p=False, zscore=False, subtract_mean=False)`: average feature expression by group.
+- `average_obs_feature_per_group(adata, groupby_key, obs_keys)`: average observation-level features by group.
+- `make_df_obs_adataX(adata, layer=None, index=True, varcolumns=None, include_obs=True, obscolumns=None, use_raw=False)`: build a `pandas.DataFrame` from `adata.X`, `adata.layers`, or `adata.raw`.
+
+## Notes
+
+The current `tools/__init__.py` exports `_functions_4_scanpy.py`. The
+`_ingest_verbose.py` module exists separately and is documented on
+[Ingest Verbose](ingest-verbose.md).
+

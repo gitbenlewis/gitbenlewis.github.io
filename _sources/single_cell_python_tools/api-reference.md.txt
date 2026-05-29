@@ -1,0 +1,108 @@
+# API Reference
+
+This is a static API inventory for the current source tree. It is intentionally
+not generated with Sphinx autodoc because the package depends on the Scanpy stack
+and the docs hub builds in a lightweight documentation environment.
+
+## Top-Level Namespace
+
+Source: [`src/single_cell_python_tools/__init__.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/__init__.py)
+
+- `sctl.pp`: preprocessing namespace.
+- `sctl.pl`: plotting namespace.
+- `sctl.tl`: tools namespace.
+- `sctl.DATASET_class`: high-level workflow class.
+
+## `DATASET_class`
+
+Source: [`DATASET_class.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/DATASET_class.py)
+
+- Class: `DATASET_class`
+- Docs: [DATASET_class](DATASET_class.md)
+
+## `sctl.pp`
+
+Source files:
+
+- [`preprocessing/_io.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/preprocessing/_io.py)
+- [`preprocessing/_qc.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/preprocessing/_qc.py)
+- [`preprocessing/_transform_data.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/preprocessing/_transform_data.py)
+- [`preprocessing/_clustering.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/preprocessing/_clustering.py)
+
+Public functions:
+
+- `reset_cellxgene_var_names`
+- `downcast_layers_to_float32`
+- `annotate_QC_genes`
+- `calculate_qc_metrics`
+- `plot_QC_metrics_scatter`
+- `plot_QC_metrics_violin`
+- `plot_qc_metrics`
+- `annotate_n_view_adata_raw_counts`
+- `basic_filitering`
+- `filter_cells_by_anotated_QC_gene`
+- `remove_genes`
+- `process2scaledPCA`
+- `scale_func`
+- `PCA_func`
+- `norm_log`
+- `HVG_selection_log_norm_seurat`
+- `HVG_selection_log_norm_seurat_v3`
+- `HVG_removal`
+- `regress_out_anotated_QC_genes`
+- `calc_cell_cycle_score`
+- `regress_cell_cycle_score_func`
+- `leiden_clustering`
+- `rename_leiden_clusters_old_old`
+- `rename_leiden_clusters_old`
+- `rename_leiden_clusters`
+- `leiden_cluster_sil_score`
+- `silhouette_walk_Largest_drop`
+- `silhouette_walk_4_Largest_drops`
+
+## `sctl.pl`
+
+Source files:
+
+- [`plotting/_plots.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/plotting/_plots.py)
+- [`plotting/_plots_depreciated.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/plotting/_plots_depreciated.py)
+
+Public functions:
+
+- `silhouette_score_n_plot`
+- `silhouette_score_of_obs_key_n_plot`
+- `plot_batch_obs_key_of_obs_key2`
+- `plot_adata_row_total_dist`
+- `plot_adata_raw_and_X_rowdist_old`
+- `plot_adata_raw_and_X_rowdist`
+- `plot_batch_obs_key_of_obs_key2_old`
+- `plot_percent_obs_key2_per_batch_obs_key`
+
+## `sctl.tl`
+
+Source: [`tools/_functions_4_scanpy.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/tools/_functions_4_scanpy.py)
+
+Public functions:
+
+- `print_size_in_MB`
+- `df_loadings_ordered_byPC`
+- `cef_to_adata`
+- `annotate_marker_genes`
+- `rank_genes`
+- `rank_genes_obscat1_vs_obscat2`
+- `diff_exp`
+- `GSEA_enrichr_all_clusters`
+- `filter_obs`
+- `label_cells_by_single_gene_expression`
+- `label_cells_by_double_gene_expression`
+- `average_feature_expression`
+- `average_obs_feature_per_group`
+- `make_df_obs_adataX`
+
+## Direct Module APIs
+
+Source: [`tools/_ingest_verbose.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/tools/_ingest_verbose.py)
+
+- `ingest_verbose`
+- `Ingest`
+

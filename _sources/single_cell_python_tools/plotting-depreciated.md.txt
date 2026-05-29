@@ -1,0 +1,40 @@
+# Deprecated Plotting Helpers
+
+Source: [`src/single_cell_python_tools/plotting/_plots_depreciated.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/plotting/_plots_depreciated.py)
+
+The source module name is `_plots_depreciated.py`; the docs preserve that
+spelling to match the package.
+
+## `plot_batch_obs_key_of_obs_key2_old`
+
+```python
+sctl.pl.plot_batch_obs_key_of_obs_key2_old(
+    adata,
+    batch_obs_key="batch",
+    obs_key2="leiden",
+    flavor="count",
+    figsize=(10, 4),
+    savefig=False,
+    output_dir="./project/",
+    output_prefix="dataset_",
+)
+```
+
+Legacy version of the batch-by-observation plotting helper.
+
+## `plot_percent_obs_key2_per_batch_obs_key`
+
+```python
+sctl.pl.plot_percent_obs_key2_per_batch_obs_key(
+    adata,
+    batch_obs_key="batch",
+    obs_key2="leiden",
+    figsize=(10, 4),
+    savefig=False,
+    output_dir="./project/",
+    output_prefix="dataset_",
+)
+```
+
+Plot percentage composition of one observation category within another.
+

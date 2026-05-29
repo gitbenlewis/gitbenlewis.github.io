@@ -1,0 +1,113 @@
+# Preprocessing QC
+
+Source: [`src/single_cell_python_tools/preprocessing/_qc.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/preprocessing/_qc.py)
+
+These helpers are exported through `sctl.pp`.
+
+## `annotate_QC_genes`
+
+```python
+sctl.pp.annotate_QC_genes(adata, organism="human", **parameters)
+```
+
+Annotate technical QC gene groups in `adata.var`, including mitochondrial,
+ribosomal, hemoglobin, MALAT1, and related marker sets.
+
+## `calculate_qc_metrics`
+
+```python
+sctl.pp.calculate_qc_metrics(adata, **parameters)
+```
+
+Calculate Scanpy QC metrics after QC gene groups have been annotated.
+
+## `plot_QC_metrics_scatter`
+
+```python
+sctl.pp.plot_QC_metrics_scatter(adata)
+```
+
+Plot scatter summaries for QC metrics.
+
+## `plot_QC_metrics_violin`
+
+```python
+sctl.pp.plot_QC_metrics_violin(adata)
+```
+
+Plot violin summaries for QC metrics.
+
+## `plot_qc_metrics`
+
+```python
+sctl.pp.plot_qc_metrics(adata, **parameters)
+```
+
+Plot annotated technical gene groups and top highly expressed genes.
+
+## `annotate_n_view_adata_raw_counts`
+
+```python
+sctl.pp.annotate_n_view_adata_raw_counts(adata, **parameters)
+```
+
+Run QC gene annotation, calculate QC metrics, and produce raw-count QC views.
+
+## `basic_filitering`
+
+```python
+sctl.pp.basic_filitering(
+    adata,
+    filter_cells_min_counts=0,
+    filter_cells_min_genes=200,
+    filter_genes_min_cells=3,
+    filter_genes_min_counts=0,
+    **parameters,
+)
+```
+
+Apply basic cell and gene count filters. The function name keeps the current
+source spelling, `basic_filitering`.
+
+## `filter_cells_by_anotated_QC_gene`
+
+```python
+sctl.pp.filter_cells_by_anotated_QC_gene(
+    adata,
+    filter_ncount=True,
+    n_genes_bycounts=2500,
+    filter_pct_mt=True,
+    percent_mt=5,
+    over_percent_mt=0,
+    filter_pct_ribo=False,
+    percent_ribo=100,
+    over_percent_ribo=0,
+    filter_pct_hb=False,
+    percent_hb=100,
+    over_percent_hb=0,
+    filter_pct_malat1=False,
+    percent_malat1=100,
+    over_percent_malat1=0,
+    **parameters,
+)
+```
+
+Filter cells by annotated QC metrics. The function name keeps the current source
+spelling, `filter_cells_by_anotated_QC_gene`.
+
+## `remove_genes`
+
+```python
+sctl.pp.remove_genes(
+    adata,
+    remove_MALAT1=False,
+    remove_MT=False,
+    remove_HB=False,
+    remove_RP_SL=False,
+    remove_MRP_SL=False,
+    **parameters,
+)
+```
+
+Remove configured technical gene groups from the active `AnnData` object.
+

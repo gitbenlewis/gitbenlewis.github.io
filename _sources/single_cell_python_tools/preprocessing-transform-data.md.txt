@@ -1,0 +1,119 @@
+# Preprocessing Transform Data
+
+Source: [`src/single_cell_python_tools/preprocessing/_transform_data.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/preprocessing/_transform_data.py)
+
+These helpers are exported through `sctl.pp`.
+
+## `process2scaledPCA`
+
+```python
+sctl.pp.process2scaledPCA(adata, **parameters)
+```
+
+Run the combined preprocessing workflow: normalization, optional log transform,
+highly variable gene selection, optional regression, scaling, and PCA.
+
+Important parameters include `normalize_total_target_sum`, `logarithmize`,
+`filter_HVG`, `HVG_flavor`, `HVG_n_top_genes`, `regress_mt`, `scale`, and
+`scale_max_std_value`.
+
+## `norm_log`
+
+```python
+sctl.pp.norm_log(
+    adata,
+    normalize_total_target_sum=1e4,
+    save_counts_layer=True,
+    logarithmize=True,
+    use_lognorm_for_raw=False,
+    **parameters,
+)
+```
+
+Normalize total counts and optionally apply `log1p`.
+
+## `HVG_selection_log_norm_seurat`
+
+```python
+sctl.pp.HVG_selection_log_norm_seurat(
+    adata,
+    filter_HVG=True,
+    HVG_min_mean=0.0125,
+    HVG_max_mean=3,
+    HVG_min_disp=0.5,
+    **parameters,
+)
+```
+
+Select highly variable genes using Scanpy's Seurat-style thresholds.
+
+## `HVG_selection_log_norm_seurat_v3`
+
+```python
+sctl.pp.HVG_selection_log_norm_seurat_v3(
+    adata,
+    filter_HVG=True,
+    HVG_n_top_genes=None,
+    **parameters,
+)
+```
+
+Select highly variable genes with the `seurat_v3` flavor.
+
+## `HVG_removal`
+
+```python
+sctl.pp.HVG_removal(adata, filter_HVG=True, **parameters)
+```
+
+Subset the dataset to highly variable genes when HVG filtering is enabled.
+
+## `regress_out_anotated_QC_genes`
+
+```python
+sctl.pp.regress_out_anotated_QC_genes(
+    adata,
+    regress_mt=True,
+    regress_ribo=False,
+    regress_malat1=False,
+    regress_hb=False,
+    n_jobs=1,
+    **parameters,
+)
+```
+
+Regress out configured annotated QC metrics.
+
+## `scale_func`
+
+```python
+sctl.pp.scale_func(adata, scale_max_std_value=None, **parameters)
+```
+
+Scale expression values, using the configured maximum standard-deviation value
+when provided.
+
+## `PCA_func`
+
+```python
+sctl.pp.PCA_func(adata, **parameters)
+```
+
+Run PCA on the active `AnnData` object.
+
+## `calc_cell_cycle_score`
+
+```python
+sctl.pp.calc_cell_cycle_score(adata, organism="human", **parameters)
+```
+
+Calculate cell-cycle scores from organism-specific S and G2M gene lists.
+
+## `regress_cell_cycle_score_func`
+
+```python
+sctl.pp.regress_cell_cycle_score_func(adata, **parameters)
+```
+
+Regress out cell-cycle scores from the data.
+

@@ -1,0 +1,30 @@
+# Preprocessing IO
+
+Source: [`src/single_cell_python_tools/preprocessing/_io.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/preprocessing/_io.py)
+
+These helpers are exported through `sctl.pp`.
+
+## `reset_cellxgene_var_names`
+
+```python
+sctl.pp.reset_cellxgene_var_names(
+    adata,
+    feature_name_col="feature_name",
+    **parameters,
+)
+```
+
+Reset `adata.var_names` for cellxgene-style datasets. The function modifies the
+`AnnData` object in place, creates a `feature_name_unique` column, and stores the
+previous index in `adata.var["cellxgene_var_index"]`.
+
+## `downcast_layers_to_float32`
+
+```python
+sctl.pp.downcast_layers_to_float32(adata, **kwargs)
+```
+
+Convert `AnnData` layers, and optionally other matrices, to `float32` in place.
+Use this when memory pressure matters and downstream analysis accepts `float32`
+data.
+

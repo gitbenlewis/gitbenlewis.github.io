@@ -1,0 +1,54 @@
+# Ingest Verbose
+
+Source: [`src/single_cell_python_tools/tools/_ingest_verbose.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/tools/_ingest_verbose.py)
+
+This module contains a modified Scanpy ingest workflow. The package source notes
+that it supports adding more than one reference observation column to the query
+object during ingest.
+
+## `ingest_verbose`
+
+```python
+ingest_verbose(
+    adata,
+    adata_ref,
+    obs=None,
+    embedding_method=("umap", "pca"),
+    labeling_method="knn",
+    neighbors_key=None,
+    inplace=True,
+    **kwargs,
+)
+```
+
+Map labels and embeddings from a reference `AnnData` object to a query `AnnData`
+object.
+
+## `Ingest`
+
+```python
+Ingest(adata, neighbors_key=None)
+```
+
+Class used to map labels and embeddings from existing data to new data. The
+source docstring notes that `scanpy.pp.neighbors` should be run on the reference
+object before initializing `Ingest`.
+
+Important public methods include:
+
+- `fit(adata_new)`: fit ingest state to a new `AnnData` object.
+- `neighbors(k=None, queue_size=5, epsilon=0.1, random_state=0)`: find neighbors.
+- `map_embedding(method)`: map embeddings such as UMAP or PCA.
+- `map_labels(labels, method)`: map labels from the reference object.
+- `to_adata(inplace=False)`: return or update an `AnnData` object with mapped results.
+- `to_adata_joint(...)`: create a joint object from reference and query data.
+
+## Export Note
+
+The current `tools/__init__.py` comments out `_ingest_verbose` exports, so import
+this module directly if needed:
+
+```python
+from single_cell_python_tools.tools._ingest_verbose import ingest_verbose, Ingest
+```
+

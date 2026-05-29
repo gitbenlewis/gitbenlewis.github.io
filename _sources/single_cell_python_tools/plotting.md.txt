@@ -1,0 +1,84 @@
+# Plotting
+
+Source: [`src/single_cell_python_tools/plotting/_plots.py`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/plotting/_plots.py)
+
+These helpers are exported through `sctl.pl`.
+
+## `silhouette_score_n_plot`
+
+```python
+sctl.pl.silhouette_score_n_plot(adata, leiden_res="unk", **parameters)
+```
+
+Plot silhouette-score summaries for Leiden clusters using `X_pca`.
+
+## `silhouette_score_of_obs_key_n_plot`
+
+```python
+sctl.pl.silhouette_score_of_obs_key_n_plot(
+    adata,
+    obs_key="leiden",
+    **parameters,
+)
+```
+
+Plot silhouette-score summaries for a selected observation key.
+
+## `plot_batch_obs_key_of_obs_key2`
+
+```python
+sctl.pl.plot_batch_obs_key_of_obs_key2(
+    adata,
+    batch_obs_key="batch",
+    obs_key2="leiden",
+    flavor="count",
+    figsize=(10, 4),
+    savetable=False,
+    savefig=False,
+    output_dir="./project/",
+    output_prefix="dataset_",
+)
+```
+
+Summarize one observation category across batches, returning count and
+normalized tables.
+
+## `plot_adata_row_total_dist`
+
+```python
+sctl.pl.plot_adata_row_total_dist(adata, **kwargs)
+```
+
+Plot the distribution of row totals for one `AnnData` matrix layer.
+
+## `plot_adata_raw_and_X_rowdist_old`
+
+```python
+sctl.pl.plot_adata_raw_and_X_rowdist_old(
+    adata,
+    max_value_mask=None,
+    savefig=False,
+    output_dir="./figures/",
+    output_prefix="adata",
+    **kwargs,
+)
+```
+
+Legacy helper for plotting raw-count and `adata.X` row-count distributions side
+by side.
+
+## `plot_adata_raw_and_X_rowdist`
+
+```python
+sctl.pl.plot_adata_raw_and_X_rowdist(
+    adata,
+    max_value_mask=None,
+    savefig=False,
+    output_dir="./figures/",
+    output_prefix="adata",
+    **kwargs,
+)
+```
+
+Plot raw-count and `adata.X` row-count distributions side by side.
+

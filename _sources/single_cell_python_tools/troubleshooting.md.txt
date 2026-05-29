@@ -1,0 +1,35 @@
+# Troubleshooting
+
+## Import Fails With Missing Scanpy
+
+`single_cell_python_tools` imports the Scanpy stack. If import fails with
+`ModuleNotFoundError: No module named 'scanpy'`, create and activate the conda
+environment from [`sctl.yaml`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/sctl.yaml), or install the dependencies listed
+in [`pyproject.toml`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/pyproject.toml).
+
+## Python Version Mismatch
+
+The package metadata currently requires Python `>=3.10,<3.11`. Use the
+repository conda environment when possible.
+
+## Notebook Cannot Find The Package
+
+Install the package in editable mode:
+
+```bash
+pip install -e .
+```
+
+For path-based notebook work, add the parent directory that contains the package
+repository to `sys.path` before importing `single_cell_python_tools`.
+
+## Output Directories Are Missing
+
+For `DATASET_class` workflows, check the output-related parameters and call
+`make_output_dirs_if_not_exist()` before steps that write figures or tables.
+
+## Links In Published Docs Go To GitHub
+
+The docs hub deliberately links notebooks, example data, generated tables, and
+source files to GitHub instead of copying them into the Pages build.
+

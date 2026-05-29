@@ -1,0 +1,75 @@
+# DATASET_class
+
+[`DATASET_class`](https://github.com/gitbenlewis/single_cell_python_tools/blob/main/src/single_cell_python_tools/DATASET_class.py) is the
+high-level workflow object. It stores a central `parameters` dictionary, keeps
+the active `AnnData` object on `self.adata`, and wraps preprocessing, clustering,
+plotting, and IO functions as chainable methods.
+
+## Constructor
+
+```python
+sctl.DATASET_class(parameters={}, **kwargs)
+```
+
+The constructor merges default parameters, an optional `parameters` dictionary,
+and keyword overrides. It also derives output-directory paths from the active
+parameters.
+
+## Data And Output Methods
+
+- `download_data(**kwargs)`: download data from `download_url`.
+- `unpack_tar(**kwargs)`: unpack downloaded tar archives.
+- `decompress_downloaded_files(**kwargs)`: decompress downloaded compressed files.
+- `fixtypo_in_downloaded_file_name(**kwargs)`: rename a downloaded file when needed.
+- `make_output_dirs_if_not_exist()`: create output directories from parameters.
+- `load_data(**kwargs)`: load data into `self.adata`.
+- `reset_cellxgene_var_names(**kwargs)`: wrap `sctl.pp.reset_cellxgene_var_names`.
+
+## QC And Filtering Methods
+
+- `basic_filitering(**kwargs)`: run basic cell and gene count filters.
+- `annotate_QC_genes(**kwargs)`: annotate mitochondrial, ribosomal, hemoglobin, and related QC gene groups.
+- `calculate_qc_metrics(**kwargs)`: compute Scanpy QC metrics.
+- `annotate_n_view_adata_raw_counts(**kwargs)`: annotate QC genes, calculate metrics, and plot raw-count QC summaries.
+- `plot_qc_metrics()`: plot QC metric summaries.
+- `filter_cells_by_anotated_QC_gene(**kwargs)`: filter cells by annotated QC metrics.
+- `remove_genes(**kwargs)`: remove configured technical gene groups.
+
+## Transform Methods
+
+- `norm_log(**kwargs)`: normalize counts and optionally log transform.
+- `HVG_selection_log_norm_seurat(**kwargs)`: select highly variable genes with the Seurat-style Scanpy workflow.
+- `HVG_selection_log_norm_seurat_v3(**kwargs)`: select highly variable genes with `seurat_v3`.
+- `HVG_removal(**kwargs)`: subset to highly variable genes.
+- `regress_out_anotated_QC_genes(**kwargs)`: regress out configured QC metrics.
+- `scale_func(**kwargs)`: scale expression values.
+- `PCA_func(**kwargs)`: run PCA.
+- `calc_cell_cycle_score(**kwargs)`: score cell-cycle genes.
+- `regress_cell_cycle_score_func(**kwargs)`: regress out cell-cycle scores.
+- `process2scaledPCA(**kwargs)`: run the combined normalization/HVG/regression/scaling/PCA workflow.
+
+## Clustering Methods
+
+- `leiden_clustering(**kwargs)`: compute neighbors, UMAP, and Leiden clusters.
+- `rename_leiden_clusters(**kwargs)`: map Leiden cluster labels to provided names.
+- `leiden_cluster_sil_score(**kwargs)`: calculate and plot silhouette scores for a Leiden resolution.
+- `silhouette_walk_Largest_drop(**kwargs)`: scan Leiden resolutions and report the largest silhouette-score drop.
+- `silhouette_walk_4_Largest_drops(**kwargs)`: scan Leiden resolutions and report the four largest drops.
+
+## Plotting Methods
+
+- `marker_gene_umaps(**kwargs)`: plot marker-gene UMAPs from configured parameters.
+- `marker_gene_umaps_old(...)`: legacy marker-gene UMAP plotting helper.
+- `silhouette_score_n_plot(**kwargs)`: wrap `sctl.pl.silhouette_score_n_plot`.
+- `silhouette_score_of_obs_key_n_plot(**kwargs)`: wrap `sctl.pl.silhouette_score_of_obs_key_n_plot`.
+- `plot_batch_obs_key_of_obs_key2(**kwargs)`: wrap `sctl.pl.plot_batch_obs_key_of_obs_key2`.
+- `plot_percent_obs_key2_per_batch_obs_key(**kwargs)`: wrap the legacy percent-by-batch plotting helper.
+- `plot_adata_row_total_dist(**kwargs)`: plot row-total distributions.
+- `plot_adata_raw_and_X_rowdist(**kwargs)`: compare raw and active matrix row totals.
+
+## Notes
+
+- Most methods mutate `self.adata` in place and return `self`.
+- Parameter names intentionally match the current source, including legacy spellings.
+- Scientific defaults and thresholds are defined in the source class and should be changed only intentionally.
+
