@@ -1,0 +1,101 @@
+# pyoncoplot Documentation
+
+`pyoncoplot` creates Python-native oncoplots from mutation-level cohort data.
+It supports interactive Plotly output and static Matplotlib output, with
+metadata tracks, TMB bars, gene recurrence bars, pathway grouping, palettes,
+tooltips, and deterministic gallery recreation from local TSV/JSON inputs.
+
+The project is inspired by the R package `ggoncoplot`. The goal is feature and
+behavior parity, not pixel-identical ggplot output.
+
+## Start Here
+
+- [Installation](installation.md)
+- [Quickstart](quickstart.md)
+- [Data Inputs](data-inputs.md)
+- [API Reference](api-reference.md)
+- [Gallery](gallery.md)
+- [Migration From ggoncoplot](migration-from-ggoncoplot.md)
+
+## Minimal Example
+
+```python
+import pandas as pd
+from pyoncoplot import oncoplot
+
+mutations = pd.DataFrame(
+    {
+        "sample": ["S1", "S1", "S2", "S3"],
+        "gene": ["TP53", "EGFR", "TP53", "PTEN"],
+        "mutation_type": [
+            "Missense_Mutation",
+            "Frame_Shift_Del",
+            "Nonsense_Mutation",
+            "Splice_Site",
+        ],
+    }
+)
+
+result = oncoplot(
+    mutations,
+    gene_col="gene",
+    sample_col="sample",
+    mutation_type_col="mutation_type",
+    draw_gene_bar=True,
+    draw_tmb_bar=True,
+)
+
+result.save("oncoplot.html")
+```
+
+For static output, pass `backend="matplotlib"` and save a PNG, SVG, or PDF:
+
+```python
+result = oncoplot(
+    mutations,
+    gene_col="gene",
+    sample_col="sample",
+    mutation_type_col="mutation_type",
+    backend="matplotlib",
+    draw_gene_bar=True,
+)
+result.save("oncoplot.png", dpi=120)
+```
+
+## Documentation Map
+
+| Page | Use it for |
+| --- | --- |
+| [Quickstart](quickstart.md) | first working plot |
+| [Data Inputs](data-inputs.md) | mutation table schema and validation |
+| [Metadata and TMB](metadata-and-tmb.md) | clinical tracks and mutation burden bars |
+| [Pathways and Sorting](pathways-and-sorting.md) | ordering genes, samples, and pathway groups |
+| [Palettes](palettes.md) | mutation, metadata, and TMB colors |
+| [Options Reference](options-reference.md) | layout, text, legend, and rendering knobs |
+| [Rendering Backends](rendering-backends.md) | Plotly vs Matplotlib behavior |
+| [Gallery](gallery.md) | deterministic local examples |
+| [Troubleshooting](troubleshooting.md) | common errors and fixes |
+
+```{toctree}
+:maxdepth: 2
+:caption: PyOncoplot
+
+installation
+quickstart
+data-inputs
+api-reference
+options-reference
+palettes
+metadata-and-tmb
+pathways-and-sorting
+rendering-backends
+gallery
+example-plot-source-citations
+examples/basic
+examples/metadata
+examples/brca-gallery
+examples/structural-variation-panel
+migration-from-ggoncoplot
+development
+troubleshooting
+```

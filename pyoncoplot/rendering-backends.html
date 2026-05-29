@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rendering Backends &mdash; gitbenlewis docs</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://gitbenlewis.github.io/pyoncoplot/rendering-backends.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Example Gallery" href="gallery.html" />
+    <link rel="prev" title="Pathways and Sorting" href="pathways-and-sorting.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            gitbenlewis docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Available Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pyoncoplot Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#start-here">Start Here</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#minimal-example">Minimal Example</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#documentation-map">Documentation Map</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#development-install">Development Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#runtime-dependencies">Runtime Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#verify-the-install">Verify The Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#next-step">Next Step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#input-data">Input Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#interactive-plotly-plot">Interactive Plotly Plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#static-matplotlib-plot">Static Matplotlib Plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#result-object">Result Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#where-to-go-next">Where To Go Next</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="data-inputs.html">Data Inputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#required-columns">Required Columns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#example-mutation-table">Example Mutation Table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#multi-hit-behavior">Multi-Hit Behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#gene-selection">Gene Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#sample-selection">Sample Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#row-and-sample-filters">Row and Sample Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#validation-rules">Validation Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api-reference.html">API Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#oncoplot"><code class="docutils literal notranslate"><span class="pre">oncoplot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#merge-oncoplot-params"><code class="docutils literal notranslate"><span class="pre">merge_oncoplot_params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#oncoplotresult"><code class="docutils literal notranslate"><span class="pre">OncoplotResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#prepare-oncoplot-data"><code class="docutils literal notranslate"><span class="pre">prepare_oncoplot_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#identify-top-genes"><code class="docutils literal notranslate"><span class="pre">identify_top_genes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#score-sample-by-gene-rank"><code class="docutils literal notranslate"><span class="pre">score_sample_by_gene_rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#rank-genes-by-pathway"><code class="docutils literal notranslate"><span class="pre">rank_genes_by_pathway</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#prettify"><code class="docutils literal notranslate"><span class="pre">prettify</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#palette-helpers">Palette Helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="options-reference.html">Options Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#size-and-layout">Size and Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#labels-and-axes">Labels and Axes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#legends">Legends</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#tile-styling">Tile Styling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#fonts">Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#titles">Titles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#tmb-and-gene-bar">TMB and Gene Bar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#pathways">Pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#metadata">Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#text-prettification">Text Prettification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#common-bundles">Common Bundles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="palettes.html">Palettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#mutation-palette">Mutation Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#metadata-palette">Metadata Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#variant-value-palette">Variant Value Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#tmb-palette">TMB Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#default-palettes">Default Palettes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#practical-color-guidance">Practical Color Guidance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metadata-and-tmb.html">Metadata and TMB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#metadata-table-schema">Metadata Table Schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#metadata-columns-in-mutation-data">Metadata Columns in Mutation Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#metadata-filtering">Metadata Filtering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#numeric-metadata">Numeric Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#categorical-metadata-order">Categorical Metadata Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#tmb-inference">TMB Inference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#custom-tmb-data">Custom TMB Data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pathways-and-sorting.html">Pathways and Sorting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#default-gene-ranking">Default Gene Ranking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#explicit-gene-order">Explicit Gene Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#pathway-input">Pathway Input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#sample-ordering">Sample Ordering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#metadata-sorting">Metadata Sorting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#showing-all-samples">Showing All Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Rendering Backends</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#plotly">Plotly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#matplotlib">Matplotlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#choosing-a-backend">Choosing A Backend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#backend-support-matrix">Backend Support Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gallery.html">Example Gallery</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#render-the-clean-gallery">Render The Clean Gallery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#regenerate-gallery-inputs">Regenerate Gallery Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#brca-comparison-sheets">BRCA Comparison Sheets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#accepted-clean-baselines">Accepted Clean Baselines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#presets">Presets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#config-driven-runs">Config-Driven Runs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#input-families">Input Families</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#related-examples">Related Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="example-plot-source-citations.html">Example Plot Source Citations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#plot-to-source-map">Plot-To-Source Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#directly-used-papers">Directly Used Papers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#tcga-and-xena-data-sources">TCGA And Xena Data Sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#documentation-and-source-image-pages">Documentation And Source Image Pages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#supporting-visualization-references">Supporting Visualization References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="examples/basic.html">Basic Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/metadata.html">Metadata Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/brca-gallery.html">BRCA Gallery Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#render-the-default-brca-outputs">Render The Default BRCA Outputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#render-comparison-sheets">Render Comparison Sheets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#inspect-the-preset-code">Inspect The Preset Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="examples/structural-variation-panel.html">Structural Variation Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="examples/structural-variation-panel.html#render-it">Render It</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/structural-variation-panel.html#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/structural-variation-panel.html#input-shapes">Input Shapes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="migration-from-ggoncoplot.html">Migration From ggoncoplot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#argument-mapping">Argument Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#options-mapping">Options Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#r-style-concept">R-Style Concept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#python-version">Python Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#important-differences">Important Differences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#ggoncoplot-parity-status">ggoncoplot Parity Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#recommended-migration-path">Recommended Migration Path</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="development.html#local-setup">Local Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#repository-layout">Repository Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#regenerate-gallery-inputs">Regenerate Gallery Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#regenerate-gallery-images">Regenerate Gallery Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#adding-a-gallery-preset">Adding A Gallery Preset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#documentation-changes">Documentation Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#missing-column-errors">Missing Column Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#empty-or-missing-sample-gene-identifiers">Empty Or Missing Sample/Gene Identifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#palette-coverage-errors">Palette Coverage Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#metadata-duplicate-sample-errors">Metadata Duplicate Sample Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#samples-disappear">Samples Disappear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#plotly-image-export-fails">Plotly Image Export Fails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#matplotlib-font-warnings">Matplotlib Font Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#very-large-cohorts">Very Large Cohorts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gitbenlewis docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">pyoncoplot Documentation</a></li>
+      <li class="breadcrumb-item active">Rendering Backends</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="rendering-backends">
+<h1>Rendering Backends<a class="headerlink" href="#rendering-backends" title="Link to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">pyoncoplot</span></code> has two rendering backends:</p>
+<ul class="simple">
+<li><p>Plotly for interactive output.</p></li>
+<li><p>Matplotlib for deterministic static output.</p></li>
+</ul>
+<section id="plotly">
+<h2>Plotly<a class="headerlink" href="#plotly" title="Link to this heading"></a></h2>
+<p>Use Plotly when you want hover labels, interactive inspection, and HTML export.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">tooltip_col</span><span class="o">=</span><span class="s2">&quot;tooltip&quot;</span><span class="p">,</span>
+    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;plotly&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">result</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;oncoplot.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Plotly output supports <code class="docutils literal notranslate"><span class="pre">copy_on_click</span></code>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Copied value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;sample&quot;</span></code></p></td>
+<td><p>clicked sample identifier</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;gene&quot;</span></code></p></td>
+<td><p>clicked gene identifier</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;tooltip&quot;</span></code></p></td>
+<td><p>clicked tooltip text</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;mutation_type&quot;</span></code></p></td>
+<td><p>clicked mutation type</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">&quot;nothing&quot;</span></code></p></td>
+<td><p>disables clipboard behavior</p></td>
+</tr>
+</tbody>
+</table>
+<p>Clipboard behavior is inserted into exported HTML via
+<code class="docutils literal notranslate"><span class="pre">navigator.clipboard.writeText</span></code>.</p>
+</section>
+<section id="matplotlib">
+<h2>Matplotlib<a class="headerlink" href="#matplotlib" title="Link to this heading"></a></h2>
+<p>Use Matplotlib when you need PNG, SVG, PDF, deterministic gallery images, or
+static figures for manuscripts.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">result</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;oncoplot.svg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Matplotlib currently has the richest static layout support for:</p>
+<ul class="simple">
+<li><p>stacked TMB bars.</p></li>
+<li><p>right-side gene bars with percentage labels.</p></li>
+<li><p>numeric metadata bars.</p></li>
+<li><p>separate metadata legends.</p></li>
+<li><p>compact tile borders and row separators.</p></li>
+</ul>
+</section>
+<section id="choosing-a-backend">
+<h2>Choosing A Backend<a class="headerlink" href="#choosing-a-backend" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Need</p></th>
+<th class="head"><p>Recommended backend</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>exploratory browser plot</p></td>
+<td><p>Plotly</p></td>
+</tr>
+<tr class="row-odd"><td><p>hover and click-to-copy</p></td>
+<td><p>Plotly</p></td>
+</tr>
+<tr class="row-even"><td><p>standalone HTML</p></td>
+<td><p>Plotly</p></td>
+</tr>
+<tr class="row-odd"><td><p>PNG/SVG/PDF figure</p></td>
+<td><p>Matplotlib</p></td>
+</tr>
+<tr class="row-even"><td><p>deterministic gallery recreation</p></td>
+<td><p>Matplotlib</p></td>
+</tr>
+<tr class="row-odd"><td><p>manuscript-style static output</p></td>
+<td><p>Matplotlib</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="backend-support-matrix">
+<h2>Backend Support Matrix<a class="headerlink" href="#backend-support-matrix" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Plotly</p></th>
+<th class="head"><p>Matplotlib</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mutation grid</p></td>
+<td><p>interactive markers with hover and linked selection</p></td>
+<td><p>static tile grid</p></td>
+</tr>
+<tr class="row-odd"><td><p>TMB totals</p></td>
+<td><p>bar trace; log and scientific tick formatting supported</p></td>
+<td><p>bar axis; log labels and scientific tick formatting supported</p></td>
+</tr>
+<tr class="row-even"><td><p>TMB subtype legends</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TMB:</span> <span class="pre">&lt;subtype&gt;</span></code> entries when custom stacked TMB is rendered</p></td>
+<td><p>separate <code class="docutils literal notranslate"><span class="pre">TMB</span> <span class="pre">Type</span></code> legend when custom stacked TMB is rendered</p></td>
+</tr>
+<tr class="row-odd"><td><p>metadata display</p></td>
+<td><p>heatmap strip with prettified hover labels and shared interactive legend</p></td>
+<td><p>heatmap or mini-bar strip with separate metadata legends</p></td>
+</tr>
+<tr class="row-even"><td><p>image export</p></td>
+<td><p>HTML built in; image export needs the <code class="docutils literal notranslate"><span class="pre">export</span></code> extra</p></td>
+<td><p>PNG, SVG, PDF, and other <code class="docutils literal notranslate"><span class="pre">savefig</span></code> formats</p></td>
+</tr>
+<tr class="row-odd"><td><p>copy-on-click</p></td>
+<td><p>supported in exported HTML</p></td>
+<td><p>not applicable to static figures</p></td>
+</tr>
+<tr class="row-even"><td><p>static layout controls</p></td>
+<td><p>useful font, legend, marker, and axis controls</p></td>
+<td><p>richest support for tile dimensions, metadata bars, font faces, and separate legend layout</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">interactive</span></code> argument is a convenience alias:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oncoplot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># backend=&quot;plotly&quot;</span>
+<span class="n">oncoplot</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">interactive</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># backend=&quot;matplotlib&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pathways-and-sorting.html" class="btn btn-neutral float-left" title="Pathways and Sorting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gallery.html" class="btn btn-neutral float-right" title="Example Gallery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Ben Lewis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

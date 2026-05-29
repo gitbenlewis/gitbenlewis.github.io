@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palettes &mdash; gitbenlewis docs</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://gitbenlewis.github.io/pyoncoplot/palettes.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Metadata and TMB" href="metadata-and-tmb.html" />
+    <link rel="prev" title="Options Reference" href="options-reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            gitbenlewis docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Available Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pyoncoplot Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#start-here">Start Here</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#minimal-example">Minimal Example</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#documentation-map">Documentation Map</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#development-install">Development Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#runtime-dependencies">Runtime Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#verify-the-install">Verify The Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#next-step">Next Step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#input-data">Input Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#interactive-plotly-plot">Interactive Plotly Plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#static-matplotlib-plot">Static Matplotlib Plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#result-object">Result Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#where-to-go-next">Where To Go Next</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="data-inputs.html">Data Inputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#required-columns">Required Columns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#example-mutation-table">Example Mutation Table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#multi-hit-behavior">Multi-Hit Behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#gene-selection">Gene Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#sample-selection">Sample Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#row-and-sample-filters">Row and Sample Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#validation-rules">Validation Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api-reference.html">API Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#oncoplot"><code class="docutils literal notranslate"><span class="pre">oncoplot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#merge-oncoplot-params"><code class="docutils literal notranslate"><span class="pre">merge_oncoplot_params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#oncoplotresult"><code class="docutils literal notranslate"><span class="pre">OncoplotResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#prepare-oncoplot-data"><code class="docutils literal notranslate"><span class="pre">prepare_oncoplot_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#identify-top-genes"><code class="docutils literal notranslate"><span class="pre">identify_top_genes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#score-sample-by-gene-rank"><code class="docutils literal notranslate"><span class="pre">score_sample_by_gene_rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#rank-genes-by-pathway"><code class="docutils literal notranslate"><span class="pre">rank_genes_by_pathway</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#prettify"><code class="docutils literal notranslate"><span class="pre">prettify</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#palette-helpers">Palette Helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="options-reference.html">Options Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#size-and-layout">Size and Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#labels-and-axes">Labels and Axes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#legends">Legends</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#tile-styling">Tile Styling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#fonts">Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#titles">Titles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#tmb-and-gene-bar">TMB and Gene Bar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#pathways">Pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#metadata">Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#text-prettification">Text Prettification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="options-reference.html#common-bundles">Common Bundles</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Palettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mutation-palette">Mutation Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metadata-palette">Metadata Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variant-value-palette">Variant Value Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tmb-palette">TMB Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#default-palettes">Default Palettes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#practical-color-guidance">Practical Color Guidance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metadata-and-tmb.html">Metadata and TMB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#metadata-table-schema">Metadata Table Schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#metadata-columns-in-mutation-data">Metadata Columns in Mutation Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#metadata-filtering">Metadata Filtering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#numeric-metadata">Numeric Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#categorical-metadata-order">Categorical Metadata Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#tmb-inference">TMB Inference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#custom-tmb-data">Custom TMB Data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pathways-and-sorting.html">Pathways and Sorting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#default-gene-ranking">Default Gene Ranking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#explicit-gene-order">Explicit Gene Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#pathway-input">Pathway Input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#sample-ordering">Sample Ordering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#metadata-sorting">Metadata Sorting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#showing-all-samples">Showing All Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rendering-backends.html">Rendering Backends</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rendering-backends.html#plotly">Plotly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rendering-backends.html#matplotlib">Matplotlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rendering-backends.html#choosing-a-backend">Choosing A Backend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rendering-backends.html#backend-support-matrix">Backend Support Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gallery.html">Example Gallery</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#render-the-clean-gallery">Render The Clean Gallery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#regenerate-gallery-inputs">Regenerate Gallery Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#brca-comparison-sheets">BRCA Comparison Sheets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#accepted-clean-baselines">Accepted Clean Baselines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#presets">Presets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#config-driven-runs">Config-Driven Runs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#input-families">Input Families</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#related-examples">Related Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="example-plot-source-citations.html">Example Plot Source Citations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#plot-to-source-map">Plot-To-Source Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#directly-used-papers">Directly Used Papers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#tcga-and-xena-data-sources">TCGA And Xena Data Sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#documentation-and-source-image-pages">Documentation And Source Image Pages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#supporting-visualization-references">Supporting Visualization References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="examples/basic.html">Basic Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/metadata.html">Metadata Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/brca-gallery.html">BRCA Gallery Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#render-the-default-brca-outputs">Render The Default BRCA Outputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#render-comparison-sheets">Render Comparison Sheets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#inspect-the-preset-code">Inspect The Preset Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="examples/structural-variation-panel.html">Structural Variation Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="examples/structural-variation-panel.html#render-it">Render It</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/structural-variation-panel.html#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/structural-variation-panel.html#input-shapes">Input Shapes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="migration-from-ggoncoplot.html">Migration From ggoncoplot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#argument-mapping">Argument Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#options-mapping">Options Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#r-style-concept">R-Style Concept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#python-version">Python Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#important-differences">Important Differences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#ggoncoplot-parity-status">ggoncoplot Parity Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#recommended-migration-path">Recommended Migration Path</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="development.html#local-setup">Local Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#repository-layout">Repository Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#regenerate-gallery-inputs">Regenerate Gallery Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#regenerate-gallery-images">Regenerate Gallery Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#adding-a-gallery-preset">Adding A Gallery Preset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#documentation-changes">Documentation Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#missing-column-errors">Missing Column Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#empty-or-missing-sample-gene-identifiers">Empty Or Missing Sample/Gene Identifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#palette-coverage-errors">Palette Coverage Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#metadata-duplicate-sample-errors">Metadata Duplicate Sample Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#samples-disappear">Samples Disappear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#plotly-image-export-fails">Plotly Image Export Fails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#matplotlib-font-warnings">Matplotlib Font Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#very-large-cohorts">Very Large Cohorts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gitbenlewis docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">pyoncoplot Documentation</a></li>
+      <li class="breadcrumb-item active">Palettes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="palettes">
+<h1>Palettes<a class="headerlink" href="#palettes" title="Link to this heading"></a></h1>
+<p>Palettes are plain Python mappings from values to CSS-style colors.</p>
+<section id="mutation-palette">
+<h2>Mutation Palette<a class="headerlink" href="#mutation-palette" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">palette</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Missense_Mutation&quot;</span><span class="p">:</span> <span class="s2">&quot;#2CA02C&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Frame_Shift_Del&quot;</span><span class="p">:</span> <span class="s2">&quot;#1F77B4&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Nonsense_Mutation&quot;</span><span class="p">:</span> <span class="s2">&quot;#17BECF&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Splice_Site&quot;</span><span class="p">:</span> <span class="s2">&quot;#FF7F0E&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Multi_Hit&quot;</span><span class="p">:</span> <span class="s2">&quot;#000000&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Use it with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The palette must cover every mutation type that appears in displayed tiles.
+Ampersand-delimited Sequence Ontology values such as
+<code class="docutils literal notranslate"><span class="pre">missense_variant&amp;intron_variant</span></code> are rejected; preselect the most severe
+consequence before plotting.</p>
+</section>
+<section id="metadata-palette">
+<h2>Metadata Palette<a class="headerlink" href="#metadata-palette" title="Link to this heading"></a></h2>
+<p>Metadata palettes map metadata columns to explicit category mappings, named
+palettes, or numeric colormaps:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metadata_palette</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;FAB_classification&quot;</span><span class="p">:</span> <span class="s2">&quot;tol_colors&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Overall_Survival_Status&quot;</span><span class="p">:</span> <span class="s2">&quot;Iridescent&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Mean VAF%&quot;</span><span class="p">:</span> <span class="s2">&quot;viridis_greyzero&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Use it with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
+    <span class="n">metadata_cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;FAB_classification&quot;</span><span class="p">,</span> <span class="s2">&quot;Overall_Survival_Status&quot;</span><span class="p">],</span>
+    <span class="n">metadata_palette</span><span class="o">=</span><span class="n">metadata_palette</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Categorical palette names are case-sensitive. PyOncoplot first resolves names
+from <code class="docutils literal notranslate"><span class="pre">pyoncoplot.palettes</span></code>, such as <code class="docutils literal notranslate"><span class="pre">tol_colors</span></code> and <code class="docutils literal notranslate"><span class="pre">Iridescent</span></code>, then falls
+back to Matplotlib colormap names such as <code class="docutils literal notranslate"><span class="pre">&quot;Dark2&quot;</span></code>. Named palettes and color
+sequences assign colors in resolved category order. Finite color lists wrap
+around from the first color again when a track has more categories than colors.</p>
+<p>You can still pass explicit category mappings. Categorical levels not listed in
+an explicit metadata palette receive fallback colors.</p>
+<p>Category order controls which fallback color each level receives and how legend
+entries are ordered. Use pandas categorical dtype order or pass explicit order
+arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;FAB_classification&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span>
+    <span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;FAB_classification&quot;</span><span class="p">],</span>
+    <span class="n">categories</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;M0&quot;</span><span class="p">,</span> <span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;M2&quot;</span><span class="p">],</span>
+    <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
+    <span class="n">metadata_cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;FAB_classification&quot;</span><span class="p">],</span>
+    <span class="n">metadata_category_orders</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;FAB_classification&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;M2&quot;</span><span class="p">,</span> <span class="s2">&quot;M1&quot;</span><span class="p">,</span> <span class="s2">&quot;M0&quot;</span><span class="p">]},</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Explicit order wins over pandas categorical dtype order. Levels not present in
+the displayed data are ignored, and observed levels missing from the explicit
+order are appended in observed order. If neither is supplied, explicit palette
+mapping key order is used before observed data order.</p>
+<p>For numeric metadata, <code class="docutils literal notranslate"><span class="pre">metadata_palette</span></code> can specify a true continuous colormap
+per column. Use a Matplotlib colormap name such as <code class="docutils literal notranslate"><span class="pre">&quot;viridis&quot;</span></code>, a PyOncoplot
+palette name such as <code class="docutils literal notranslate"><span class="pre">&quot;Iridescent&quot;</span></code>, or a sequence of colors:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metadata_palette</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;CAF%&quot;</span><span class="p">:</span> <span class="s2">&quot;viridis_greyzero&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Mean VAF%&quot;</span><span class="p">:</span> <span class="s2">&quot;magma&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Tumor purity&quot;</span><span class="p">:</span> <span class="s2">&quot;Iridescent&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span>
+    <span class="n">metadata_cols</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;CAF%&quot;</span><span class="p">,</span> <span class="s2">&quot;Mean VAF%&quot;</span><span class="p">,</span> <span class="s2">&quot;Tumor purity&quot;</span><span class="p">],</span>
+    <span class="n">metadata_palette</span><span class="o">=</span><span class="n">metadata_palette</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Numeric metadata columns must have numeric dtype. Convert strings such as
+<code class="docutils literal notranslate"><span class="pre">&quot;42%&quot;</span></code> before plotting:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;CAF%&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;CAF%&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;%&quot;</span><span class="p">),</span> <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;coerce&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Plotly and Matplotlib show continuous colorbars for numeric metadata when
+<code class="docutils literal notranslate"><span class="pre">options={&quot;show_metadata_legends&quot;:</span> <span class="pre">True}</span></code>. Matplotlib keeps right-side numeric
+metadata colorbars vertical by default but renders their titles horizontally to
+reduce label overlap. Set
+<code class="docutils literal notranslate"><span class="pre">options={&quot;metadata_legend_orientation_heatmap&quot;:</span> <span class="pre">&quot;horizontal&quot;}</span></code> to place numeric
+metadata colorbars horizontally.</p>
+</section>
+<section id="variant-value-palette">
+<h2>Variant Value Palette<a class="headerlink" href="#variant-value-palette" title="Link to this heading"></a></h2>
+<p>Pass <code class="docutils literal notranslate"><span class="pre">variant_value_col</span></code> to color the main oncoplot grid by a numeric
+variant-level value instead of mutation type. <code class="docutils literal notranslate"><span class="pre">variant_value_palette</span></code> accepts
+the same continuous colormap forms as numeric metadata and defaults to
+<code class="docutils literal notranslate"><span class="pre">&quot;viridis&quot;</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">variant_value_col</span><span class="o">=</span><span class="s2">&quot;VAF&quot;</span><span class="p">,</span>
+    <span class="n">variant_value_agg</span><span class="o">=</span><span class="s2">&quot;max&quot;</span><span class="p">,</span>
+    <span class="n">variant_value_palette</span><span class="o">=</span><span class="s2">&quot;magma&quot;</span><span class="p">,</span>
+    <span class="n">draw_gene_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Mutation palettes still control stacked gene bars when <code class="docutils literal notranslate"><span class="pre">draw_gene_bar=True</span></code>.
+Use <code class="docutils literal notranslate"><span class="pre">options={&quot;gene_bar_mode&quot;:</span> <span class="pre">&quot;percent&quot;}</span></code> for a normalized mutation-type
+composition bar beside each gene.
+Continuous variant-value colorbars render horizontally by default to keep their
+labels readable. In expanded main grids, Plotly and Matplotlib place those
+colorbars below the metadata/sample grid rather than on the right side or
+between the metadata and mutation grids.
+Missing variant values render as blank tiles by default. Set
+<code class="docutils literal notranslate"><span class="pre">variant_value_missing=&quot;zero&quot;</span></code> when missing values should be filled with zero
+before sample/gene aggregation.</p>
+<p>For multi-row main grids, each <code class="docutils literal notranslate"><span class="pre">variant_value</span></code> row can define its own continuous
+palette:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">main_grid_rows</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Variant type&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;variant_value&quot;</span><span class="p">,</span> <span class="s2">&quot;column&quot;</span><span class="p">:</span> <span class="s2">&quot;VAF_pct&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;VAF %&quot;</span><span class="p">,</span> <span class="s2">&quot;palette&quot;</span><span class="p">:</span> <span class="s2">&quot;viridis&quot;</span><span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;variant_value&quot;</span><span class="p">,</span> <span class="s2">&quot;column&quot;</span><span class="p">:</span> <span class="s2">&quot;VAF_abs&quot;</span><span class="p">,</span> <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;VAF abs&quot;</span><span class="p">,</span> <span class="s2">&quot;palette&quot;</span><span class="p">:</span> <span class="s2">&quot;magma&quot;</span><span class="p">,</span> <span class="s2">&quot;missing&quot;</span><span class="p">:</span> <span class="s2">&quot;zero&quot;</span><span class="p">},</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Set <code class="docutils literal notranslate"><span class="pre">variant_value_scale=&quot;shared&quot;</span></code> to use one shared range and colorbar across
+all continuous rows. Shared scaling uses the top-level <code class="docutils literal notranslate"><span class="pre">variant_value_palette</span></code>,
+so row-level palettes are intentionally rejected in that mode.</p>
+<p>PyOncoplot also exports reusable color cycles and ramps from
+<code class="docutils literal notranslate"><span class="pre">pyoncoplot.palettes</span></code>: <code class="docutils literal notranslate"><span class="pre">tol_colors</span></code>, <code class="docutils literal notranslate"><span class="pre">Iridescent</span></code>, <code class="docutils literal notranslate"><span class="pre">vega_10</span></code>,
+<code class="docutils literal notranslate"><span class="pre">vega_10_scanpy</span></code>, <code class="docutils literal notranslate"><span class="pre">vega_20</span></code>, <code class="docutils literal notranslate"><span class="pre">vega_20_scanpy</span></code>, <code class="docutils literal notranslate"><span class="pre">default_20</span></code>, <code class="docutils literal notranslate"><span class="pre">zeileis_28</span></code>,
+<code class="docutils literal notranslate"><span class="pre">default_28</span></code>, <code class="docutils literal notranslate"><span class="pre">godsnot_102</span></code>, <code class="docutils literal notranslate"><span class="pre">default_102</span></code>, and the gray-zero colormaps
+listed below.</p>
+<p>For sparse continuous tracks where exact zero should stand out as gray,
+PyOncoplot registers gray-zero colormaps named <code class="docutils literal notranslate"><span class="pre">viridis_greyzero</span></code>,
+<code class="docutils literal notranslate"><span class="pre">plasma_greyzero</span></code>, <code class="docutils literal notranslate"><span class="pre">magma_greyzero</span></code>, <code class="docutils literal notranslate"><span class="pre">inferno_greyzero</span></code>, <code class="docutils literal notranslate"><span class="pre">cividis_greyzero</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">turbo_greyzero</span></code>. These are built as a gray first color followed by the
+256-color base Matplotlib ramp.</p>
+</section>
+<section id="tmb-palette">
+<h2>TMB Palette<a class="headerlink" href="#tmb-palette" title="Link to this heading"></a></h2>
+<p>When TMB data includes a mutation type column, pass a matching palette to stack
+TMB bars by mutation type:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">draw_tmb_bar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">tmb_data</span><span class="o">=</span><span class="n">tmb</span><span class="p">,</span>
+    <span class="n">tmb_palette</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">OncoplotOptions</span><span class="p">(</span><span class="n">log10_transform_tmb</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Stacked TMB bars are most useful with <code class="docutils literal notranslate"><span class="pre">log10_transform_tmb=False</span></code>.
+Palette coverage for custom TMB categories is required only when stacked subtype
+bars are rendered with <code class="docutils literal notranslate"><span class="pre">log10_transform_tmb=False</span></code>. If those categories are not
+covered by <code class="docutils literal notranslate"><span class="pre">tmb_palette</span></code> or by the mutation palette fallback, <code class="docutils literal notranslate"><span class="pre">pyoncoplot</span></code>
+raises a clear error instead of drawing uncolored bars.
+Use <code class="docutils literal notranslate"><span class="pre">tmb_type_order</span></code> to control stacked TMB color assignment and legend order;
+use <code class="docutils literal notranslate"><span class="pre">mutation_type_order</span></code> for the main mutation tile legend.</p>
+<p>Default-generated mutation palettes use <code class="docutils literal notranslate"><span class="pre">OncoplotOptions.multi_hit_color</span></code> for
+<code class="docutils literal notranslate"><span class="pre">Multi_Hit</span></code>. An explicit <code class="docutils literal notranslate"><span class="pre">palette={&quot;Multi_Hit&quot;:</span> <span class="pre">...}</span></code> entry takes precedence.</p>
+</section>
+<section id="default-palettes">
+<h2>Default Palettes<a class="headerlink" href="#default-palettes" title="Link to this heading"></a></h2>
+<p>If no mutation palette is provided, <code class="docutils literal notranslate"><span class="pre">pyoncoplot</span></code> creates a sensible default for
+the observed mutation types.</p>
+<p>You can inspect or validate palettes directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyoncoplot</span><span class="w"> </span><span class="kn">import</span> <span class="n">assert_palette_is_sensible</span><span class="p">,</span> <span class="n">get_sensible_default_palette</span>
+
+<span class="n">palette</span> <span class="o">=</span> <span class="n">get_sensible_default_palette</span><span class="p">(</span><span class="n">mutations</span><span class="p">[</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">])</span>
+<span class="n">assert_palette_is_sensible</span><span class="p">(</span><span class="n">palette</span><span class="p">,</span> <span class="n">mutations</span><span class="p">[</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="practical-color-guidance">
+<h2>Practical Color Guidance<a class="headerlink" href="#practical-color-guidance" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Use high-contrast mutation colors.</p></li>
+<li><p>Reserve black or near-black for multi-hit or truncating events.</p></li>
+<li><p>Use white carefully in metadata palettes because white can look like missing data.</p></li>
+<li><p>Keep numeric metadata bars neutral unless the value has an obvious semantic direction.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="options-reference.html" class="btn btn-neutral float-left" title="Options Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="metadata-and-tmb.html" class="btn btn-neutral float-right" title="Metadata and TMB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Ben Lewis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

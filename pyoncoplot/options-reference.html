@@ -1,0 +1,817 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Options Reference &mdash; gitbenlewis docs</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+    <link rel="canonical" href="https://gitbenlewis.github.io/pyoncoplot/options-reference.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Palettes" href="palettes.html" />
+    <link rel="prev" title="API Reference" href="api-reference.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            gitbenlewis docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Available Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">pyoncoplot Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#start-here">Start Here</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#minimal-example">Minimal Example</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#documentation-map">Documentation Map</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#development-install">Development Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#runtime-dependencies">Runtime Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#verify-the-install">Verify The Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="installation.html#next-step">Next Step</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html">Quickstart</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#input-data">Input Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#interactive-plotly-plot">Interactive Plotly Plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#static-matplotlib-plot">Static Matplotlib Plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#result-object">Result Object</a></li>
+<li class="toctree-l4"><a class="reference internal" href="quickstart.html#where-to-go-next">Where To Go Next</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="data-inputs.html">Data Inputs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#required-columns">Required Columns</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#example-mutation-table">Example Mutation Table</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#multi-hit-behavior">Multi-Hit Behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#gene-selection">Gene Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#sample-selection">Sample Selection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#row-and-sample-filters">Row and Sample Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="data-inputs.html#validation-rules">Validation Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="api-reference.html">API Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#oncoplot"><code class="docutils literal notranslate"><span class="pre">oncoplot</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#merge-oncoplot-params"><code class="docutils literal notranslate"><span class="pre">merge_oncoplot_params</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#oncoplotresult"><code class="docutils literal notranslate"><span class="pre">OncoplotResult</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#prepare-oncoplot-data"><code class="docutils literal notranslate"><span class="pre">prepare_oncoplot_data</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#identify-top-genes"><code class="docutils literal notranslate"><span class="pre">identify_top_genes</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#score-sample-by-gene-rank"><code class="docutils literal notranslate"><span class="pre">score_sample_by_gene_rank</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#rank-genes-by-pathway"><code class="docutils literal notranslate"><span class="pre">rank_genes_by_pathway</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#prettify"><code class="docutils literal notranslate"><span class="pre">prettify</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-reference.html#palette-helpers">Palette Helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Options Reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#size-and-layout">Size and Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#labels-and-axes">Labels and Axes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#legends">Legends</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tile-styling">Tile Styling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fonts">Fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#titles">Titles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tmb-and-gene-bar">TMB and Gene Bar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pathways">Pathways</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metadata">Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text-prettification">Text Prettification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#common-bundles">Common Bundles</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="palettes.html">Palettes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#mutation-palette">Mutation Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#metadata-palette">Metadata Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#variant-value-palette">Variant Value Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#tmb-palette">TMB Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#default-palettes">Default Palettes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palettes.html#practical-color-guidance">Practical Color Guidance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="metadata-and-tmb.html">Metadata and TMB</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#metadata-table-schema">Metadata Table Schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#metadata-columns-in-mutation-data">Metadata Columns in Mutation Data</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#metadata-filtering">Metadata Filtering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#numeric-metadata">Numeric Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#categorical-metadata-order">Categorical Metadata Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#tmb-inference">TMB Inference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metadata-and-tmb.html#custom-tmb-data">Custom TMB Data</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pathways-and-sorting.html">Pathways and Sorting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#default-gene-ranking">Default Gene Ranking</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#explicit-gene-order">Explicit Gene Order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#pathway-input">Pathway Input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#sample-ordering">Sample Ordering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#metadata-sorting">Metadata Sorting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pathways-and-sorting.html#showing-all-samples">Showing All Samples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="rendering-backends.html">Rendering Backends</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rendering-backends.html#plotly">Plotly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rendering-backends.html#matplotlib">Matplotlib</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rendering-backends.html#choosing-a-backend">Choosing A Backend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rendering-backends.html#backend-support-matrix">Backend Support Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gallery.html">Example Gallery</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#render-the-clean-gallery">Render The Clean Gallery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#regenerate-gallery-inputs">Regenerate Gallery Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#brca-comparison-sheets">BRCA Comparison Sheets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#accepted-clean-baselines">Accepted Clean Baselines</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#presets">Presets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#config-driven-runs">Config-Driven Runs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#input-families">Input Families</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gallery.html#related-examples">Related Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="example-plot-source-citations.html">Example Plot Source Citations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#plot-to-source-map">Plot-To-Source Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#directly-used-papers">Directly Used Papers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#tcga-and-xena-data-sources">TCGA And Xena Data Sources</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#documentation-and-source-image-pages">Documentation And Source Image Pages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#supporting-visualization-references">Supporting Visualization References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example-plot-source-citations.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="examples/basic.html">Basic Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/metadata.html">Metadata Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="examples/brca-gallery.html">BRCA Gallery Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#render-the-default-brca-outputs">Render The Default BRCA Outputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#render-comparison-sheets">Render Comparison Sheets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/brca-gallery.html#inspect-the-preset-code">Inspect The Preset Code</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="examples/structural-variation-panel.html">Structural Variation Panel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="examples/structural-variation-panel.html#render-it">Render It</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/structural-variation-panel.html#inputs">Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="examples/structural-variation-panel.html#input-shapes">Input Shapes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="migration-from-ggoncoplot.html">Migration From ggoncoplot</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#argument-mapping">Argument Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#options-mapping">Options Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#r-style-concept">R-Style Concept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#python-version">Python Version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#important-differences">Important Differences</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#ggoncoplot-parity-status">ggoncoplot Parity Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="migration-from-ggoncoplot.html#recommended-migration-path">Recommended Migration Path</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="development.html">Development</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="development.html#local-setup">Local Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#repository-layout">Repository Layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#regenerate-gallery-inputs">Regenerate Gallery Inputs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#regenerate-gallery-images">Regenerate Gallery Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#adding-a-gallery-preset">Adding A Gallery Preset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="development.html#documentation-changes">Documentation Changes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#missing-column-errors">Missing Column Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#empty-or-missing-sample-gene-identifiers">Empty Or Missing Sample/Gene Identifiers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#palette-coverage-errors">Palette Coverage Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#metadata-duplicate-sample-errors">Metadata Duplicate Sample Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#samples-disappear">Samples Disappear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#plotly-image-export-fails">Plotly Image Export Fails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#matplotlib-font-warnings">Matplotlib Font Warnings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="troubleshooting.html#very-large-cohorts">Very Large Cohorts</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gitbenlewis docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">pyoncoplot Documentation</a></li>
+      <li class="breadcrumb-item active">Options Reference</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="options-reference">
+<h1>Options Reference<a class="headerlink" href="#options-reference" title="Link to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">OncoplotOptions</span></code> controls layout and visual details. Pass it through the
+<code class="docutils literal notranslate"><span class="pre">options</span></code> argument:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyoncoplot</span><span class="w"> </span><span class="kn">import</span> <span class="n">OncoplotOptions</span><span class="p">,</span> <span class="n">oncoplot</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">oncoplot</span><span class="p">(</span>
+    <span class="n">mutations</span><span class="p">,</span>
+    <span class="n">gene_col</span><span class="o">=</span><span class="s2">&quot;gene&quot;</span><span class="p">,</span>
+    <span class="n">sample_col</span><span class="o">=</span><span class="s2">&quot;sample&quot;</span><span class="p">,</span>
+    <span class="n">mutation_type_col</span><span class="o">=</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span>
+    <span class="n">backend</span><span class="o">=</span><span class="s2">&quot;matplotlib&quot;</span><span class="p">,</span>
+    <span class="n">options</span><span class="o">=</span><span class="n">OncoplotOptions</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">1200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">700</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<section id="size-and-layout">
+<h2>Size and Layout<a class="headerlink" href="#size-and-layout" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">width</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1200</span></code></p></td>
+<td><p>intended output width in pixels</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">height</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">650</span></code></p></td>
+<td><p>intended output height in pixels</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">selection_type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code></p></td>
+<td><p>Plotly selection mode: <code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;multiple&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;single&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tmb_height_ratio</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.14</span></code></p></td>
+<td><p>relative height of the TMB bar area</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gene_bar_width_ratio</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.18</span></code></p></td>
+<td><p>relative width of the right gene bar</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_height_ratio</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.18</span></code></p></td>
+<td><p>relative height of metadata tracks</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_position</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;top&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">buffer_metadata</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.08</span></code></p></td>
+<td><p>spacing around metadata tracks</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">buffer_tmb</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.08</span></code></p></td>
+<td><p>spacing around the TMB bar</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">buffer_gene_bar</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.02</span></code></p></td>
+<td><p>spacing between the matrix and gene bar</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="labels-and-axes">
+<h2>Labels and Axes<a class="headerlink" href="#labels-and-axes" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x_label</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Sample&quot;</span></code></p></td>
+<td><p>x-axis label</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">y_label</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Gene&quot;</span></code></p></td>
+<td><p>y-axis label</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">show_sample_ids</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>show sample labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sample_id_position</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code></p></td>
+<td><p>sample label placement</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sample_id_angle</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">90</span></code></p></td>
+<td><p>sample label rotation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">show_x_label</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>show x-axis label</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">show_y_label</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>show y-axis label</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">show_tmb_y_label</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>show TMB y-axis label</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">show_tmb_axis</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>show TMB tick labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">show_gene_bar_axis</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>show gene bar axis</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="legends">
+<h2>Legends<a class="headerlink" href="#legends" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">show_legend</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>draw mutation legend</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">show_legend_titles</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>draw legend titles</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mutation_legend_position</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;none&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">show_metadata_legends</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>draw categorical metadata legends and numeric metadata colorbars</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_legend_position</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;right&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;bottom&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">legend_key_size</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+<td><p>mutation legend key size multiplier</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">legend_offsets</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
+<td><p>per-legend <code class="docutils literal notranslate"><span class="pre">{&quot;x&quot;:</span> <span class="pre">...,</span> <span class="pre">&quot;y&quot;:</span> <span class="pre">...}</span></code> offsets in figure/paper coordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_legend_nrow</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>optional metadata legend row limit</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_legend_ncol</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>optional metadata legend column count</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_legend_key_size</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+<td><p>metadata legend key size multiplier</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">legend_label_max_chars</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>optional maximum displayed legend label length</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">legend_title_max_chars</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>optional maximum displayed legend title length</p></td>
+</tr>
+</tbody>
+</table>
+<p>Plotly uses one shared interactive legend. <code class="docutils literal notranslate"><span class="pre">mutation_legend_position=&quot;none&quot;</span></code>
+hides mutation traces while categorical metadata legends can remain visible. A
+bottom request creates a horizontal Plotly legend; otherwise visible legends are
+placed vertically on the right. Expanded main-grid variant-value colorbars are
+an exception: Plotly and Matplotlib place them horizontally below the plot area so
+they do not compete with right-side metadata legends. Matplotlib keeps separate
+static legend layout controls, including <code class="docutils literal notranslate"><span class="pre">metadata_legend_nrow</span></code> and
+<code class="docutils literal notranslate"><span class="pre">metadata_legend_ncol</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">legend_offsets</span></code> targets individual legends by stable keys. Use source columns
+where available, such as <code class="docutils literal notranslate"><span class="pre">mutation:type</span></code>, <code class="docutils literal notranslate"><span class="pre">tmb:tmb_type</span></code>, <code class="docutils literal notranslate"><span class="pre">metadata:clinical_group</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">variant:vaf</span></code>. Use stable fallback keys for legends without one source column:
+<code class="docutils literal notranslate"><span class="pre">mutation</span></code>, <code class="docutils literal notranslate"><span class="pre">tmb</span></code>, <code class="docutils literal notranslate"><span class="pre">variant:shared</span></code>, and <code class="docutils literal notranslate"><span class="pre">gene_bar</span></code>. Positive <code class="docutils literal notranslate"><span class="pre">x</span></code> moves right and
+positive <code class="docutils literal notranslate"><span class="pre">y</span></code> moves up. Plotly splits only targeted categorical legend groups into
+separate legend containers; untargeted legends keep the default shared position.</p>
+</section>
+<section id="tile-styling">
+<h2>Tile Styling<a class="headerlink" href="#tile-styling" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">background_color</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;#E5E5E5&quot;</span></code></p></td>
+<td><p>empty tile background</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tile_height</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+<td><p>mutated and empty tile height</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tile_width</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.0</span></code></p></td>
+<td><p>mutated and empty tile width</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tile_linewidth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.25</span></code></p></td>
+<td><p>tile border width</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">row_separator_linewidth</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.8</span></code></p></td>
+<td><p>row separator width</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">unspecified_mutation_color</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;#1A1A1A&quot;</span></code></p></td>
+<td><p>fallback mutation color</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">multi_hit_color</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;black&quot;</span></code></p></td>
+<td><p>multi-hit color</p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">tile_width</span></code> and <code class="docutils literal notranslate"><span class="pre">tile_height</span></code> are Matplotlib/static-layout controls. Plotly
+uses fixed interactive square markers; <code class="docutils literal notranslate"><span class="pre">tile_linewidth</span></code> applies to marker
+outlines in both renderers.</p>
+</section>
+<section id="fonts">
+<h2>Fonts<a class="headerlink" href="#fonts" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_x_label</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">26</span></code></p></td>
+<td><p>x-axis label size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_y_label</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">26</span></code></p></td>
+<td><p>y-axis label size</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_genes</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">12</span></code></p></td>
+<td><p>gene label size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_samples</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">9</span></code></p></td>
+<td><p>sample label size</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_metadata</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+<td><p>metadata row label size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_metadata_bar_numbers</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">8</span></code></p></td>
+<td><p>numeric metadata min/max label size</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_tmb_axis</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+<td><p>TMB axis text size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_gene_bar_axis</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+<td><p>gene bar text size</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_legend_text</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>explicit mutation/TMB/Plotly legend label size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_legend_title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>explicit mutation/TMB/colorbar legend title size</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_metadata_legend_text</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>explicit metadata legend label size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_metadata_legend_title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>explicit metadata legend title size</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">14</span></code></p></td>
+<td><p>top-level figure title size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_subplot_title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">12</span></code></p></td>
+<td><p>named subplot title size</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">font_size_pathway</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>explicit pathway strip label size</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gene_name_x_offset</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+<td><p>extra leftward padding for expanded-grid gene labels</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">main_grid_rows_label_x_offset</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">10.0</span></code></p></td>
+<td><p>extra leftward padding for expanded-grid row labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">font_family</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Arial&quot;</span></code></p></td>
+<td><p>renderer font family</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gene_font_style</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;normal&quot;</span></code></p></td>
+<td><p>gene label style</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sample_font_style</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;normal&quot;</span></code></p></td>
+<td><p>sample label style</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">font_style_metadata</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;normal&quot;</span></code></p></td>
+<td><p>metadata row label style</p></td>
+</tr>
+</tbody>
+</table>
+<p>Plotly applies practical font sizes for sample ticks, gene ticks, axis labels,
+TMB axes, gene-bar axes, and metadata row labels. Font face style controls such
+as <code class="docutils literal notranslate"><span class="pre">gene_font_style</span></code>, <code class="docutils literal notranslate"><span class="pre">sample_font_style</span></code>, and <code class="docutils literal notranslate"><span class="pre">font_style_metadata</span></code> are
+Matplotlib/static-layout oriented.</p>
+</section>
+<section id="titles">
+<h2>Titles<a class="headerlink" href="#titles" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">title_text</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>optional top-level figure title</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">main_subplot_title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>optional main mutation matrix title</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tmb_subplot_title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>optional TMB subplot title</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gene_bar_subplot_title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>optional gene-bar subplot title</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_subplot_title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>optional metadata subplot title</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tmb-and-gene-bar">
+<h2>TMB and Gene Bar<a class="headerlink" href="#tmb-and-gene-bar" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">log10_transform_tmb</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>log-transform TMB values</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scientific_tmb</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>use scientific TMB labels where supported</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gene_bar_mode</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;counts&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;counts&quot;</span></code> for recurrence-width bars or <code class="docutils literal notranslate"><span class="pre">&quot;percent&quot;</span></code> for 100% mutation-type composition bars</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">show_gene_bar_labels</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p>show recurrence percentage labels</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gene_bar_label_round</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p>rounding for recurrence labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gene_bar_label_padding</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.24</span></code></p></td>
+<td><p>extra x-axis room for gene-bar percentage labels</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gene_bar_label_nudge</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.0</span></code></p></td>
+<td><p>additional x-axis nudge for gene-bar labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">gene_bar_scale_breaks</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>explicit gene-bar axis tick positions</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">gene_bar_scale_n_breaks</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p>requested number of gene-bar axis breaks</p></td>
+</tr>
+</tbody>
+</table>
+<p>In Plotly, <code class="docutils literal notranslate"><span class="pre">gene_bar_scale_n_breaks</span></code> is passed through as an <code class="docutils literal notranslate"><span class="pre">nticks</span></code> request
+when <code class="docutils literal notranslate"><span class="pre">gene_bar_scale_breaks</span></code> is not supplied.
+<code class="docutils literal notranslate"><span class="pre">gene_bar_mode=&quot;percent&quot;</span></code> keeps the same mutation-type colors but normalizes
+each gene’s stacked bar to 100%.</p>
+</section>
+<section id="pathways">
+<h2>Pathways<a class="headerlink" href="#pathways" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pathway_text_color</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;white&quot;</span></code></p></td>
+<td><p>pathway strip label color</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pathway_background_color</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;#1A1A1A&quot;</span></code></p></td>
+<td><p>pathway strip fill color</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pathway_outline_color</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;black&quot;</span></code></p></td>
+<td><p>pathway strip border color</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pathway_text_angle</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td><p>pathway strip label rotation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="metadata">
+<h2>Metadata<a class="headerlink" href="#metadata" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_na_marker</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;!&quot;</span></code></p></td>
+<td><p>legend label for missing metadata</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_na_marker_size</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></td>
+<td><p>visible NA marker text size</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_max_levels</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">40</span></code></p></td>
+<td><p>maximum categorical levels allowed per metadata track</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_numeric_plot_type</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;heatmap&quot;</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;heatmap&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;bar&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_legend_orientation_heatmap</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;vertical&quot;</span></code></p></td>
+<td><p>orientation hint for numeric heatmap legends</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">metadata_default_colors</span></code></p></td>
+<td><p>color sequence</p></td>
+<td><p>fallback metadata colors</p></td>
+</tr>
+</tbody>
+</table>
+<p>Categorical metadata tracks reuse <code class="docutils literal notranslate"><span class="pre">metadata_default_colors</span></code> from the beginning
+when there are more levels than fallback colors. <code class="docutils literal notranslate"><span class="pre">metadata_numeric_plot_type=&quot;bar&quot;</span></code>
+and metadata legend row/column controls are Matplotlib/static metadata controls.
+<code class="docutils literal notranslate"><span class="pre">metadata_legend_orientation_heatmap</span></code> controls numeric metadata colorbar
+orientation in both backends.
+Plotly renders compact metadata heatmaps and categorical metadata legend entries
+that fit its interactive model.</p>
+</section>
+<section id="text-prettification">
+<h2>Text Prettification<a class="headerlink" href="#text-prettification" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prettify_legend_titles</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>prettify legend titles</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">prettify_legend_values</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p>prettify legend values</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">prettify_function</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">prettify</span></code></p></td>
+<td><p>function used for display labels</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-bundles">
+<h2>Common Bundles<a class="headerlink" href="#common-bundles" title="Link to this heading"></a></h2>
+<p>Compact static plot:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">OncoplotOptions</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">520</span><span class="p">,</span>
+    <span class="n">font_size_genes</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+    <span class="n">tile_linewidth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">row_separator_linewidth</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Gallery-style static plot:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">OncoplotOptions</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
+    <span class="n">log10_transform_tmb</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">show_gene_bar_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">mutation_legend_position</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+    <span class="n">metadata_legend_position</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+    <span class="n">metadata_numeric_plot_type</span><span class="o">=</span><span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api-reference.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="palettes.html" class="btn btn-neutral float-right" title="Palettes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Ben Lewis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
