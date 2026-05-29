@@ -1,0 +1,3 @@
+Sphinx>=8.2,<10
+sphinx-rtd-theme>=3.0,<4
+myst-parser>=4.0,<6

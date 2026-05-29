@@ -1,4 +1,6 @@
 _site
+_build
+docs/pyoncoplot/
 .bundle
 .sass-cache
 .jekyll-cache
