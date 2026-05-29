@@ -29,6 +29,8 @@ on:
     types:
       - pyoncoplot-docs-updated
       - adata-science-tools-docs-updated
+      - adata_science_tools-docs-updated
+      - single_cell_python_tools-docs-updated
       - cheatsheets-docs-updated
   workflow_dispatch:
 
@@ -60,6 +62,12 @@ jobs:
           repository: gitbenlewis/gitbenlewis_cheatsheets
           path: gitbenlewis_cheatsheets
 
+      - name: Checkout single_cell_python_tools
+        uses: actions/checkout@v4
+        with:
+          repository: gitbenlewis/single_cell_python_tools
+          path: single_cell_python_tools
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -76,6 +84,7 @@ jobs:
             --pyoncoplot-source PyOncoplot \
             --adata-source adata_science_tools \
             --cheatsheets-source gitbenlewis_cheatsheets \
+            --single-cell-source single_cell_python_tools \
             --dest-root docs
 
       - name: Build Sphinx docs

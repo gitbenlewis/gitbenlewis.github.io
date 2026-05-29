@@ -40,7 +40,12 @@ html_context = {
 
 EDIT_LINKS = {
     "pyoncoplot/": ("PyOncoplot", "/docs/", None),
-    "adata-science-tools/": ("adata_science_tools", "/docs/", {"index": "README"}),
+    "adata_science_tools/": ("adata_science_tools", "/docs/", {"index": "README"}),
+    "single_cell_python_tools/": (
+        "single_cell_python_tools",
+        "/docs/",
+        {"index": "README"},
+    ),
     "cheatsheets/": ("gitbenlewis_cheatsheets", "/", {"index": "README"}),
 }
 

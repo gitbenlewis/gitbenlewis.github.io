@@ -107,6 +107,48 @@ ADATA_DOCS = [
     "palettes.md",
 ]
 
+SINGLE_CELL_TOCTREE = """
+```{toctree}
+:maxdepth: 2
+:caption: single_cell_python_tools
+
+installation
+quickstart
+DATASET_class
+preprocessing-io
+preprocessing-qc
+preprocessing-transform-data
+preprocessing-clustering
+plotting
+plotting-depreciated
+tools-functions-4-scanpy
+ingest-verbose
+example-notebooks
+api-reference
+development
+troubleshooting
+```
+"""
+
+SINGLE_CELL_DOCS = [
+    "README.md",
+    "installation.md",
+    "quickstart.md",
+    "DATASET_class.md",
+    "preprocessing-io.md",
+    "preprocessing-qc.md",
+    "preprocessing-transform-data.md",
+    "preprocessing-clustering.md",
+    "plotting.md",
+    "plotting-depreciated.md",
+    "tools-functions-4-scanpy.md",
+    "ingest-verbose.md",
+    "example-notebooks.md",
+    "api-reference.md",
+    "development.md",
+    "troubleshooting.md",
+]
+
 CHEATSHEETS_TOCTREE = """
 ```{toctree}
 :maxdepth: 2
@@ -167,6 +209,17 @@ def parse_args() -> argparse.Namespace:
         ),
         help="Path to the gitbenlewis_cheatsheets repository.",
     )
+    parser.add_argument(
+        "--single-cell-source",
+        type=Path,
+        default=Path(
+            os.environ.get(
+                "SINGLE_CELL_PYTHON_TOOLS_REPO",
+                parent / "single_cell_python_tools",
+            )
+        ),
+        help="Path to the single_cell_python_tools repository.",
+    )
     return parser.parse_args()
 
 
@@ -209,6 +262,18 @@ def copy_project_docs(
 
 def quote_path(path: Path) -> str:
     return "/".join(quote(part) for part in path.parts)
+
+
+def remove_path(path: Path) -> None:
+    if path.is_dir():
+        shutil.rmtree(path)
+    elif path.exists():
+        path.unlink()
+
+
+def staged_html_path(relative_path: str, index_source: str) -> Path:
+    staged_path = Path("index.md" if relative_path == index_source else relative_path)
+    return staged_path.with_suffix(".html")
 
 
 def repo_url(repo: str, repo_relative_path: Path, is_image: bool, is_dir: bool) -> str:
@@ -291,6 +356,49 @@ def relax_psql_code_fences(dest: Path) -> None:
         )
 
 
+def write_html_redirects(
+    extra_root: Path,
+    old_slug: str,
+    new_slug: str,
+    relative_paths: list[str],
+    index_source: str,
+) -> None:
+    redirect_root = extra_root / old_slug
+    remove_path(redirect_root)
+    redirect_root.mkdir(parents=True)
+
+    for relative_path in relative_paths:
+        html_path = staged_html_path(relative_path, index_source)
+        redirect_path = redirect_root / html_path
+        redirect_path.parent.mkdir(parents=True, exist_ok=True)
+
+        if html_path == Path("index.html"):
+            target = f"../{new_slug}/"
+        else:
+            target = f"../{new_slug}/{quote_path(html_path)}"
+
+        redirect_path.write_text(
+            "\n".join(
+                [
+                    "<!doctype html>",
+                    '<html lang="en">',
+                    "<head>",
+                    '  <meta charset="utf-8">',
+                    f'  <link rel="canonical" href="{target}">',
+                    f'  <meta http-equiv="refresh" content="0; url={target}">',
+                    f'  <title>Redirecting to {target}</title>',
+                    "</head>",
+                    "<body>",
+                    f'  <p><a href="{target}">Redirecting to {target}</a></p>',
+                    "</body>",
+                    "</html>",
+                    "",
+                ]
+            ),
+            encoding="utf-8",
+        )
+
+
 def sync_pyoncoplot(source_root: Path, dest_root: Path) -> None:
     source_docs = source_root / "docs"
     copy_project_docs(
@@ -305,7 +413,8 @@ def sync_pyoncoplot(source_root: Path, dest_root: Path) -> None:
 
 def sync_adata(source_root: Path, dest_root: Path) -> None:
     source_docs = source_root / "docs"
-    dest = dest_root / "adata-science-tools"
+    remove_path(dest_root / "adata-science-tools")
+    dest = dest_root / "adata_science_tools"
     copy_project_docs(
         source_root,
         source_docs,
@@ -321,6 +430,36 @@ def sync_adata(source_root: Path, dest_root: Path) -> None:
         source_docs,
         copied_paths,
         repo="gitbenlewis/adata_science_tools",
+    )
+    write_html_redirects(
+        dest_root / "_extra",
+        "adata-science-tools",
+        "adata_science_tools",
+        ADATA_DOCS,
+        "README.md",
+    )
+
+
+def sync_single_cell(source_root: Path, dest_root: Path) -> None:
+    source_docs = source_root / "docs"
+    dest = dest_root / "single_cell_python_tools"
+    copy_project_docs(
+        source_root,
+        source_docs,
+        dest,
+        SINGLE_CELL_DOCS,
+        "README.md",
+        SINGLE_CELL_TOCTREE,
+    )
+    copied_paths = {
+        (source_docs / relative_path).resolve() for relative_path in SINGLE_CELL_DOCS
+    }
+    rewrite_external_repo_links(
+        dest,
+        source_root,
+        source_docs,
+        copied_paths,
+        repo="gitbenlewis/single_cell_python_tools",
     )
 
 
@@ -349,6 +488,7 @@ def main() -> None:
     args = parse_args()
     sync_pyoncoplot(args.pyoncoplot_source, args.dest_root)
     sync_adata(args.adata_source, args.dest_root)
+    sync_single_cell(args.single_cell_source, args.dest_root)
     sync_cheatsheets(args.cheatsheets_source, args.dest_root)
     print(f"Synced project docs into {args.dest_root}")
 
