@@ -4,7 +4,6 @@ docs/pyoncoplot/
 docs/adata_science_tools/
 docs/single_cell_python_tools/
 docs/cheatsheets/
-docs/_extra/adata-science-tools/
 .bundle
 .sass-cache
 .jekyll-cache

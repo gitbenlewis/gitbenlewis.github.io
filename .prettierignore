@@ -12,7 +12,6 @@ docs/pyoncoplot/**
 docs/adata_science_tools/**
 docs/single_cell_python_tools/**
 docs/cheatsheets/**
-docs/_extra/adata-science-tools/**
 _posts/2015-10-20-math.md
 _sass/font-awesome/*.scss
 _sass/tabler-icons/*.scss

@@ -25,5 +25,3 @@ Open `_build/html/index.html` to view the docs hub locally.
 - `docs/pyoncoplot`, `docs/adata_science_tools`,
   `docs/single_cell_python_tools`, and `docs/cheatsheets` are generated and
   intentionally ignored by git.
-- `docs/_extra/adata-science-tools` contains generated redirects for the old
-  adata URL slug.

@@ -271,11 +271,6 @@ def remove_path(path: Path) -> None:
         path.unlink()
 
 
-def staged_html_path(relative_path: str, index_source: str) -> Path:
-    staged_path = Path("index.md" if relative_path == index_source else relative_path)
-    return staged_path.with_suffix(".html")
-
-
 def repo_url(repo: str, repo_relative_path: Path, is_image: bool, is_dir: bool) -> str:
     encoded_path = quote_path(repo_relative_path)
     if is_image:
@@ -356,49 +351,6 @@ def relax_psql_code_fences(dest: Path) -> None:
         )
 
 
-def write_html_redirects(
-    extra_root: Path,
-    old_slug: str,
-    new_slug: str,
-    relative_paths: list[str],
-    index_source: str,
-) -> None:
-    redirect_root = extra_root / old_slug
-    remove_path(redirect_root)
-    redirect_root.mkdir(parents=True)
-
-    for relative_path in relative_paths:
-        html_path = staged_html_path(relative_path, index_source)
-        redirect_path = redirect_root / html_path
-        redirect_path.parent.mkdir(parents=True, exist_ok=True)
-
-        if html_path == Path("index.html"):
-            target = f"../{new_slug}/"
-        else:
-            target = f"../{new_slug}/{quote_path(html_path)}"
-
-        redirect_path.write_text(
-            "\n".join(
-                [
-                    "<!doctype html>",
-                    '<html lang="en">',
-                    "<head>",
-                    '  <meta charset="utf-8">',
-                    f'  <link rel="canonical" href="{target}">',
-                    f'  <meta http-equiv="refresh" content="0; url={target}">',
-                    f'  <title>Redirecting to {target}</title>',
-                    "</head>",
-                    "<body>",
-                    f'  <p><a href="{target}">Redirecting to {target}</a></p>',
-                    "</body>",
-                    "</html>",
-                    "",
-                ]
-            ),
-            encoding="utf-8",
-        )
-
-
 def sync_pyoncoplot(source_root: Path, dest_root: Path) -> None:
     source_docs = source_root / "docs"
     copy_project_docs(
@@ -430,13 +382,6 @@ def sync_adata(source_root: Path, dest_root: Path) -> None:
         source_docs,
         copied_paths,
         repo="gitbenlewis/adata_science_tools",
-    )
-    write_html_redirects(
-        dest_root / "_extra",
-        "adata-science-tools",
-        "adata_science_tools",
-        ADATA_DOCS,
-        "README.md",
     )
 
 
