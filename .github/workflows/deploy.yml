@@ -12,6 +12,7 @@ on:
       - "requirements-docs.txt"
       - "requirements.txt"
       - "README.md"
+      - ".prettierignore"
   pull_request:
     branches:
       - master
@@ -23,6 +24,7 @@ on:
       - "requirements-docs.txt"
       - "requirements.txt"
       - "README.md"
+      - ".prettierignore"
   repository_dispatch:
     types:
       - pyoncoplot-docs-updated
@@ -37,8 +39,6 @@ jobs:
     steps:
       - name: Checkout docs site
         uses: actions/checkout@v4
-        with:
-          path: site
 
       - name: Checkout PyOncoplot
         uses: actions/checkout@v4
@@ -51,22 +51,22 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip"
-          cache-dependency-path: site/requirements-docs.txt
+          cache-dependency-path: requirements-docs.txt
 
       - name: Install docs dependencies
-        run: python -m pip install -r site/requirements-docs.txt
+        run: python -m pip install -r requirements-docs.txt
 
       - name: Sync PyOncoplot docs
         run: |
-          python site/scripts/sync_pyoncoplot_docs.py \
+          python scripts/sync_pyoncoplot_docs.py \
             --source PyOncoplot \
-            --dest site/docs/pyoncoplot
+            --dest docs/pyoncoplot
 
       - name: Build Sphinx docs
-        run: sphinx-build -W -b html site/docs site/_site
+        run: sphinx-build -W -b html docs _site
 
       - name: Deploy docs
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: site/_site
+          folder: _site

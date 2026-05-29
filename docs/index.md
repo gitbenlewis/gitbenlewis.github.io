@@ -10,4 +10,3 @@ This site is a documentation hub for GitHub-hosted projects by Ben Lewis.
 
 pyoncoplot/index
 ```
-
