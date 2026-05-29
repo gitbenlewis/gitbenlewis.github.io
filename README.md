@@ -11,7 +11,7 @@ Sphinx source tree at build time.
 
 ```bash
 python3 -m pip install -r requirements-docs.txt
-python3 scripts/sync_pyoncoplot_docs.py
+python3 scripts/sync_project_docs.py
 sphinx-build -W -b html docs _build/html
 ```
 
@@ -20,6 +20,7 @@ Open `_build/html/index.html` to view the docs hub locally.
 ## Documentation Sources
 
 - `docs/index.md` is the root docs hub.
-- `scripts/sync_pyoncoplot_docs.py` copies `../PyOncoplot/docs` into
-  `docs/pyoncoplot`.
-- `docs/pyoncoplot` is generated and intentionally ignored by git.
+- `scripts/sync_project_docs.py` stages canonical docs from sibling project
+  repositories into generated Sphinx source directories.
+- `docs/pyoncoplot`, `docs/adata-science-tools`, and `docs/cheatsheets` are
+  generated and intentionally ignored by git.

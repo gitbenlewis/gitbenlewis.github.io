@@ -38,11 +38,35 @@ html_context = {
 }
 
 
+EDIT_LINKS = {
+    "pyoncoplot/": ("PyOncoplot", "/docs/", None),
+    "adata-science-tools/": ("adata_science_tools", "/docs/", {"index": "README"}),
+    "cheatsheets/": ("gitbenlewis_cheatsheets", "/", {"index": "README"}),
+}
+
+
 def _set_edit_context(app, pagename, templatename, context, doctree):
-    if pagename.startswith("pyoncoplot/"):
-        context["github_repo"] = "PyOncoplot"
-        context["conf_py_path"] = "/docs/"
-        context["pagename"] = pagename.removeprefix("pyoncoplot/")
+    context["display_github"] = True
+    context["github_user"] = "gitbenlewis"
+    context["github_version"] = "main"
+
+    for prefix, (repo, source_path, page_overrides) in EDIT_LINKS.items():
+        if not pagename.startswith(prefix):
+            continue
+
+        source_page = pagename.removeprefix(prefix)
+        if page_overrides:
+            source_page = page_overrides.get(source_page, source_page)
+
+        context["github_repo"] = repo
+        context["conf_py_path"] = source_path
+        context["meta"] = dict(context.get("meta") or {})
+        context["meta"]["github_url"] = (
+            f"https://github.com/gitbenlewis/{repo}/blob/main"
+            f"{source_path.rstrip('/')}/{source_page}"
+            f"{context.get('page_source_suffix', '.md')}"
+        )
+        return
 
 
 def setup(app):

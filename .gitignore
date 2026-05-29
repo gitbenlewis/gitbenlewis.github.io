@@ -1,6 +1,8 @@
 _site
 _build
 docs/pyoncoplot/
+docs/adata-science-tools/
+docs/cheatsheets/
 .bundle
 .sass-cache
 .jekyll-cache
