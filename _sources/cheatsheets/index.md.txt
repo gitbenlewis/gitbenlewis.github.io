@@ -1,0 +1,627 @@
+# Coding Cheatsheets
+
+Concise command references for day-to-day coding work. The top-level README is a broad quick reference; the topic files are the fuller versions.
+
+## Full Cheatsheets
+
+- [GitHub and Git](cheatsheets/github.md)
+- [Conda Environments](cheatsheets/conda-environments.md)
+- [Bash](cheatsheets/bash.md)
+- [Python](cheatsheets/python.md)
+- [R](cheatsheets/r.md)
+- [SQL and PostgreSQL](cheatsheets/sql-postgres.md)
+
+## Fast Project Startup
+
+```bash
+# clone a repository from GitHub
+git clone https://github.com/USER/REPO.git
+
+# move into the repository
+cd REPO
+
+# create a conda environment for the project
+conda create -n project-env python=3.11
+
+# activate the conda environment
+conda activate project-env
+
+# install common Python analysis packages
+conda install -c conda-forge pandas numpy matplotlib seaborn jupyterlab
+
+# start Jupyter Lab from the project folder
+jupyter lab
+```
+
+## GitHub and Git
+
+### Clone, Status, and History
+
+```bash
+# clone a GitHub repository
+git clone https://github.com/USER/REPO.git
+
+# show changed files and current branch
+git status
+
+# show a compact commit history
+git log --oneline --graph --decorate --all
+
+# show changes that are not staged
+git diff
+
+# show staged changes
+git diff --staged
+
+# show the current branch name
+git branch --show-current
+```
+
+### Stage, Commit, and Push
+
+```bash
+# stage all changed files
+git add .
+
+# stage one file
+git add path/to/file
+
+# commit staged changes with a short message
+git commit -m "describe the change"
+
+# push the current branch to GitHub
+git push
+
+# push a new branch and set upstream tracking
+git push -u origin branch-name
+
+# pull the newest changes from GitHub
+git pull
+```
+
+### Branches, Remotes, and Pull Requests
+
+```bash
+# create and switch to a new branch
+git switch -c branch-name
+
+# switch to an existing branch
+git switch branch-name
+
+# list local branches
+git branch
+
+# merge another branch into the current branch
+git merge branch-name
+
+# show remote repository URLs
+git remote -v
+
+# create a pull request with GitHub CLI
+gh pr create --fill
+
+# check pull request status with GitHub CLI
+gh pr checks
+```
+
+### Submodules
+
+```bash
+# add another GitHub repository as a submodule
+git submodule add https://github.com/USER/SUBMODULE_REPO.git path/to/submodule
+
+# commit the new submodule link and .gitmodules file
+git add .gitmodules path/to/submodule
+git commit -m "Add submodule"
+
+# clone a repository and include all submodules
+git clone --recurse-submodules https://github.com/USER/REPO.git
+
+# initialize submodules after a normal clone
+git submodule update --init --recursive
+
+# one-time setup: make a submodule follow a specific branch
+git config -f .gitmodules submodule.SUBMODULE_NAME.branch main
+git submodule sync --recursive
+git add .gitmodules
+git commit -m "Track submodule main branch"
+
+# update one submodule to the newest commit from its tracked branch and merge it
+git submodule update --remote --merge path/to/submodule
+
+# update all submodules to newest commits from tracked branches
+git submodule update --remote --merge --recursive
+
+# commit the updated submodule pointer in the parent repo
+git add path/to/submodule
+git commit -m "Update submodule"
+```
+
+## Conda Environments
+
+### Setup and Channels
+
+```bash
+# show conda version
+conda --version
+
+# update conda in the base environment
+conda update -n base conda
+
+# add conda-forge as a package channel
+conda config --add channels conda-forge
+
+# add bioconda as a package channel
+conda config --add channels bioconda
+
+# use strict channel priority
+conda config --set channel_priority strict
+```
+
+### Create, Use, and Remove Environments
+
+```bash
+# create a new environment with Python
+conda create -n project-env python=3.11
+
+# create an environment with starter packages
+conda create -n project-env python=3.11 pandas numpy
+
+# activate an environment
+conda activate project-env
+
+# deactivate the active environment
+conda deactivate
+
+# list all environments
+conda env list
+
+# remove an environment
+conda env remove -n project-env
+```
+
+### Packages, Environment Files, and Jupyter
+
+```bash
+# install packages into the active environment
+conda install pandas numpy matplotlib
+
+# install packages from conda-forge
+conda install -c conda-forge seaborn scikit-learn
+
+# list installed packages
+conda list
+
+# export the active environment
+conda env export > environment.yml
+
+# export only manually requested packages
+conda env export --from-history > environment.yml
+
+# rebuild an environment from a file
+conda env create -f environment.yml
+
+# update an environment from a file
+conda env update -f environment.yml --prune
+
+# register the active environment as a Jupyter kernel
+python -m ipykernel install --user --name project-env --display-name "Python (project-env)"
+```
+
+## Bash
+
+### Navigation and Files
+
+```bash
+# show the current directory
+pwd
+
+# list files with details and hidden files
+ls -lah
+
+# move into a directory
+cd path/to/project
+
+# move up one directory
+cd ..
+
+# create nested directories
+mkdir -p data/raw
+
+# create an empty file
+touch notes.txt
+
+# copy a file
+cp source.txt destination.txt
+
+# move or rename a file
+mv old_name.txt new_name.txt
+
+# remove a file
+rm file.txt
+```
+
+### View, Search, and Redirect
+
+```bash
+# print a whole file
+cat file.txt
+
+# page through a file
+less file.txt
+
+# show the first lines
+head file.txt
+
+# show the last lines
+tail file.txt
+
+# search a file for text
+grep "pattern" file.txt
+
+# search all files below the current directory
+grep -R "pattern" .
+
+# find files by name
+find . -name "*.py"
+
+# save command output to a file
+ls -lah > files.txt
+
+# append command output to a file
+date >> log.txt
+
+# send output and errors to one file
+python script.py > run.log 2>&1
+```
+
+### Permissions, Environment, and Processes
+
+```bash
+# make a script executable
+chmod +x script.sh
+
+# print an environment variable
+echo "$PATH"
+
+# set an environment variable for the current shell
+export PROJECT_DIR="$HOME/projects/my_project"
+
+# show command history
+history
+
+# search command history interactively
+ctrl-r
+
+# show running processes
+ps aux
+
+# stop a process by process ID
+kill PID
+
+# run a command in the background
+python script.py &
+```
+
+## Python
+
+### Run Python and Manage Packages
+
+```bash
+# show Python version
+python --version
+
+# start an interactive Python shell
+python
+
+# run a Python script
+python script.py
+
+# run one line of Python
+python -c "print('hello')"
+
+# create a virtual environment
+python -m venv .venv
+
+# activate a virtual environment
+source .venv/bin/activate
+
+# install packages with pip
+python -m pip install pandas numpy
+
+# save installed packages
+python -m pip freeze > requirements.txt
+
+# install packages from a requirements file
+python -m pip install -r requirements.txt
+```
+
+### Script Pattern, Paths, and Files
+
+```python
+# import a standard library path helper
+from pathlib import Path
+
+# define the script entrypoint
+def main():
+    data_path = Path("data") / "input.csv"
+    print(data_path)
+
+
+# run main only when this file is executed directly
+if __name__ == "__main__":
+    main()
+```
+
+```python
+# read a whole text file
+with open("input.txt", "r") as file:
+    text = file.read()
+
+# write text to a file
+with open("output.txt", "w") as file:
+    file.write("hello\n")
+
+# read a CSV file with pandas
+import pandas as pd
+
+df = pd.read_csv("data.csv")
+
+# write a CSV file with pandas
+df.to_csv("output.csv", index=False)
+```
+
+### Arguments, Testing, and Debugging
+
+```python
+# parse command line arguments
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--input", required=True)
+args = parser.parse_args()
+
+print(args.input)
+```
+
+```bash
+# run tests with pytest
+python -m pytest
+
+# run a script with the Python debugger
+python -m pdb script.py
+```
+
+```python
+# stop execution at a breakpoint
+breakpoint()
+
+# print a quick debug value
+print(f"value={value!r}")
+```
+
+## R
+
+### Run R and Manage Packages
+
+```bash
+# start an interactive R session
+R
+
+# run an R script
+Rscript analysis.R
+
+# run one R expression from the shell
+Rscript -e "print('hello')"
+```
+
+```r
+# install a package from CRAN
+install.packages("tidyverse")
+
+# load a package
+library(tidyverse)
+
+# update installed packages
+update.packages()
+
+# remove a package
+remove.packages("package_name")
+```
+
+### Files and Data Frames
+
+```r
+# show the current working directory
+getwd()
+
+# set the working directory
+setwd("path/to/project")
+
+# list files in the working directory
+list.files()
+
+# read a CSV file
+df <- read.csv("data.csv")
+
+# write a CSV file
+write.csv(df, "output.csv", row.names = FALSE)
+
+# show the first rows
+head(df)
+
+# summarize columns
+summary(df)
+
+# filter rows with base R
+df[df$count > 10, ]
+```
+
+### dplyr, ggplot2, and Jupyter
+
+```r
+# load dplyr from tidyverse
+library(dplyr)
+
+# filter rows
+df_filtered <- df %>%
+  filter(count > 10)
+
+# select columns
+df_selected <- df %>%
+  select(sample, count)
+
+# add a new column
+df_mutated <- df %>%
+  mutate(double_count = count * 2)
+
+# summarize by group
+df_summary <- df %>%
+  group_by(sample) %>%
+  summarize(total = sum(count), .groups = "drop")
+```
+
+```r
+# load ggplot2 from tidyverse
+library(ggplot2)
+
+# make a bar plot
+ggplot(df, aes(x = sample, y = count)) +
+  geom_col()
+
+# save the last ggplot
+ggsave("plot.png", width = 6, height = 4, dpi = 300)
+
+# install the R Jupyter kernel
+install.packages("IRkernel")
+
+# register the R kernel for Jupyter
+IRkernel::installspec(user = TRUE)
+```
+
+## SQL and PostgreSQL
+
+### Connect and Navigate
+
+```bash
+# connect to a local PostgreSQL database
+psql -d database_name
+
+# connect with user, host, and port
+psql -U user_name -h localhost -p 5432 -d database_name
+
+# run one SQL command from the shell
+psql -d database_name -c "SELECT version();"
+
+# run SQL from a file
+psql -d database_name -f script.sql
+```
+
+```text
+-- list databases
+\l
+
+-- connect to a database
+\c database_name
+
+-- list tables
+\dt
+
+-- describe a table
+\d table_name
+
+-- quit psql
+\q
+```
+
+### Query Data
+
+```sql
+-- select rows from a table
+SELECT *
+FROM table_name
+LIMIT 10;
+
+-- filter rows
+SELECT *
+FROM table_name
+WHERE column_name = 'value';
+
+-- sort rows
+SELECT *
+FROM table_name
+ORDER BY column_name DESC;
+
+-- find text with a case-insensitive match
+SELECT *
+FROM table_name
+WHERE column_name ILIKE '%search_text%';
+```
+
+### Join, Group, and Modify
+
+```sql
+-- join two tables
+SELECT s.sample_name, p.project_name
+FROM samples AS s
+JOIN projects AS p ON s.project_id = p.id;
+
+-- count rows by group
+SELECT project_id, COUNT(*) AS sample_count
+FROM samples
+GROUP BY project_id;
+
+-- insert one row
+INSERT INTO samples (sample_name, count)
+VALUES ('sample_a', 10);
+
+-- update rows
+UPDATE samples
+SET count = 25
+WHERE sample_name = 'sample_a';
+
+-- delete rows
+DELETE FROM samples
+WHERE sample_name = 'sample_a';
+```
+
+### Import, Export, and Back Up
+
+```text
+-- import CSV from the psql client machine
+\copy samples(sample_name, count) FROM 'samples.csv' WITH CSV HEADER
+
+-- export CSV to the psql client machine
+\copy samples TO 'samples_export.csv' WITH CSV HEADER
+```
+
+```bash
+# back up one database as SQL text
+pg_dump database_name > backup.sql
+
+# restore a SQL text backup
+psql -d database_name < backup.sql
+
+# back up one database in custom format
+pg_dump -Fc database_name > backup.dump
+
+# restore a custom-format backup
+pg_restore -d database_name backup.dump
+```
+
+## Legacy Material
+
+Older onboarding and notebook material is preserved under [archive/legacy](https://github.com/gitbenlewis/gitbenlewis_cheatsheets/tree/main/archive/legacy).
+
+
+```{toctree}
+:maxdepth: 2
+:caption: Cheatsheets
+
+cheatsheets/github
+cheatsheets/conda-environments
+cheatsheets/bash
+cheatsheets/python
+cheatsheets/r
+cheatsheets/sql-postgres
+```

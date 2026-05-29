@@ -1,0 +1,179 @@
+# SQL and PostgreSQL Cheatsheet
+
+## Connect with psql
+
+```bash
+# connect to a local database
+psql -d database_name
+
+# connect with user, host, and port
+psql -U user_name -h localhost -p 5432 -d database_name
+
+# run one SQL command from the shell
+psql -d database_name -c "SELECT version();"
+
+# run SQL from a file
+psql -d database_name -f script.sql
+```
+
+## psql Navigation
+
+```text
+-- list databases
+\l
+
+-- connect to a database
+\c database_name
+
+-- list tables
+\dt
+
+-- describe a table
+\d table_name
+
+-- show query timing
+\timing
+
+-- quit psql
+\q
+```
+
+## Databases and Tables
+
+```sql
+-- create a database
+CREATE DATABASE database_name;
+
+-- drop a database
+DROP DATABASE database_name;
+
+-- create a table
+CREATE TABLE samples (
+    id SERIAL PRIMARY KEY,
+    sample_name TEXT NOT NULL,
+    count INTEGER,
+    created_at TIMESTAMP DEFAULT now()
+);
+
+-- drop a table
+DROP TABLE samples;
+```
+
+## Select and Filter
+
+```sql
+-- select all columns
+SELECT *
+FROM samples
+LIMIT 10;
+
+-- select specific columns
+SELECT sample_name, count
+FROM samples;
+
+-- filter rows
+SELECT *
+FROM samples
+WHERE count > 10;
+
+-- sort rows
+SELECT *
+FROM samples
+ORDER BY count DESC;
+
+-- find text with a case-insensitive match
+SELECT *
+FROM samples
+WHERE sample_name ILIKE '%tumor%';
+```
+
+## Joins and Grouping
+
+```sql
+-- join two tables
+SELECT s.sample_name, p.project_name
+FROM samples AS s
+JOIN projects AS p ON s.project_id = p.id;
+
+-- keep rows even when the joined table has no match
+SELECT s.sample_name, p.project_name
+FROM samples AS s
+LEFT JOIN projects AS p ON s.project_id = p.id;
+
+-- count rows by group
+SELECT project_id, COUNT(*) AS sample_count
+FROM samples
+GROUP BY project_id;
+
+-- filter grouped results
+SELECT project_id, COUNT(*) AS sample_count
+FROM samples
+GROUP BY project_id
+HAVING COUNT(*) > 5;
+```
+
+## Insert, Update, and Delete
+
+```sql
+-- insert one row
+INSERT INTO samples (sample_name, count)
+VALUES ('sample_a', 10);
+
+-- insert multiple rows
+INSERT INTO samples (sample_name, count)
+VALUES
+    ('sample_a', 10),
+    ('sample_b', 20);
+
+-- update rows
+UPDATE samples
+SET count = 25
+WHERE sample_name = 'sample_b';
+
+-- delete rows
+DELETE FROM samples
+WHERE sample_name = 'sample_b';
+```
+
+## CSV Import and Export
+
+```text
+-- import CSV from the psql client machine
+\copy samples(sample_name, count) FROM 'samples.csv' WITH CSV HEADER
+
+-- export CSV to the psql client machine
+\copy samples TO 'samples_export.csv' WITH CSV HEADER
+```
+
+## Backup and Restore
+
+```bash
+# back up one database as SQL text
+pg_dump database_name > backup.sql
+
+# restore a SQL text backup
+psql -d database_name < backup.sql
+
+# back up one database in custom format
+pg_dump -Fc database_name > backup.dump
+
+# restore a custom-format backup
+pg_restore -d database_name backup.dump
+```
+
+## Admin
+
+```sql
+-- create a user
+CREATE USER user_name WITH PASSWORD 'password';
+
+-- grant database privileges
+GRANT ALL PRIVILEGES ON DATABASE database_name TO user_name;
+
+-- show active queries
+SELECT pid, state, query
+FROM pg_stat_activity;
+
+-- cancel a query by process ID
+SELECT pg_cancel_backend(pid);
+```

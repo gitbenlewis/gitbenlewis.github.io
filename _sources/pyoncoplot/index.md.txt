@@ -76,6 +76,7 @@ result.save("oncoplot.png", dpi=120)
 | [Gallery](gallery.md) | deterministic local examples |
 | [Troubleshooting](troubleshooting.md) | common errors and fixes |
 
+
 ```{toctree}
 :maxdepth: 2
 :caption: PyOncoplot
