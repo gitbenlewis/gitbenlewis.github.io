@@ -1,5 +1,10 @@
 # Coding Cheatsheets
 
+## Documentation
+
+- Published docs: [gitbenlewis.github.io/cheatsheets](https://gitbenlewis.github.io/cheatsheets/)
+- Source docs: this README and [cheatsheets/](https://github.com/gitbenlewis/gitbenlewis_cheatsheets/tree/main/cheatsheets)
+
 Concise command references for day-to-day coding work. The top-level README is a broad quick reference; the topic files are the fuller versions.
 
 ## Full Cheatsheets
