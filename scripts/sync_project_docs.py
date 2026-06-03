@@ -79,6 +79,7 @@ _metab_IO
 _model_fit
 _plots
 _plots_depreciated
+_preprocessing
 _row_plots
 _simulate_data
 _somascan_IO
@@ -99,6 +100,7 @@ ADATA_DOCS = [
     "_model_fit.md",
     "_plots.md",
     "_plots_depreciated.md",
+    "_preprocessing.md",
     "_row_plots.md",
     "_simulate_data.md",
     "_somascan_IO.md",
