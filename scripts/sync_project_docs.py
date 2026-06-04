@@ -75,8 +75,10 @@ _column_plots
 _corr_dotplots
 _diff_test
 _expectation_based_covar_correction
+_histograms
 _metab_IO
 _model_fit
+_paired_datapoints
 _plots
 _plots_depreciated
 _preprocessing
@@ -96,8 +98,10 @@ ADATA_DOCS = [
     "_corr_dotplots.md",
     "_diff_test.md",
     "_expectation_based_covar_correction.md",
+    "_histograms.md",
     "_metab_IO.md",
     "_model_fit.md",
+    "_paired_datapoints.md",
     "_plots.md",
     "_plots_depreciated.md",
     "_preprocessing.md",
@@ -106,6 +110,7 @@ ADATA_DOCS = [
     "_somascan_IO.md",
     "_utils.md",
     "_venn_plots.md",
+    "assets/paired_datapoints_synthetic_example.png",
     "palettes.md",
 ]
 
