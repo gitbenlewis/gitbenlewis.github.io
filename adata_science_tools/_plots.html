@@ -21,7 +21,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="_plots_depreciated" href="_plots_depreciated.html" />
-    <link rel="prev" title="_model_fit" href="_model_fit.html" /> 
+    <link rel="prev" title="_paired_datapoints" href="_paired_datapoints.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -265,6 +265,18 @@
 <li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#practical-workflow-summary">Practical workflow summary</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="_histograms.html"><code class="docutils literal notranslate"><span class="pre">_histograms</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#main-entry-point">Main entry point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#adata-histograms"><code class="docutils literal notranslate"><span class="pre">adata_histograms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#full-signature">Full signature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#basic-example">Basic example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#supported-input-modes">Supported input modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#all-variable-stacked-histogram">All-variable stacked histogram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#variable-grouped-histograms">Variable-grouped histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#filtering-and-subsets">Filtering and Subsets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#important-behavior">Important behavior</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
@@ -287,6 +299,21 @@
 <li class="toctree-l4"><a class="reference internal" href="_model_fit.html#behavior-and-constraints">Behavior and constraints</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_model_fit.html#feature-annotation-merge">Feature annotation merge</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_model_fit.html#practical-guidance">Practical guidance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_paired_datapoints.html"><code class="docutils literal notranslate"><span class="pre">_paired_datapoints</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#main-entry-point">Main entry point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#id1"><code class="docutils literal notranslate"><span class="pre">paired_datapoints</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#full-signature">Full signature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#basic-anndata-example">Basic AnnData example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#synthetic-example-plot">Synthetic example plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#supported-input-modes">Supported input modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#pairing-behavior">Pairing behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#ref-vs-target-adata-source-values"><code class="docutils literal notranslate"><span class="pre">ref_vs_target_adata()</span></code> source values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#filtering-and-subsets">Filtering and subsets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#variable-grouping-and-collapse">Variable grouping and collapse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#logging">Logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#return-value">Return value</a></li>
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">_plots</span></code></a><ul>
@@ -627,13 +654,16 @@
   <section id="plots">
 <h1><code class="docutils literal notranslate"><span class="pre">_plots</span></code><a class="headerlink" href="#plots" title="Link to this heading"></a></h1>
 <p>General plotting utilities from <code class="docutils literal notranslate"><span class="pre">_plotting/_plots.py</span></code>.</p>
-<p>This module contains the current volcano-plot, QQ-plot, and paired time-series plotting helpers:</p>
+<p>This module contains volcano-plot, QQ-plot, and paired datapoint plotting helpers:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">volcano_plot_generic</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">qqplot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">paired_datapoints</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">timeseries_paired_datapoints</span></code></p></li>
 </ul>
-<p>These are the modern entry points for this part of the plotting package. Older replacements live in <a class="reference internal" href="_plots_depreciated.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_plots_depreciated.md</span></code></span></a>.</p>
+<p>The newer configurable Pre/Post or ref/target paired plotting API is documented in
+<a class="reference internal" href="_paired_datapoints.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_paired_datapoints.md</span></code></span></a>. Older replacements live in
+<a class="reference internal" href="_plots_depreciated.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_plots_depreciated.md</span></code></span></a>.</p>
 <section id="volcano-plot-generic">
 <h2><code class="docutils literal notranslate"><span class="pre">volcano_plot_generic</span></code><a class="headerlink" href="#volcano-plot-generic" title="Link to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">volcano_plot_generic(...)</span></code> to render a volcano plot from a results <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
@@ -755,7 +785,7 @@
 </section>
 <section id="coverage-note">
 <h2>Coverage note<a class="headerlink" href="#coverage-note" title="Link to this heading"></a></h2>
-<p>This page documents current code in <code class="docutils literal notranslate"><span class="pre">_plotting/_plots.py</span></code> and repo example usage such as <code class="docutils literal notranslate"><span class="pre">example_PMID_33969320/scripts/make_volcano_plots.py</span></code>. There does not appear to be dedicated regression coverage for this module in <code class="docutils literal notranslate"><span class="pre">tests/</span></code>.</p>
+<p>This page documents current code in <code class="docutils literal notranslate"><span class="pre">_plotting/_plots.py</span></code> and repo example usage such as <code class="docutils literal notranslate"><span class="pre">example_PMID_33969320/scripts/make_volcano_plots.py</span></code>. Dedicated regression coverage exists for <code class="docutils literal notranslate"><span class="pre">paired_datapoints()</span></code> in <code class="docutils literal notranslate"><span class="pre">tests/test_paired_datapoints.py</span></code>; the other functions on this page are based on current code and repo example usage.</p>
 </section>
 </section>
 
@@ -763,7 +793,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="_model_fit.html" class="btn btn-neutral float-left" title="_model_fit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="_paired_datapoints.html" class="btn btn-neutral float-left" title="_paired_datapoints" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="_plots_depreciated.html" class="btn btn-neutral float-right" title="_plots_depreciated" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

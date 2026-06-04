@@ -265,6 +265,18 @@
 <li class="toctree-l4"><a class="reference internal" href="_expectation_based_covar_correction.html#practical-workflow-summary">Practical workflow summary</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="_histograms.html"><code class="docutils literal notranslate"><span class="pre">_histograms</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#main-entry-point">Main entry point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#adata-histograms"><code class="docutils literal notranslate"><span class="pre">adata_histograms</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#full-signature">Full signature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#basic-example">Basic example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#supported-input-modes">Supported input modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#all-variable-stacked-histogram">All-variable stacked histogram</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#variable-grouped-histograms">Variable-grouped histograms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#filtering-and-subsets">Filtering and Subsets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_histograms.html#important-behavior">Important behavior</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
@@ -287,6 +299,21 @@
 <li class="toctree-l4"><a class="reference internal" href="_model_fit.html#behavior-and-constraints">Behavior and constraints</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_model_fit.html#feature-annotation-merge">Feature annotation merge</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_model_fit.html#practical-guidance">Practical guidance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="_paired_datapoints.html"><code class="docutils literal notranslate"><span class="pre">_paired_datapoints</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#main-entry-point">Main entry point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#id1"><code class="docutils literal notranslate"><span class="pre">paired_datapoints</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#full-signature">Full signature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#basic-anndata-example">Basic AnnData example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#synthetic-example-plot">Synthetic example plot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#supported-input-modes">Supported input modes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#pairing-behavior">Pairing behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#ref-vs-target-adata-source-values"><code class="docutils literal notranslate"><span class="pre">ref_vs_target_adata()</span></code> source values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#filtering-and-subsets">Filtering and subsets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#variable-grouping-and-collapse">Variable grouping and collapse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#logging">Logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#return-value">Return value</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_plots.html"><code class="docutils literal notranslate"><span class="pre">_plots</span></code></a><ul>
@@ -644,6 +671,20 @@
 <span class="p">)</span>
 </pre></div>
 </div>
+<p>To skip <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> CSV exports or save only selected <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> keys:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adtl</span><span class="o">.</span><span class="n">save_dataset</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="s2">&quot;results/corrected_dataset.h5ad&quot;</span><span class="p">,</span>
+    <span class="n">save_obsm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">adtl</span><span class="o">.</span><span class="n">save_dataset</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="s2">&quot;results/corrected_dataset.h5ad&quot;</span><span class="p">,</span>
+    <span class="n">obsm_keys</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ref_values&quot;</span><span class="p">,</span> <span class="s2">&quot;target_values&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
 <section id="output-files">
 <h3>Output files<a class="headerlink" href="#output-files" title="Link to this heading"></a></h3>
 <p>If the output path is <code class="docutils literal notranslate"><span class="pre">results/corrected_dataset.h5ad</span></code>, the helper writes:</p>
@@ -653,6 +694,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">results/corrected_dataset.var.csv</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">results/corrected_dataset.X.csv</span></code></p></li>
 <li><p>one CSV per layer, named like <code class="docutils literal notranslate"><span class="pre">results/corrected_dataset.layer.&lt;layer_name&gt;.csv</span></code></p></li>
+<li><p>one CSV per saved <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> table, named like <code class="docutils literal notranslate"><span class="pre">results/corrected_dataset.obsm.&lt;obsm_key&gt;.csv</span></code></p></li>
 </ul>
 <p>If the path does not end in <code class="docutils literal notranslate"><span class="pre">.h5ad</span></code>, the helper treats it as the basename and still writes the same set of files with <code class="docutils literal notranslate"><span class="pre">.h5ad</span></code> and CSV suffixes.</p>
 </section>
@@ -663,7 +705,39 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">adata.X</span></code> is converted to dense before writing the <code class="docutils literal notranslate"><span class="pre">.X.csv</span></code> file if needed.</p></li>
 <li><p>Each layer is also written to CSV.</p></li>
 <li><p>Layer names containing <code class="docutils literal notranslate"><span class="pre">/</span></code> are normalized to <code class="docutils literal notranslate"><span class="pre">_</span></code> in the layer CSV filenames.</p></li>
+<li><p>By default, each 2D <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> value aligned to observations is written to CSV.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.obsm</span></code> names containing <code class="docutils literal notranslate"><span class="pre">/</span></code> are normalized to <code class="docutils literal notranslate"><span class="pre">_</span></code> in CSV filenames.</p></li>
+<li><p>Requested missing <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> keys raise <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p></li>
+<li><p>Sanitized <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> filename collisions raise <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> before files are written.</p></li>
+<li><p>Unsupported <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> values, such as arrays that are not 2D, are logged and skipped.</p></li>
 <li><p>The helper always writes the <code class="docutils literal notranslate"><span class="pre">.h5ad</span></code> plus CSV bundle together. There is no flag to save only one of those outputs.</p></li>
+</ul>
+</section>
+<section id="obsm-table-exports">
+<h3><code class="docutils literal notranslate"><span class="pre">.obsm</span></code> table exports<a class="headerlink" href="#obsm-table-exports" title="Link to this heading"></a></h3>
+<p>For <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> entries that are already <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> objects,
+<code class="docutils literal notranslate"><span class="pre">save_dataset(...)</span></code> preserves the DataFrame index and columns.</p>
+<p>For array-like or sparse 2D <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> entries, the helper uses <code class="docutils literal notranslate"><span class="pre">adata.obs_names</span></code>
+as the row index. If the number of <code class="docutils literal notranslate"><span class="pre">.obsm</span></code> columns equals <code class="docutils literal notranslate"><span class="pre">adata.n_vars</span></code>, it
+uses <code class="docutils literal notranslate"><span class="pre">adata.var_names</span></code> as column labels; otherwise it writes deterministic
+columns named <code class="docutils literal notranslate"><span class="pre">dim_0</span></code>, <code class="docutils literal notranslate"><span class="pre">dim_1</span></code>, and so on.</p>
+<p>This is useful for source-value tables created by
+<code class="docutils literal notranslate"><span class="pre">ref_vs_target_adata(save_source_values_obsm=True)</span></code>, which stores paired
+reference and target source matrices in <code class="docutils literal notranslate"><span class="pre">.obsm[&quot;ref_values&quot;]</span></code> and
+<code class="docutils literal notranslate"><span class="pre">.obsm[&quot;target_values&quot;]</span></code> by default:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">post_minus_pre</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">ref_vs_target_adata</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="n">pair_by_key</span><span class="o">=</span><span class="s2">&quot;Subject_ID&quot;</span><span class="p">,</span>
+    <span class="n">save_source_values_obsm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">adtl</span><span class="o">.</span><span class="n">save_dataset</span><span class="p">(</span><span class="n">post_minus_pre</span><span class="p">,</span> <span class="s2">&quot;results/post_minus_pre.h5ad&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This writes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">results/post_minus_pre.obsm.ref_values.csv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">results/post_minus_pre.obsm.target_values.csv</span></code></p></li>
 </ul>
 </section>
 </section>

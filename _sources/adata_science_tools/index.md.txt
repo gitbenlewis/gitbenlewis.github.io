@@ -9,8 +9,10 @@ This directory holds module-level documentation for public `adata_science_tools`
 - [`_corr_dotplots.md`](_corr_dotplots.md): correlation scatterplots, subgroup fit overlays, and rank-comparison helpers.
 - [`_diff_test.md`](_diff_test.md): differential testing across independent, paired, and nested paired group comparisons, including CSV-backed input workflows.
 - [`_expectation_based_covar_correction.md`](_expectation_based_covar_correction.md): expectation-model fitting, artifact export, prediction, regression-based correction, and residual or ratio transforms for `AnnData` objects.
+- [`_histograms.md`](_histograms.md): AnnData and wide-DataFrame histogram plotting with obs/var filters and subgroup overlays.
 - [`_metab_IO.md`](_metab_IO.md): Metabolon Excel ingestion, layer creation, optional metadata merge, and dataset export behavior.
 - [`_model_fit.md`](_model_fit.md): OLS and MixedLM model-fitting APIs, summary-table schemas, filtering support, and model-spec sidecar behavior.
+- [`_paired_datapoints.md`](_paired_datapoints.md): paired ref/target or Pre/Post datapoint plots with obs/var filters, grouping, and a synthetic example image.
 - [`_plots.md`](_plots.md): volcano plots, QQ plots for p-values, and paired time-series datapoint plots.
 - [`_plots_depreciated.md`](_plots_depreciated.md): legacy plotting APIs kept for backward compatibility, with preferred modern replacements.
 - [`_preprocessing.md`](_preprocessing.md): row-wise AnnData preprocessing helpers, including paired target-vs-reference transforms.
@@ -25,7 +27,7 @@ This directory holds module-level documentation for public `adata_science_tools`
 
 - These pages document the current implementation in `adata_science_tools`, not an earlier design draft.
 - The first source of truth for behavior is the code in `_tools/`, `_io/`, `_simulate_data/`, and the tests in `tests/`.
-- Within `_plotting`, direct regression coverage currently exists for `_corr_dotplots.py`; the other plotting pages are based on current code and repo example usage.
+- Within `_plotting`, direct regression coverage currently exists for `_corr_dotplots.py`, `_histograms.py`, and `paired_datapoints()`; the other plotting pages are based on current code and repo example usage.
 
 
 ```{toctree}
@@ -37,8 +39,10 @@ _column_plots
 _corr_dotplots
 _diff_test
 _expectation_based_covar_correction
+_histograms
 _metab_IO
 _model_fit
+_paired_datapoints
 _plots
 _plots_depreciated
 _preprocessing
