@@ -692,7 +692,9 @@ source variable names.</p></li>
 <li><p>PANELS: <code class="docutils literal notranslate"><span class="pre">subplot_by_obs_key</span></code> splits observations into panels by obs metadata.
 <code class="docutils literal notranslate"><span class="pre">subplot_by_var_key</span></code> splits selected x categories into panels by var metadata.
 The two subplot modes are mutually exclusive in v1. Missing values in
-<code class="docutils literal notranslate"><span class="pre">subplot_by_obs_key</span></code> raise instead of silently dropping observations.</p></li>
+<code class="docutils literal notranslate"><span class="pre">subplot_by_obs_key</span></code> raise instead of silently dropping observations. Missing
+values in <code class="docutils literal notranslate"><span class="pre">subplot_by_var_key</span></code> are routed to <code class="docutils literal notranslate"><span class="pre">subplot_by_var_missing_label</span></code>,
+which defaults to <code class="docutils literal notranslate"><span class="pre">&quot;Missing&quot;</span></code>.</p></li>
 <li><p>OVERLAYS: Box plots are enabled by default. Violin plots are opt-in with
 <code class="docutils literal notranslate"><span class="pre">violinplot=True</span></code>; when both overlays are enabled, violins draw behind a
 lightweight outline box and the strip points.</p></li>
