@@ -151,7 +151,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#directly-used-papers">Directly Used Papers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#tcga-and-xena-data-sources">TCGA And Xena Data Sources</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#documentation-and-source-image-pages">Documentation And Source Image Pages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#supporting-visualization-references">Supporting Visualization References</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/example-plot-source-citations.html#notes">Notes</a></li>
 </ul>
 </li>
@@ -162,12 +161,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/brca-gallery.html#render-comparison-sheets">Render Comparison Sheets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/brca-gallery.html#inputs">Inputs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/brca-gallery.html#inspect-the-preset-code">Inspect The Preset Code</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/examples/structural-variation-panel.html">Structural Variation Panel</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/structural-variation-panel.html#render-it">Render It</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/structural-variation-panel.html#inputs">Inputs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../pyoncoplot/examples/structural-variation-panel.html#input-shapes">Input Shapes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../pyoncoplot/migration-from-ggoncoplot.html">Migration From ggoncoplot</a><ul>
@@ -309,6 +302,7 @@
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#synthetic-example-plot">Synthetic example plot</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#supported-input-modes">Supported input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#pairing-behavior">Pairing behavior</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#bounds">Bounds</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#ref-vs-target-adata-source-values"><code class="docutils literal notranslate"><span class="pre">ref_vs_target_adata()</span></code> source values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#filtering-and-subsets">Filtering and subsets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#variable-grouping-and-collapse">Variable grouping and collapse</a></li>
@@ -710,14 +704,16 @@ backward-compatible config-driven use:</p>
     <span class="n">target_max_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ref_min_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">ref_max_value</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">bounds_fill_missing</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">bounds_fill_missing_paired_only</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">merge_shared_obs_cols</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">return_df</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">allow_unused_params</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">log_level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
     <span class="n">save_source_values_obsm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">target_values_obsm_key</span><span class="o">=</span><span class="s2">&quot;target_values&quot;</span><span class="p">,</span>
-    <span class="n">ref_values_obsm_key</span><span class="o">=</span><span class="s2">&quot;ref_values&quot;</span><span class="p">,</span>
+    <span class="n">target_values_obsm_key</span><span class="o">=</span><span class="s2">&quot;post_values&quot;</span><span class="p">,</span>
+    <span class="n">ref_values_obsm_key</span><span class="o">=</span><span class="s2">&quot;pre_values&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -809,9 +805,59 @@ computed:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">target_max_value</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ref_min_value</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ref_max_value</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bounds_fill_missing</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bounds_fill_missing_paired_only</span></code></p></li>
 </ul>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">target_min_value=0.5</span></code> treats any selected target value below <code class="docutils literal notranslate"><span class="pre">0.5</span></code>
 as <code class="docutils literal notranslate"><span class="pre">0.5</span></code>. Bounds are clamping controls, not filters.</p>
+<p>By default, bounds do not impute missing values. Set
+<code class="docutils literal notranslate"><span class="pre">bounds_fill_missing=True</span></code> to fill every missing value on each bounded side
+before clipping and computation. The fill value uses side-specific precedence:
+the side’s min value when present, otherwise the side’s max value.</p>
+<p>Set <code class="docutils literal notranslate"><span class="pre">bounds_fill_missing_paired_only=True</span></code> to fill missing values only when the
+opposite side of the same pair and variable is present. If both missing-fill
+flags are <code class="docutils literal notranslate"><span class="pre">True</span></code>, paired-only fill behavior is used. Numeric clipping of
+present values is unchanged. A missing side is filled only when that side has a
+min or max bound; if no bound is provided for that side, the missing value stays
+missing.</p>
+<p>For one variable with <code class="docutils literal notranslate"><span class="pre">ref_min_value=2</span></code>, <code class="docutils literal notranslate"><span class="pre">target_min_value=1</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">bounds_fill_missing_paired_only=True</span></code>:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Raw reference</p></th>
+<th class="head text-right"><p>Raw target</p></th>
+<th class="head text-right"><p>Bounded reference</p></th>
+<th class="head text-right"><p>Bounded target</p></th>
+<th class="head"><p>Reason</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>Missing target is filled because reference is present.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code></p></td>
+<td><p>Both sides are missing, so neither side is filled.</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">NaN</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">20</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">20</span></code></p></td>
+<td><p>Missing reference is filled because target is present.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">0.5</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">0.25</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td class="text-right"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>Present values are still clipped to side-specific bounds.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="returned-metadata">
 <h3>Returned metadata<a class="headerlink" href="#returned-metadata" title="Link to this heading"></a></h3>
@@ -855,7 +901,7 @@ observations and variables:</p>
 used for computation.</p>
 <p><code class="docutils literal notranslate"><span class="pre">adtl.save_dataset(result,</span> <span class="pre">&quot;path/to/result.h5ad&quot;)</span></code> exports these tables by
 default as <code class="docutils literal notranslate"><span class="pre">.obsm.&lt;key&gt;.csv</span></code> files, for example
-<code class="docutils literal notranslate"><span class="pre">result.obsm.ref_values.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">result.obsm.target_values.csv</span></code> when the
+<code class="docutils literal notranslate"><span class="pre">result.obsm.pre_values.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">result.obsm.post_values.csv</span></code> when the
 default keys are used.</p>
 </section>
 <section id="dataframe-return">

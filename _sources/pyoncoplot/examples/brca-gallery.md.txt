@@ -15,7 +15,7 @@ Outputs:
 
 ```text
 python_refactor_goal_sources/generated_plots/clean/gen.goal_plot_01.png
-python_refactor_goal_sources/generated_plots/clean/gen.goal_plot_14.png
+python_refactor_goal_sources/generated_plots/clean/gen.goal_plot_07.png
 ```
 
 ## Render Comparison Sheets
@@ -45,4 +45,4 @@ python_refactor_goal_sources/make_oncoplots.py
 ```
 
 Use `renderer: oncoplot` presets when the public API can express the plot. Add a
-custom renderer only when the plot is too bespoke for `oncoplot()`.
+new active gallery goal only when the public API can express the plot.
