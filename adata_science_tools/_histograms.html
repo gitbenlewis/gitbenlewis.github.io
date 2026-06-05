@@ -263,6 +263,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#adata-histograms"><code class="docutils literal notranslate"><span class="pre">adata_histograms</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#basic-example">Basic example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#legend-positioning">Legend positioning</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#supported-input-modes">Supported input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#all-variable-stacked-histogram">All-variable stacked histogram</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#variable-grouped-histograms">Variable-grouped histograms</a></li>
@@ -299,6 +300,7 @@
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#id1"><code class="docutils literal notranslate"><span class="pre">paired_datapoints</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#basic-anndata-example">Basic AnnData example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#title-and-axis-label-placement">Title and axis label placement</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#synthetic-example-plot">Synthetic example plot</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#supported-input-modes">Supported input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_paired_datapoints.html#pairing-behavior">Pairing behavior</a></li>
@@ -718,6 +720,8 @@ lines whose values are added to legends by default.</p>
     <span class="n">axis_label_fontsize</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span>
     <span class="n">tick_label_fontsize</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">legend_fontsize</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">legend_loc</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">legend_bbox_to_anchor</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">legend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">dropna</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">nas2zeros</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -741,6 +745,20 @@ lines whose values are added to legends by default.</p>
     <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">xlims</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
     <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="legend-positioning">
+<h2>Legend positioning<a class="headerlink" href="#legend-positioning" title="Link to this heading"></a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">legend_loc</span></code> and <code class="docutils literal notranslate"><span class="pre">legend_bbox_to_anchor</span></code> to move per-panel legends.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adtl</span><span class="o">.</span><span class="n">adata_histograms</span><span class="p">(</span>
+    <span class="n">adata</span><span class="o">=</span><span class="n">adata</span><span class="p">,</span>
+    <span class="n">var_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;GENE_A&quot;</span><span class="p">],</span>
+    <span class="n">subset_obs_key</span><span class="o">=</span><span class="s2">&quot;Treatment&quot;</span><span class="p">,</span>
+    <span class="n">legend_loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">,</span>
+    <span class="n">legend_bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.02</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
     <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>

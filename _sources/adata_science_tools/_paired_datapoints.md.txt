@@ -46,7 +46,9 @@ def paired_datapoints(
     bounds_fill_missing_paired_only: bool = False,
     filter_vars_by_isin_lists: Mapping[str, Sequence[Any]] | None = None,
     filter_obs_by_isin_lists: Mapping[str, Sequence[Any]] | None = None,
+    subplot_by_obs_key: str | None = None,
     subset_obs_key: str | None = None,
+    subset_var_key: str | None = None,
     subset_order: Sequence[Any] | None = None,
     palette: Sequence[Any] | str | None = palettes.tol_colors,
     subset_palette: Sequence[Any] | str | None = None,
@@ -67,12 +69,18 @@ def paired_datapoints(
     sharey: bool = False,
     ylims: Sequence[float] | None = None,
     ylabel: str | None = None,
+    xlabel: str | None = None,
     title: str | None = None,
     subplot_title_var_col: str | None = None,
+    subplot_title_y: float | None = None,
     title_fontsize: int = 14,
+    title_y: float | None = None,
     axis_label_fontsize: int = 12,
     tick_label_fontsize: int | None = None,
     legend_fontsize: int | None = None,
+    legend_loc: str | int | None = None,
+    legend_bbox_to_anchor: tuple[float, ...] | None = None,
+    legend_scope: Literal["axis", "figure"] = "axis",
     legend: bool = False,
     dropna: bool = True,
     nas2zeros: bool = False,
@@ -101,6 +109,25 @@ fig, axes, plot_df = adtl.paired_datapoints(
     pair_by_key="Subject_ID",
     subset_obs_key="Treatment",
     legend=True,
+    show=False,
+)
+```
+
+## Title and axis label placement
+
+Use `title_y` and `subplot_title_y` to move the figure title or subplot titles
+vertically. Use `xlabel=""` to suppress the x-axis label below the Pre/Post tick
+labels.
+
+```python
+fig, axes, plot_df = adtl.paired_datapoints(
+    adata=adata,
+    var_names=["IL6"],
+    pair_by_key="Subject_ID",
+    title="Paired IL6",
+    title_y=1.03,
+    subplot_title_y=1.05,
+    xlabel="",
     show=False,
 )
 ```
@@ -311,11 +338,63 @@ fig, axes, plot_df = adtl.paired_datapoints(
 2. `filter_vars_by_isin_lists={"column": ["allowed"]}` filters variables with
    AND semantics before grouping and collapse.
 
-3. `subset_obs_key="column"` colors points by observation metadata group within
-   each panel.
+3. `subplot_by_obs_key="column"` splits paired records into one subplot per
+   non-missing observation metadata value. For normal Pre/Post-style input, the
+   ref and target rows in a pair must have the same value.
 
-4. `subset_order` controls hue order; otherwise categorical order or first
+4. `subset_obs_key="column"` colors points by observation metadata group within
+   each panel. `subset_var_key="column"` colors points by variable metadata
+   when plotted records map to one `source_variable`.
+
+5. `subset_order` controls hue order; otherwise categorical order or first
    appearance is used.
+
+6. `legend_scope="figure"` draws one shared legend for a multi-panel grid.
+   `legend_loc` and `legend_bbox_to_anchor` are forwarded to Matplotlib legend
+   placement for either per-axis or figure-level legends.
+
+```python
+fig, axes, plot_df = adtl.paired_datapoints(
+    adata=adata,
+    var_names=["IL6"],
+    pair_by_key="subject_id",
+    subplot_by_obs_key="subject_id",
+    show=False,
+)
+```
+
+```python
+fig, axes, plot_df = adtl.paired_datapoints(
+    adata=adata,
+    var_names=["IL6", "TNF", "CRP"],
+    pair_by_key="Subject_ID",
+    subset_obs_key="cohort",
+    legend=True,
+    legend_scope="figure",
+    legend_loc="center left",
+    legend_bbox_to_anchor=(1.02, 0.5),
+    show=False,
+)
+```
+
+Use `subset_var_key` with raw-variable rows, such as `collapse_mode="stack"` or
+`collapse_mode="all"`, when hue should come from `adata.var` or `var_df`:
+
+```python
+fig, axes, plot_df = adtl.paired_datapoints(
+    adata=adata,
+    var_groupby_key="Gene",
+    var_names=["IL6"],
+    collapse_mode="stack",
+    pair_by_key="Subject_ID",
+    subset_var_key="feature_type",
+    legend=True,
+    legend_scope="figure",
+    legend_loc="center left",
+    legend_bbox_to_anchor=(1.02, 0.5),
+    show=False,
+)
+```
 
 ## Variable grouping and collapse
 
@@ -338,6 +417,11 @@ fig, axes, plot_df = adtl.paired_datapoints(
    `var_groupby_key`, and selects the raw variable with the largest non-missing
    reference value per pair and group. Ties are logged and resolved by filtered
    variable order.
+
+7. `subset_var_key` is not supported for grouped aggregate reductions such as
+   `mean`, `median`, or `sum`, because those rows combine multiple variables.
+   Use `collapse_mode="stack"`, `collapse_mode="all"`, ungrouped variables, or
+   `collapse_func="select_max_ref_value"` when variable-metadata hue is needed.
 
 ## Logging
 
