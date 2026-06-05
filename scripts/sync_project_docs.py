@@ -71,6 +71,7 @@ ADATA_TOCTREE = """
 _IO
 _column_plots
 _corr_dotplots
+_datapoints
 _diff_test
 _expectation_based_covar_correction
 _histograms
@@ -94,6 +95,7 @@ ADATA_DOCS = [
     "_IO.md",
     "_column_plots.md",
     "_corr_dotplots.md",
+    "_datapoints.md",
     "_diff_test.md",
     "_expectation_based_covar_correction.md",
     "_histograms.md",
