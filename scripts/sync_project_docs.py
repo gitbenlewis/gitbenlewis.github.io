@@ -36,7 +36,6 @@ example-plot-source-citations
 examples/basic
 examples/metadata
 examples/brca-gallery
-examples/structural-variation-panel
 migration-from-ggoncoplot
 development
 troubleshooting
@@ -59,7 +58,6 @@ PYONCOPLOT_DOCS = [
     "examples/basic.md",
     "examples/metadata.md",
     "examples/brca-gallery.md",
-    "examples/structural-variation-panel.md",
     "migration-from-ggoncoplot.md",
     "development.md",
     "troubleshooting.md",
