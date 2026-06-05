@@ -6,12 +6,12 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>_model_fit &mdash; gitbenlewis docs</title>
+  <title>_datapoints &mdash; gitbenlewis docs</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
 
   
-    <link rel="canonical" href="https://gitbenlewis.github.io/adata_science_tools/_model_fit.html" />
+    <link rel="canonical" href="https://gitbenlewis.github.io/adata_science_tools/_datapoints.html" />
       <script src="../_static/jquery.js?v=5d32c60e"></script>
       <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../_static/documentation_options.js?v=2709fde1"></script>
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="_paired_datapoints" href="_paired_datapoints.html" />
-    <link rel="prev" title="_metab_IO" href="_metab_IO.html" /> 
+    <link rel="next" title="_diff_test" href="_diff_test.html" />
+    <link rel="prev" title="_corr_dotplots" href="_corr_dotplots.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -231,8 +231,8 @@
 <li class="toctree-l4"><a class="reference internal" href="_corr_dotplots.html#example-with-plain-dataframe">Example with plain <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="_datapoints.html"><code class="docutils literal notranslate"><span class="pre">_datapoints</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="_datapoints.html#id1"><code class="docutils literal notranslate"><span class="pre">datapoints</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">_datapoints</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">datapoints</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
@@ -286,17 +286,17 @@
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#when-to-use-this-module">When to use this module</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">_model_fit</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ols-workflow">OLS workflow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mixedlm-workflow">MixedLM workflow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#filtering-before-fit">Filtering before fit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#low-level-wide-apis">Low-level <code class="docutils literal notranslate"><span class="pre">*_wide(...)</span></code> APIs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#result-table-schema">Result table schema</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sidecar-yaml-model-specs">Sidecar YAML model specs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#adata-uns-storage"><code class="docutils literal notranslate"><span class="pre">adata.uns</span></code> storage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#behavior-and-constraints">Behavior and constraints</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#feature-annotation-merge">Feature annotation merge</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#practical-guidance">Practical guidance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="_model_fit.html"><code class="docutils literal notranslate"><span class="pre">_model_fit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#ols-workflow">OLS workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#mixedlm-workflow">MixedLM workflow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#filtering-before-fit">Filtering before fit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#low-level-wide-apis">Low-level <code class="docutils literal notranslate"><span class="pre">*_wide(...)</span></code> APIs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#result-table-schema">Result table schema</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#sidecar-yaml-model-specs">Sidecar YAML model specs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#adata-uns-storage"><code class="docutils literal notranslate"><span class="pre">adata.uns</span></code> storage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#behavior-and-constraints">Behavior and constraints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#feature-annotation-merge">Feature annotation merge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_model_fit.html#practical-guidance">Practical guidance</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_paired_datapoints.html"><code class="docutils literal notranslate"><span class="pre">_paired_datapoints</span></code></a><ul>
@@ -640,10 +640,10 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="index.html">adata_science_tools docs</a></li>
-      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">_model_fit</span></code></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">_datapoints</span></code></li>
       <li class="wy-breadcrumbs-aside">
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/gitbenlewis/adata_science_tools/blob/main/docs/_model_fit.md" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/gitbenlewis/adata_science_tools/blob/main/docs/_datapoints.md" class="fa fa-github"> Edit on GitHub</a>
       </li>
   </ul>
   <hr/>
@@ -651,271 +651,70 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="model-fit">
-<h1><code class="docutils literal notranslate"><span class="pre">_model_fit</span></code><a class="headerlink" href="#model-fit" title="Link to this heading"></a></h1>
-<p>Model-fitting utilities for feature-wise OLS and MixedLM summaries on <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> objects.</p>
-<p>This module provides two levels of API:</p>
-<ul class="simple">
-<li><p>low-level <code class="docutils literal notranslate"><span class="pre">*_wide(...)</span></code> functions that fit models from a combined observation-plus-feature <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>;</p></li>
-<li><p>higher-level <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers that build that table from <code class="docutils literal notranslate"><span class="pre">AnnData</span></code>, optionally filter observations first, and handle saving or <code class="docutils literal notranslate"><span class="pre">adata.uns</span></code> storage.</p></li>
-</ul>
-<p>The current primary APIs are:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_wide</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_adata</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_wide</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_adata</span></code></p></li>
-</ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">old_fit_smf_ols_models_and_summarize_adata</span></code> and <code class="docutils literal notranslate"><span class="pre">old_fit_smf_mixedlm_models_and_summarize_adata</span></code> helpers are legacy compatibility wrappers. They do not expose the newer filter or model-spec sidecar features and should not be treated as the preferred interface.</p>
-<section id="ols-workflow">
-<h2>OLS workflow<a class="headerlink" href="#ols-workflow" title="Link to this heading"></a></h2>
-<p>Use <code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_adata(...)</span></code> to fit one OLS model per feature.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adata_science_tools</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">adtl</span>
-
-<span class="n">ols_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
-    <span class="n">adata</span><span class="p">,</span>
-    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
-    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NHS_Case&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender&quot;</span><span class="p">],</span>
-    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;ols_unit&quot;</span><span class="p">,</span>
-    <span class="n">save_table</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">save_model_spec_yaml</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;results/ols_results.csv&quot;</span><span class="p">,</span>
-    <span class="n">save_result_to_adata_uns_as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">include_fdr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+  <section id="datapoints">
+<h1><code class="docutils literal notranslate"><span class="pre">_datapoints</span></code><a class="headerlink" href="#datapoints" title="Link to this heading"></a></h1>
+<p>Unpaired variable-level datapoint plotting for <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> objects and wide
+<code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> inputs.</p>
+<section id="id1">
+<h2><code class="docutils literal notranslate"><span class="pre">datapoints</span></code><a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">datapoints(...)</span></code> draws selected variables or variable groups as categorical
+x-axis entries. It is intended for config-driven plotting runs that need the
+same obs/var filtering and grouping conventions as <code class="docutils literal notranslate"><span class="pre">adata_histograms()</span></code> without
+requiring paired reference/target observations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">plot_df</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">datapoints</span><span class="p">(</span>
+    <span class="n">adata</span><span class="o">=</span><span class="n">adata</span><span class="p">,</span>
+    <span class="n">var_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;IL6&quot;</span><span class="p">,</span> <span class="s2">&quot;TNF&quot;</span><span class="p">,</span> <span class="s2">&quot;CXCL10&quot;</span><span class="p">],</span>
+    <span class="n">subset_obs_key</span><span class="o">=</span><span class="s2">&quot;condition&quot;</span><span class="p">,</span>
+    <span class="n">subplot_by_var_key</span><span class="o">=</span><span class="s2">&quot;assay&quot;</span><span class="p">,</span>
+    <span class="n">legend_metrics</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;median&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">),</span>
+    <span class="n">violinplot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">show</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>Important behavior:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">predictors</span></code> is normalized through a YAML-friendly list validator.</p></li>
-<li><p>Numeric-like predictor columns are coerced to numeric dtype before fitting so continuous covariates do not become dummy-coded categories.</p></li>
-<li><p>Per-feature OLS p-value columns use the <code class="docutils literal notranslate"><span class="pre">P&gt;|t|</span></code> naming pattern.</p></li>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">include_fdr=True</span></code>, per-term FDR columns are added with the <code class="docutils literal notranslate"><span class="pre">_FDR</span></code> suffix.</p></li>
-</ul>
+<section id="important-behavior">
+<h3>Important behavior<a class="headerlink" href="#important-behavior" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>INPUTS: Provide exactly one of <code class="docutils literal notranslate"><span class="pre">input_data</span></code>, <code class="docutils literal notranslate"><span class="pre">adata</span></code>, or <code class="docutils literal notranslate"><span class="pre">df</span></code>. For wide
+<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> input, provide <code class="docutils literal notranslate"><span class="pre">var_names</span></code> or <code class="docutils literal notranslate"><span class="pre">var_df</span></code> so metadata columns are
+not inferred as feature columns. Config-driven callers can pass
+<code class="docutils literal notranslate"><span class="pre">**{&quot;input&quot;:</span> <span class="pre">data}</span></code> as an alias for <code class="docutils literal notranslate"><span class="pre">input_data</span></code>.</p></li>
+<li><p>FILTERS: <code class="docutils literal notranslate"><span class="pre">filter_obs_by_isin_lists</span></code> and <code class="docutils literal notranslate"><span class="pre">filter_vars_by_isin_lists</span></code> use
+AND semantics with the <code class="docutils literal notranslate"><span class="pre">{&quot;column&quot;:</span> <span class="pre">[&quot;allowed&quot;,</span> <span class="pre">...]}</span></code> shape used by nearby
+plotting helpers.</p></li>
+<li><p>MATRIX SOURCE: <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> input supports <code class="docutils literal notranslate"><span class="pre">.X</span></code>, <code class="docutils literal notranslate"><span class="pre">layers[layer]</span></code>, and <code class="docutils literal notranslate"><span class="pre">raw.X</span></code>.
+The function selects requested variable columns before converting sparse
+slices to dense arrays.</p></li>
+<li><p>X-AXIS: By default, one axis named <code class="docutils literal notranslate"><span class="pre">&quot;all&quot;</span></code> contains the selected variable
+names as x-axis categories. With <code class="docutils literal notranslate"><span class="pre">var_groupby_key</span></code>, <code class="docutils literal notranslate"><span class="pre">collapse_mode=&quot;aggregate&quot;</span></code>
+uses variable-group names as x categories, while <code class="docutils literal notranslate"><span class="pre">collapse_mode=&quot;stack&quot;</span></code> uses
+source variable names.</p></li>
+<li><p>PANELS: <code class="docutils literal notranslate"><span class="pre">subplot_by_obs_key</span></code> splits observations into panels by obs metadata.
+<code class="docutils literal notranslate"><span class="pre">subplot_by_var_key</span></code> splits selected x categories into panels by var metadata.
+The two subplot modes are mutually exclusive in v1. Missing values in
+<code class="docutils literal notranslate"><span class="pre">subplot_by_obs_key</span></code> raise instead of silently dropping observations.</p></li>
+<li><p>OVERLAYS: Box plots are enabled by default. Violin plots are opt-in with
+<code class="docutils literal notranslate"><span class="pre">violinplot=True</span></code>; when both overlays are enabled, violins draw behind a
+lightweight outline box and the strip points.</p></li>
+<li><p>LEGEND METRICS: <code class="docutils literal notranslate"><span class="pre">legend_metrics</span></code> can include <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">median</span></code>, <code class="docutils literal notranslate"><span class="pre">count</span></code>,
+<code class="docutils literal notranslate"><span class="pre">std</span></code>, and <code class="docutils literal notranslate"><span class="pre">sem</span></code>. When <code class="docutils literal notranslate"><span class="pre">legend=True</span></code>, labels include all-data metrics plus
+per-<code class="docutils literal notranslate"><span class="pre">subset_obs_key</span></code> group metrics. Metrics are computed after <code class="docutils literal notranslate"><span class="pre">nas2zeros</span></code>,
+<code class="docutils literal notranslate"><span class="pre">dropna</span></code>, and <code class="docutils literal notranslate"><span class="pre">dropzeros</span></code>.</p></li>
+<li><p>METRIC SCOPE: Legend metrics are panel-level summaries. If one panel contains
+multiple x-axis variables, each metric pools across those x categories.</p></li>
+</ol>
 </section>
-<section id="mixedlm-workflow">
-<h2>MixedLM workflow<a class="headerlink" href="#mixedlm-workflow" title="Link to this heading"></a></h2>
-<p>Use <code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_adata(...)</span></code> to fit one mixed-effects model per feature.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mixedlm_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_mixedlm_models_and_summarize_adata</span><span class="p">(</span>
-    <span class="n">adata</span><span class="p">,</span>
-    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
-    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NHS_Case&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender&quot;</span><span class="p">],</span>
-    <span class="n">group</span><span class="o">=</span><span class="s2">&quot;Batch&quot;</span><span class="p">,</span>
-    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;mixedlm_unit&quot;</span><span class="p">,</span>
-    <span class="n">reml</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">save_table</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">save_model_spec_yaml</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;results/mixedlm_results.csv&quot;</span><span class="p">,</span>
-    <span class="n">save_result_to_adata_uns_as_dict</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">include_fdr</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span>
+<section id="return-value">
+<h3>Return value<a class="headerlink" href="#return-value" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">datapoints(...)</span></code> returns:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">plot_df</span>
 </pre></div>
 </div>
-<p>Important behavior:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">group</span></code> is required.</p></li>
-<li><p>MixedLM also expects a non-empty <code class="docutils literal notranslate"><span class="pre">predictors</span></code> list.</p></li>
-<li><p>Per-term MixedLM p-value columns use the <code class="docutils literal notranslate"><span class="pre">P&gt;|z|</span></code> naming pattern.</p></li>
-<li><p>The summary includes grouping-specific fields such as <code class="docutils literal notranslate"><span class="pre">n_groups</span></code>, <code class="docutils literal notranslate"><span class="pre">Method</span></code>, random-effect variances, and, when available, per-group random effects.</p></li>
-</ul>
+<p><code class="docutils literal notranslate"><span class="pre">axes</span></code> maps panel names to Matplotlib axes. <code class="docutils literal notranslate"><span class="pre">plot_df</span></code> is the deterministic
+long-form plotting table and includes <code class="docutils literal notranslate"><span class="pre">panel</span></code>, <code class="docutils literal notranslate"><span class="pre">variable</span></code>, <code class="docutils literal notranslate"><span class="pre">source_variable</span></code>,
+<code class="docutils literal notranslate"><span class="pre">obs_name</span></code>, <code class="docutils literal notranslate"><span class="pre">x_label</span></code>, <code class="docutils literal notranslate"><span class="pre">x_order</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>, and <code class="docutils literal notranslate"><span class="pre">subset_value</span></code>, plus the original
+subset or subplot metadata columns when requested.</p>
 </section>
-<section id="filtering-before-fit">
-<h2>Filtering before fit<a class="headerlink" href="#filtering-before-fit" title="Link to this heading"></a></h2>
-<p>Both <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers can create a filtered working <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> through:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dataset_cfg</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">filter_obs_boolean_column</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">filter_obs_column_key</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">filter_obs_column_values_list</span></code></p></li>
-</ul>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filtered_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
-    <span class="n">adata</span><span class="p">,</span>
-    <span class="n">dataset_cfg</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;filter_obs_boolean_column&quot;</span><span class="p">:</span> <span class="s2">&quot;use_for_expectation&quot;</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
-    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">],</span>
-    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;ols_filtered&quot;</span><span class="p">,</span>
-    <span class="n">return_filtered_adata</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>Wrapper behavior:</p>
-<ul class="simple">
-<li><p>if any filter inputs are provided, the wrapper creates <code class="docutils literal notranslate"><span class="pre">work_adata</span></code> with <code class="docutils literal notranslate"><span class="pre">CFG_filter_adata_by_obs(...)</span></code>;</p></li>
-<li><p>the fit is run against <code class="docutils literal notranslate"><span class="pre">work_adata</span></code>, not the original <code class="docutils literal notranslate"><span class="pre">adata</span></code>;</p></li>
-<li><p>when <code class="docutils literal notranslate"><span class="pre">return_filtered_adata=True</span></code> and a filtered copy was created, the wrapper returns <code class="docutils literal notranslate"><span class="pre">(results,</span> <span class="pre">work_adata)</span></code> instead of only <code class="docutils literal notranslate"><span class="pre">results</span></code>.</p></li>
-</ul>
-</section>
-<section id="low-level-wide-apis">
-<h2>Low-level <code class="docutils literal notranslate"><span class="pre">*_wide(...)</span></code> APIs<a class="headerlink" href="#low-level-wide-apis" title="Link to this heading"></a></h2>
-<p>The wide functions operate on a single <code class="docutils literal notranslate"><span class="pre">obs_X_df</span></code> table that contains:</p>
-<ul class="simple">
-<li><p>one column per feature, and</p></li>
-<li><p>one column per predictor, plus <code class="docutils literal notranslate"><span class="pre">group</span></code> for MixedLM.</p></li>
-</ul>
-<p>Use them when the combined table already exists or when you want to bypass <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> handling:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_wide(obs_X_df,</span> <span class="pre">feature_columns,</span> <span class="pre">predictors,</span> <span class="pre">...)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_wide(obs_X_df,</span> <span class="pre">feature_columns,</span> <span class="pre">predictors,</span> <span class="pre">group=...,</span> <span class="pre">...)</span></code></p></li>
-</ul>
-<p>The <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers build this table internally with <code class="docutils literal notranslate"><span class="pre">make_df_obs_adataX(...)</span></code>, so most users should start with the <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> APIs unless they already have the combined matrix.</p>
-</section>
-<section id="result-table-schema">
-<h2>Result table schema<a class="headerlink" href="#result-table-schema" title="Link to this heading"></a></h2>
-<p>Both OLS and MixedLM result tables are indexed by feature name and include <code class="docutils literal notranslate"><span class="pre">var_names</span></code> as the first column.</p>
-<p>Column names are prefixed with <code class="docutils literal notranslate"><span class="pre">model_name</span></code>, so changing <code class="docutils literal notranslate"><span class="pre">model_name</span></code> changes the entire result schema namespace.</p>
-<p>Representative OLS column patterns include:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Formula</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Converged</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Warnings</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_nobs</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_R-squared</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Coef_&lt;term&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_StdErr_&lt;term&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_tStat_&lt;term&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_P&gt;|t|_&lt;term&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_P&gt;|t|_&lt;term&gt;_FDR</span></code></p></li>
-</ul>
-<p>Representative MixedLM column patterns include:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Formula</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Converged</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Warnings</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_nobs</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_n_groups</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Method</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Var_RE_&lt;term&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Var_Residual</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_Coef_&lt;term&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_StdErr_&lt;term&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_tStat_&lt;term&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_P&gt;|z|_&lt;term&gt;</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">&lt;model_name&gt;_P&gt;|z|_&lt;term&gt;_FDR</span></code></p></li>
-</ul>
-<p>The exact set of columns depends on:</p>
-<ul class="simple">
-<li><p>the fitted design terms,</p></li>
-<li><p>the chosen <code class="docutils literal notranslate"><span class="pre">model_name</span></code>,</p></li>
-<li><p>whether warnings or random effects are present,</p></li>
-<li><p>whether <code class="docutils literal notranslate"><span class="pre">include_fdr=True</span></code>.</p></li>
-</ul>
-</section>
-<section id="sidecar-yaml-model-specs">
-<h2>Sidecar YAML model specs<a class="headerlink" href="#sidecar-yaml-model-specs" title="Link to this heading"></a></h2>
-<p>The current <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers can write a sibling <code class="docutils literal notranslate"><span class="pre">.model_spec.yaml</span></code> file when:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">save_table=True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">save_path</span></code> is provided</p></li>
-</ul>
-<p>If <code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code> is requested without <code class="docutils literal notranslate"><span class="pre">save_table=True</span></code> and <code class="docutils literal notranslate"><span class="pre">save_path</span></code>, the wrappers raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ols_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
-    <span class="n">adata</span><span class="p">,</span>
-    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
-    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NHS_Case&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender&quot;</span><span class="p">],</span>
-    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;ols_unit&quot;</span><span class="p">,</span>
-    <span class="n">save_table</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">save_model_spec_yaml</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">save_path</span><span class="o">=</span><span class="s2">&quot;results/ols_results.csv&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>This writes:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">results/ols_results.csv</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">results/ols_results.model_spec.yaml</span></code></p></li>
-</ul>
-<p>The YAML captures the fitting contract for downstream consumers, including:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">fit_method</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">model_name</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">predictors</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">layer</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">use_raw</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">formula_rhs</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">coefficient_terms</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">coefficient_columns</span></code></p></li>
-</ul>
-<p>For MixedLM sidecars, the YAML also includes:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">group</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">reml</span></code></p></li>
-</ul>
-<p>This is the metadata used by the expectation-correction workflow documented in <a class="reference internal" href="_expectation_based_covar_correction.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_expectation_based_covar_correction.md</span></code></span></a>, which can consume OLS summary outputs and derived coefficient tables.</p>
-</section>
-<section id="adata-uns-storage">
-<h2><code class="docutils literal notranslate"><span class="pre">adata.uns</span></code> storage<a class="headerlink" href="#adata-uns-storage" title="Link to this heading"></a></h2>
-<p>When <code class="docutils literal notranslate"><span class="pre">save_result_to_adata_uns_as_dict=True</span></code>, the wrappers store results under model-type-specific namespaces.</p>
-<p>OLS storage:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">work_adata.uns[&quot;ols_model_results&quot;][f&quot;OLS_model_results_{model_name}&quot;]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">work_adata.uns[&quot;ols_model_specs&quot;][f&quot;OLS_model_results_{model_name}&quot;]</span></code> when <code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code></p></li>
-</ul>
-<p>MixedLM storage:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">work_adata.uns[&quot;mixedlm_model_results&quot;][f&quot;mixedlm_model_results_{model_name}&quot;]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">work_adata.uns[&quot;mixedlm_model_specs&quot;][f&quot;mixedlm_model_results_{model_name}&quot;]</span></code> when <code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code></p></li>
-</ul>
-<p>If filtering created a new <code class="docutils literal notranslate"><span class="pre">work_adata</span></code> and <code class="docutils literal notranslate"><span class="pre">save_results_to_original_adata_uns=True</span></code>, the same results and model specs are also written into the original <code class="docutils literal notranslate"><span class="pre">adata.uns</span></code>.</p>
-</section>
-<section id="behavior-and-constraints">
-<h2>Behavior and constraints<a class="headerlink" href="#behavior-and-constraints" title="Link to this heading"></a></h2>
-<p>The current implementation locks in these behaviors.</p>
-<section id="predictor-handling">
-<h3>Predictor handling<a class="headerlink" href="#predictor-handling" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>Wrapper inputs such as <code class="docutils literal notranslate"><span class="pre">predictors</span></code> and <code class="docutils literal notranslate"><span class="pre">add_adata_var_column_key_list</span></code> are normalized with <code class="docutils literal notranslate"><span class="pre">_ensure_list(...)</span></code>.</p></li>
-<li><p>YAML-style lists are expected.</p></li>
-<li><p>Passing a single string instead of a list raises a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>.</p></li>
-<li><p>Numeric-like predictors are coerced to numeric dtype before fitting.</p></li>
-</ul>
-</section>
-<section id="ols-specific-notes">
-<h3>OLS-specific notes<a class="headerlink" href="#ols-specific-notes" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>OLS treats missing and infinite values as <code class="docutils literal notranslate"><span class="pre">NaN</span></code> and fits only complete-case rows for each feature.</p></li>
-<li><p>If a feature has no complete-case rows after that cleanup, the OLS wide function does not raise.</p></li>
-<li><p>Instead, it records a summary row with <code class="docutils literal notranslate"><span class="pre">Converged=False</span></code> and a warning message explaining why the fit was skipped.</p></li>
-</ul>
-</section>
-<section id="mixedlm-specific-notes">
-<h3>MixedLM-specific notes<a class="headerlink" href="#mixedlm-specific-notes" title="Link to this heading"></a></h3>
-<ul class="simple">
-<li><p>MixedLM raises early when required fit conditions are not met.</p></li>
-<li><p>Missing feature, predictor, or group columns raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p></li>
-<li><p>Zero complete-case rows for a feature raise a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p></li>
-<li><p>Fewer than two non-empty groups after filtering also raises a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>.</p></li>
-<li><p>MixedLM tries to collect random effects, but if covariance inversion fails it records that failure in the warnings field and continues building the summary row.</p></li>
-</ul>
-</section>
-</section>
-<section id="feature-annotation-merge">
-<h2>Feature annotation merge<a class="headerlink" href="#feature-annotation-merge" title="Link to this heading"></a></h2>
-<p>Both <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers can merge selected <code class="docutils literal notranslate"><span class="pre">adata.var</span></code> columns into the result table through <code class="docutils literal notranslate"><span class="pre">add_adata_var_column_key_list</span></code>.</p>
-<p>Example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ols_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
-    <span class="n">adata</span><span class="p">,</span>
-    <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
-    <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">],</span>
-    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;ols_with_var&quot;</span><span class="p">,</span>
-    <span class="n">add_adata_var_column_key_list</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;gene_name&quot;</span><span class="p">,</span> <span class="s2">&quot;feature_class&quot;</span><span class="p">],</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<p>Missing <code class="docutils literal notranslate"><span class="pre">adata.var</span></code> keys are skipped with a warning or print message, depending on the code path.</p>
-</section>
-<section id="practical-guidance">
-<h2>Practical guidance<a class="headerlink" href="#practical-guidance" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers for most workflows.</p></li>
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">*_wide(...)</span></code> functions when you already have an <code class="docutils literal notranslate"><span class="pre">obs_X_df</span></code> table.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">save_model_spec_yaml=True</span></code> only when you also want a saved CSV artifact.</p></li>
-<li><p>Use OLS outputs as the upstream summary source for expectation-model workflows described in <a class="reference internal" href="_expectation_based_covar_correction.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_expectation_based_covar_correction.md</span></code></span></a>.</p></li>
-</ul>
 </section>
 </section>
 
@@ -923,8 +722,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="_metab_IO.html" class="btn btn-neutral float-left" title="_metab_IO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="_paired_datapoints.html" class="btn btn-neutral float-right" title="_paired_datapoints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="_corr_dotplots.html" class="btn btn-neutral float-left" title="_corr_dotplots" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="_diff_test.html" class="btn btn-neutral float-right" title="_diff_test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

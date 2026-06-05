@@ -231,6 +231,10 @@
 <li class="toctree-l4"><a class="reference internal" href="_corr_dotplots.html#example-with-plain-dataframe">Example with plain <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="_datapoints.html"><code class="docutils literal notranslate"><span class="pre">_datapoints</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_datapoints.html#id1"><code class="docutils literal notranslate"><span class="pre">datapoints</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
@@ -655,6 +659,7 @@
 <li><p><a class="reference internal" href="_IO.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_IO.md</span></code></span></a>: core dataset save and AnnData-to-DataFrame helpers used across the package.</p></li>
 <li><p><a class="reference internal" href="_column_plots.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_column_plots.md</span></code></span></a>: horizontal bar plots, log2 fold-change dotplots, and multi-panel composite figure builders.</p></li>
 <li><p><a class="reference internal" href="_corr_dotplots.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_corr_dotplots.md</span></code></span></a>: correlation scatterplots, subgroup fit overlays, and rank-comparison helpers.</p></li>
+<li><p><a class="reference internal" href="_datapoints.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_datapoints.md</span></code></span></a>: unpaired variable-level datapoint plots with obs/var filters, grouped variables, optional box/violin overlays, and metric legends.</p></li>
 <li><p><a class="reference internal" href="_diff_test.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_diff_test.md</span></code></span></a>: differential testing across independent, paired, and nested paired group comparisons, including CSV-backed input workflows.</p></li>
 <li><p><a class="reference internal" href="_expectation_based_covar_correction.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_expectation_based_covar_correction.md</span></code></span></a>: expectation-model fitting, artifact export, prediction, regression-based correction, and residual or ratio transforms for <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> objects.</p></li>
 <li><p><a class="reference internal" href="_histograms.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_histograms.md</span></code></span></a>: AnnData and wide-DataFrame histogram plotting with obs/var filters and subgroup overlays.</p></li>
@@ -677,7 +682,7 @@
 <ul class="simple">
 <li><p>These pages document the current implementation in <code class="docutils literal notranslate"><span class="pre">adata_science_tools</span></code>, not an earlier design draft.</p></li>
 <li><p>The first source of truth for behavior is the code in <code class="docutils literal notranslate"><span class="pre">_tools/</span></code>, <code class="docutils literal notranslate"><span class="pre">_io/</span></code>, <code class="docutils literal notranslate"><span class="pre">_simulate_data/</span></code>, and the tests in <code class="docutils literal notranslate"><span class="pre">tests/</span></code>.</p></li>
-<li><p>Within <code class="docutils literal notranslate"><span class="pre">_plotting</span></code>, direct regression coverage currently exists for <code class="docutils literal notranslate"><span class="pre">_corr_dotplots.py</span></code>, <code class="docutils literal notranslate"><span class="pre">_histograms.py</span></code>, and <code class="docutils literal notranslate"><span class="pre">paired_datapoints()</span></code>; the other plotting pages are based on current code and repo example usage.</p></li>
+<li><p>Within <code class="docutils literal notranslate"><span class="pre">_plotting</span></code>, direct regression coverage currently exists for <code class="docutils literal notranslate"><span class="pre">_corr_dotplots.py</span></code>, <code class="docutils literal notranslate"><span class="pre">_histograms.py</span></code>, <code class="docutils literal notranslate"><span class="pre">datapoints()</span></code>, and <code class="docutils literal notranslate"><span class="pre">paired_datapoints()</span></code>; the other plotting pages are based on current code and repo example usage.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">adata_science_tools</span></p>
@@ -711,6 +716,10 @@
 <li class="toctree-l2"><a class="reference internal" href="_corr_dotplots.html#spearman-cor-dotplot"><code class="docutils literal notranslate"><span class="pre">spearman_cor_dotplot</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="_corr_dotplots.html#secondary-helpers">Secondary helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="_corr_dotplots.html#example-with-plain-dataframe">Example with plain <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_datapoints.html"><code class="docutils literal notranslate"><span class="pre">_datapoints</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_datapoints.html#id1"><code class="docutils literal notranslate"><span class="pre">datapoints</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>

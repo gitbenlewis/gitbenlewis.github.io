@@ -231,6 +231,10 @@
 <li class="toctree-l4"><a class="reference internal" href="_corr_dotplots.html#example-with-plain-dataframe">Example with plain <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="_datapoints.html"><code class="docutils literal notranslate"><span class="pre">_datapoints</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_datapoints.html#id1"><code class="docutils literal notranslate"><span class="pre">datapoints</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
@@ -650,15 +654,15 @@
   <section id="plots">
 <h1><code class="docutils literal notranslate"><span class="pre">_plots</span></code><a class="headerlink" href="#plots" title="Link to this heading"></a></h1>
 <p>General plotting utilities from <code class="docutils literal notranslate"><span class="pre">_plotting/_plots.py</span></code>.</p>
-<p>This module contains volcano-plot, QQ-plot, and paired datapoint plotting helpers:</p>
+<p>This module contains volcano-plot, QQ-plot, and paired time-series datapoint plotting helpers:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">volcano_plot_generic</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">qqplot</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">paired_datapoints</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">timeseries_paired_datapoints</span></code></p></li>
 </ul>
-<p>The newer configurable Pre/Post or ref/target paired plotting API is documented in
-<a class="reference internal" href="_paired_datapoints.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_paired_datapoints.md</span></code></span></a>. Older replacements live in
+<p>The configurable unpaired and Pre/Post/ref-target datapoint plotting APIs live in
+<code class="docutils literal notranslate"><span class="pre">_plotting/_datapoints.py</span></code> and are documented in <a class="reference internal" href="_datapoints.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_datapoints.md</span></code></span></a>
+and <a class="reference internal" href="_paired_datapoints.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_paired_datapoints.md</span></code></span></a>. Older replacements live in
 <a class="reference internal" href="_plots_depreciated.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">_plots_depreciated.md</span></code></span></a>.</p>
 <section id="volcano-plot-generic">
 <h2><code class="docutils literal notranslate"><span class="pre">volcano_plot_generic</span></code><a class="headerlink" href="#volcano-plot-generic" title="Link to this heading"></a></h2>
@@ -781,7 +785,7 @@
 </section>
 <section id="coverage-note">
 <h2>Coverage note<a class="headerlink" href="#coverage-note" title="Link to this heading"></a></h2>
-<p>This page documents current code in <code class="docutils literal notranslate"><span class="pre">_plotting/_plots.py</span></code> and repo example usage such as <code class="docutils literal notranslate"><span class="pre">example_PMID_33969320/scripts/make_volcano_plots.py</span></code>. Dedicated regression coverage exists for <code class="docutils literal notranslate"><span class="pre">paired_datapoints()</span></code> in <code class="docutils literal notranslate"><span class="pre">tests/test_paired_datapoints.py</span></code>; the other functions on this page are based on current code and repo example usage.</p>
+<p>This page documents current code in <code class="docutils literal notranslate"><span class="pre">_plotting/_plots.py</span></code> and repo example usage such as <code class="docutils literal notranslate"><span class="pre">example_PMID_33969320/scripts/make_volcano_plots.py</span></code>. Dedicated datapoint regression coverage lives in <code class="docutils literal notranslate"><span class="pre">tests/test_datapoints.py</span></code> and <code class="docutils literal notranslate"><span class="pre">tests/test_paired_datapoints.py</span></code>; the functions on this page are based on current code and repo example usage.</p>
 </section>
 </section>
 
