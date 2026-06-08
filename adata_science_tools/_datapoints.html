@@ -703,7 +703,10 @@ metadata groups as x-axis categories instead. Missing <code class="docutils lite
 are routed to <code class="docutils literal notranslate"><span class="pre">x_by_obs_missing_label</span></code>, which defaults to <code class="docutils literal notranslate"><span class="pre">&quot;Missing&quot;</span></code>.
 <code class="docutils literal notranslate"><span class="pre">x_order</span></code> orders the displayed x-axis labels; for config-driven calls, raw
 typed values such as <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">1]</span></code> and string labels such as <code class="docutils literal notranslate"><span class="pre">[&quot;2&quot;,</span> <span class="pre">&quot;1&quot;]</span></code> both
-match displayed labels.</p></li>
+match displayed labels. When <code class="docutils literal notranslate"><span class="pre">subset_obs_key</span></code> and <code class="docutils literal notranslate"><span class="pre">x_by_obs_key</span></code> are the
+same obs column, legend and color order follow <code class="docutils literal notranslate"><span class="pre">x_order</span></code> unless
+<code class="docutils literal notranslate"><span class="pre">subset_order</span></code> is supplied; the same rule applies inside
+<code class="docutils literal notranslate"><span class="pre">subplot_by_obs_key</span></code> panels.</p></li>
 <li><p>OBS-GROUP X-AXIS: With <code class="docutils literal notranslate"><span class="pre">x_by_obs_key</span></code> and multiple selected variables or
 groups, <code class="docutils literal notranslate"><span class="pre">x_by_obs_multi_var_mode=&quot;panel_by_variable&quot;</span></code> is the default and
 creates one panel per selected variable/group. Use
