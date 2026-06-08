@@ -700,7 +700,10 @@ names as x-axis categories. With <code class="docutils literal notranslate"><spa
 uses variable-group names as x categories, while <code class="docutils literal notranslate"><span class="pre">collapse_mode=&quot;stack&quot;</span></code> uses
 source variable names. Set <code class="docutils literal notranslate"><span class="pre">x_by_obs_key=&quot;column&quot;</span></code> to use observation
 metadata groups as x-axis categories instead. Missing <code class="docutils literal notranslate"><span class="pre">x_by_obs_key</span></code> values
-are routed to <code class="docutils literal notranslate"><span class="pre">x_by_obs_missing_label</span></code>, which defaults to <code class="docutils literal notranslate"><span class="pre">&quot;Missing&quot;</span></code>.</p></li>
+are routed to <code class="docutils literal notranslate"><span class="pre">x_by_obs_missing_label</span></code>, which defaults to <code class="docutils literal notranslate"><span class="pre">&quot;Missing&quot;</span></code>.
+<code class="docutils literal notranslate"><span class="pre">x_order</span></code> orders the displayed x-axis labels; for config-driven calls, raw
+typed values such as <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">1]</span></code> and string labels such as <code class="docutils literal notranslate"><span class="pre">[&quot;2&quot;,</span> <span class="pre">&quot;1&quot;]</span></code> both
+match displayed labels.</p></li>
 <li><p>OBS-GROUP X-AXIS: With <code class="docutils literal notranslate"><span class="pre">x_by_obs_key</span></code> and multiple selected variables or
 groups, <code class="docutils literal notranslate"><span class="pre">x_by_obs_multi_var_mode=&quot;panel_by_variable&quot;</span></code> is the default and
 creates one panel per selected variable/group. Use
