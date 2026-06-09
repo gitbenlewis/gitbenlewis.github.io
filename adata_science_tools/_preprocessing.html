@@ -948,6 +948,14 @@ default as <code class="docutils literal notranslate"><span class="pre">.obsm.&l
 <code class="docutils literal notranslate"><span class="pre">result.obsm.pre_values.csv</span></code> and <code class="docutils literal notranslate"><span class="pre">result.obsm.post_values.csv</span></code> when the
 default keys are used.</p>
 </section>
+<section id="logging">
+<h3>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">logger</span></code> and <code class="docutils literal notranslate"><span class="pre">log_level</span></code> control <code class="docutils literal notranslate"><span class="pre">INFO</span></code>-level argument summaries, progress
+messages, and the final <code class="docutils literal notranslate"><span class="pre">.X</span></code> source selection. The argument summary reports
+<code class="docutils literal notranslate"><span class="pre">AnnData</span></code> shape, matrix type, layer keys, and column names without logging
+matrix values or full <code class="docutils literal notranslate"><span class="pre">obs</span></code>/<code class="docutils literal notranslate"><span class="pre">var</span></code> tables. The final <code class="docutils literal notranslate"><span class="pre">.X</span></code> log records the base
+source, base operation, operation-layer key when applicable, shape, and dtype.</p>
+</section>
 <section id="dataframe-return">
 <h3>DataFrame return<a class="headerlink" href="#dataframe-return" title="Link to this heading"></a></h3>
 <p>Set <code class="docutils literal notranslate"><span class="pre">return_df=True</span></code> to return both the result object and a feature matrix
