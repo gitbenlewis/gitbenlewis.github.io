@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -666,6 +668,19 @@
 <section id="sim-observations-covars">
 <h2><code class="docutils literal notranslate"><span class="pre">sim_observations_covars</span></code><a class="headerlink" href="#sim-observations-covars" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">sim_observations_covars(...)</span></code> creates an <code class="docutils literal notranslate"><span class="pre">obs_df</span></code> with one column per requested covariate.</p>
+<section id="full-signature">
+<h3>Full signature<a class="headerlink" href="#full-signature" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sim_observations_covars</span><span class="p">(</span>
+    <span class="n">obs_key_list</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">obs_covar_dist_params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">n_obs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">obs_names_prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;obs_&quot;</span><span class="p">,</span>
+    <span class="n">save_obs_df</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">save_obs_df_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;obs_df&quot;</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">adata_science_tools._simulate_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">sim_observations_covars</span>
 
 <span class="n">obs_df</span> <span class="o">=</span> <span class="n">sim_observations_covars</span><span class="p">(</span>
@@ -688,10 +703,28 @@
 <li><p>Observation names use <code class="docutils literal notranslate"><span class="pre">obs_names_prefix</span></code> with 1-based indexing, for example <code class="docutils literal notranslate"><span class="pre">obs_1</span></code>, <code class="docutils literal notranslate"><span class="pre">obs_2</span></code>, <code class="docutils literal notranslate"><span class="pre">obs_3</span></code>.</p></li>
 </ul>
 </section>
+</section>
 <section id="sim-covar-dependent-features">
 <h2><code class="docutils literal notranslate"><span class="pre">sim_covar_dependent_features</span></code><a class="headerlink" href="#sim-covar-dependent-features" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">sim_covar_dependent_features(...)</span></code> treats the columns of <code class="docutils literal notranslate"><span class="pre">obs_df</span></code> as predictors, coerces them to numeric values, and generates a linear feature matrix with optional additive residual noise:</p>
 <p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">=</span> <span class="pre">obs_matrix</span> <span class="pre">&#64;</span> <span class="pre">beta_matrix.T</span> <span class="pre">+</span> <span class="pre">yint</span> <span class="pre">+</span> <span class="pre">residual</span></code></p>
+<section id="id1">
+<h3>Full signature<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sim_covar_dependent_features</span><span class="p">(</span>
+    <span class="n">obs_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">var_names</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;covar_dependent_feature&quot;</span><span class="p">,),</span>
+    <span class="n">betas</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">),</span>
+    <span class="n">yints</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">also_return_adata</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_adata_dataset</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">residual_dist</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+    <span class="n">residual_mean</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">residual_stdev</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">adata_science_tools._simulate_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">sim_covar_dependent_features</span>
 
 <span class="n">X</span><span class="p">,</span> <span class="n">var_df</span><span class="p">,</span> <span class="n">obs_df</span><span class="p">,</span> <span class="n">adata</span> <span class="o">=</span> <span class="n">sim_covar_dependent_features</span><span class="p">(</span>
@@ -718,9 +751,32 @@
 <li><p>Non-numeric predictor columns are rejected at this layer.</p></li>
 </ul>
 </section>
+</section>
 <section id="sim-covar-dependent-dataset">
 <h2><code class="docutils literal notranslate"><span class="pre">sim_covar_dependent_dataset</span></code><a class="headerlink" href="#sim-covar-dependent-dataset" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">sim_covar_dependent_dataset(...)</span></code> is the wrapper that first simulates covariates and then simulates features from those covariates.</p>
+<section id="id2">
+<h3>Full signature<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sim_covar_dependent_dataset</span><span class="p">(</span>
+    <span class="n">obs_key_list</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">obs_covar_dist_params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span> <span class="o">|</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">n_obs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="n">obs_names_prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;obs_&quot;</span><span class="p">,</span>
+    <span class="n">save_obs_df</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">save_obs_df_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">=</span> <span class="s2">&quot;obs_df&quot;</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">var_names</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;covar_dependent_feature&quot;</span><span class="p">,),</span>
+    <span class="n">betas</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">),</span>
+    <span class="n">yints</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">also_return_adata</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">save_adata_dataset</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">residual_dist</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+    <span class="n">residual_mean</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">residual_stdev</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span> <span class="o">|</span> <span class="kc">None</span><span class="p">]:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">adata_science_tools._simulate_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">sim_covar_dependent_dataset</span>
 
 <span class="n">X</span><span class="p">,</span> <span class="n">var_df</span><span class="p">,</span> <span class="n">obs_df</span><span class="p">,</span> <span class="n">adata</span> <span class="o">=</span> <span class="n">sim_covar_dependent_dataset</span><span class="p">(</span>
@@ -747,6 +803,7 @@
 <li><p>Dataset export reuses the package save helper and writes <code class="docutils literal notranslate"><span class="pre">.h5ad</span></code>, <code class="docutils literal notranslate"><span class="pre">.obs.csv</span></code>, <code class="docutils literal notranslate"><span class="pre">.var.csv</span></code>, and <code class="docutils literal notranslate"><span class="pre">.X.csv</span></code> sidecars.</p></li>
 <li><p>When <code class="docutils literal notranslate"><span class="pre">adata.layers</span></code> are present, the same export path also writes one CSV per layer, so this simulator now emits <code class="docutils literal notranslate"><span class="pre">linear_mean</span></code> and <code class="docutils literal notranslate"><span class="pre">residual</span></code> sidecars alongside the main matrix export.</p></li>
 </ul>
+</section>
 </section>
 <section id="repo-example-workflow">
 <h2>Repo example workflow<a class="headerlink" href="#repo-example-workflow" title="Link to this heading"></a></h2>

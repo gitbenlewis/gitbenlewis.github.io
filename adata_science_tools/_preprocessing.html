@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -681,7 +683,7 @@ backward-compatible config-driven use:</p>
     <span class="n">groupby_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Pre_or_Post_obs_col&quot;</span><span class="p">,</span>
     <span class="n">groupby_key_target_value</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Post&quot;</span><span class="p">,</span>
     <span class="n">groupby_key_ref_value</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Pre&quot;</span><span class="p">,</span>
-    <span class="n">opperation_flavor</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;subtraction&quot;</span><span class="p">,</span>
+    <span class="n">opperation_flavor</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;subtraction&quot;</span><span class="p">,</span>
     <span class="n">obs_dfs</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;merge&quot;</span><span class="p">,</span>
     <span class="n">ref_obs_suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;.src_pre&quot;</span><span class="p">,</span>
     <span class="n">target_obs_suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;.src_post&quot;</span><span class="p">,</span>
@@ -696,7 +698,7 @@ backward-compatible config-driven use:</p>
     <span class="n">groupby_key</span><span class="o">=</span><span class="s2">&quot;Pre_or_Post_obs_col&quot;</span><span class="p">,</span>
     <span class="n">groupby_key_target_value</span><span class="o">=</span><span class="s2">&quot;Post&quot;</span><span class="p">,</span>
     <span class="n">groupby_key_ref_value</span><span class="o">=</span><span class="s2">&quot;Pre&quot;</span><span class="p">,</span>
-    <span class="n">opperation_flavor</span><span class="o">=</span><span class="s2">&quot;subtraction&quot;</span><span class="p">,</span>
+    <span class="n">opperation_flavor</span><span class="o">=</span><span class="s2">&quot;subtraction&quot;</span><span class="p">,</span>  <span class="c1"># or a list of operation strings</span>
     <span class="n">obs_dfs</span><span class="o">=</span><span class="s2">&quot;merge&quot;</span><span class="p">,</span>
     <span class="n">ref_obs_suffix</span><span class="o">=</span><span class="s2">&quot;.src_pre&quot;</span><span class="p">,</span>
     <span class="n">target_obs_suffix</span><span class="o">=</span><span class="s2">&quot;.src_post&quot;</span><span class="p">,</span>
@@ -767,6 +769,18 @@ index.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">relative_change_fc</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">relative_change_l2fc</span></code></p></li>
 </ul>
+<p><code class="docutils literal notranslate"><span class="pre">opperation_flavor</span></code> can also be a non-empty sequence of operation names. In
+that mode, each requested operation is computed and stored as a layer in the
+returned object. The returned <code class="docutils literal notranslate"><span class="pre">.X</span></code> uses the first requested operation for the
+selected base source, so <code class="docutils literal notranslate"><span class="pre">[&quot;subtraction&quot;,</span> <span class="pre">&quot;relative_change_pct&quot;]</span></code> keeps
+<code class="docutils literal notranslate"><span class="pre">subtraction</span></code> in <code class="docutils literal notranslate"><span class="pre">.X</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">post_minus_pre</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">ref_vs_target_adata</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="n">pair_by_key</span><span class="o">=</span><span class="s2">&quot;SubjectID&quot;</span><span class="p">,</span>
+    <span class="n">opperation_flavor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;subtraction&quot;</span><span class="p">,</span> <span class="s2">&quot;relative_change_pct&quot;</span><span class="p">,</span> <span class="s2">&quot;relative_change_l2fc&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
 <p>The corrected parameter alias <code class="docutils literal notranslate"><span class="pre">operation_flavor</span></code> is accepted through <code class="docutils literal notranslate"><span class="pre">**params</span></code>,
 but the public signature keeps the existing typo-compatible
 <code class="docutils literal notranslate"><span class="pre">opperation_flavor</span></code>.</p>
@@ -801,6 +815,27 @@ the first requested source.</p>
 </div>
 <p>When a layer source is requested, the computed values for that source are also
 stored in <code class="docutils literal notranslate"><span class="pre">result.layers[source]</span></code>.</p>
+<p>When multiple operations are requested for one source, operation names become
+layer keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">result.layers[&quot;subtraction&quot;]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">result.layers[&quot;relative_change_pct&quot;]</span></code></p></li>
+</ul>
+<p>When multiple operations and multiple sources are requested together, layers are
+named as <code class="docutils literal notranslate"><span class="pre">source__operation</span></code>. The <code class="docutils literal notranslate"><span class="pre">.X</span></code> source is labeled <code class="docutils literal notranslate"><span class="pre">X</span></code> in layer keys:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">post_minus_pre</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">ref_vs_target_adata</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="n">pair_by_key</span><span class="o">=</span><span class="s2">&quot;SubjectID&quot;</span><span class="p">,</span>
+    <span class="n">opperation_flavor</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;subtraction&quot;</span><span class="p">,</span> <span class="s2">&quot;relative_change_l2fc&quot;</span><span class="p">],</span>
+    <span class="n">layers_to_compute</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;RFU&quot;</span><span class="p">],</span>
+    <span class="n">base_layer</span><span class="o">=</span><span class="s2">&quot;RFU&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This creates layers such as <code class="docutils literal notranslate"><span class="pre">X__subtraction</span></code>, <code class="docutils literal notranslate"><span class="pre">X__relative_change_l2fc</span></code>,
+<code class="docutils literal notranslate"><span class="pre">RFU__subtraction</span></code>, and <code class="docutils literal notranslate"><span class="pre">RFU__relative_change_l2fc</span></code>. The returned <code class="docutils literal notranslate"><span class="pre">.X</span></code> is
+<code class="docutils literal notranslate"><span class="pre">RFU__subtraction</span></code> because <code class="docutils literal notranslate"><span class="pre">base_layer=&quot;RFU&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">subtraction</span></code> is the first
+requested operation.</p>
 </section>
 <section id="bounds-and-lod-style-clamping">
 <h3>Bounds and LOD-style clamping<a class="headerlink" href="#bounds-and-lod-style-clamping" title="Link to this heading"></a></h3>
@@ -873,6 +908,8 @@ missing.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">ref_obs_name</span></code>, <code class="docutils literal notranslate"><span class="pre">target_obs_name</span></code>, <code class="docutils literal notranslate"><span class="pre">pair_order</span></code>, source group labels, and the
 operation name in <code class="docutils literal notranslate"><span class="pre">.obs</span></code>;</p></li>
 <li><p>operation and source metadata in <code class="docutils literal notranslate"><span class="pre">.uns[&quot;ref_vs_target_adata&quot;]</span></code>;</p></li>
+<li><p>multi-operation metadata such as <code class="docutils literal notranslate"><span class="pre">operation_flavors</span></code>, <code class="docutils literal notranslate"><span class="pre">operation_layer_keys</span></code>,
+<code class="docutils literal notranslate"><span class="pre">operation_layer_key_by_source_operation</span></code>, and <code class="docutils literal notranslate"><span class="pre">base_operation_layer</span></code>;</p></li>
 <li><p>dropped unmatched pair IDs in both <code class="docutils literal notranslate"><span class="pre">.uns[&quot;ref_vs_target_adata&quot;]</span></code> and flat
 convenience keys;</p></li>
 <li><p>copied <code class="docutils literal notranslate"><span class="pre">adata.var</span></code> plus operation metadata when <code class="docutils literal notranslate"><span class="pre">keep_var_df=True</span></code>;</p></li>
@@ -887,7 +924,8 @@ in both sources are collapsed to one column. <code class="docutils literal notra
 <section id="optional-source-value-obsm">
 <h3>Optional source-value <code class="docutils literal notranslate"><span class="pre">obsm</span></code><a class="headerlink" href="#optional-source-value-obsm" title="Link to this heading"></a></h3>
 <p>Set <code class="docutils literal notranslate"><span class="pre">save_source_values_obsm=True</span></code> to store the paired, ordered source values
-used for the returned <code class="docutils literal notranslate"><span class="pre">.X</span></code> before the final operation result is returned:</p>
+used for the returned <code class="docutils literal notranslate"><span class="pre">.X</span></code> base source before the final operation result is
+returned:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">post_minus_pre</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">ref_vs_target_adata</span><span class="p">(</span>
     <span class="n">adata</span><span class="p">,</span>
     <span class="n">pair_by_key</span><span class="o">=</span><span class="s2">&quot;SubjectID&quot;</span><span class="p">,</span>

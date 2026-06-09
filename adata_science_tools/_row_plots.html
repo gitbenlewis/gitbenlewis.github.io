@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -661,6 +663,11 @@
 <section id="plot-columns">
 <h2><code class="docutils literal notranslate"><span class="pre">plot_columns</span></code><a class="headerlink" href="#plot-columns" title="Link to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">plot_columns(...)</span></code> to render a one-row panel of grouped bar plots with swarm overlays from a plain <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<section id="full-signature">
+<h3>Full signature<a class="headerlink" href="#full-signature" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_columns</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">columns2plot</span><span class="p">,</span><span class="n">columns2plot_titles</span><span class="p">,</span><span class="n">y_groupby</span><span class="p">,</span><span class="n">figsize</span><span class="p">,</span><span class="n">sharex</span><span class="p">,</span><span class="n">sharey</span><span class="p">):</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adata_science_tools</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">adtl</span>
 
 <span class="n">adtl</span><span class="o">.</span><span class="n">plot_columns</span><span class="p">(</span>
@@ -674,6 +681,7 @@
 <span class="p">)</span>
 </pre></div>
 </div>
+</section>
 <section id="important-behavior">
 <h3>Important behavior<a class="headerlink" href="#important-behavior" title="Link to this heading"></a></h3>
 <ul class="simple">

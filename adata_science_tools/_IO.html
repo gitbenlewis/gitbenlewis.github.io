@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -663,6 +665,17 @@
 <section id="save-dataset">
 <h2><code class="docutils literal notranslate"><span class="pre">save_dataset</span></code><a class="headerlink" href="#save-dataset" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">save_dataset(...)</span></code> writes one <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> object to a bundle of files with a shared basename.</p>
+<section id="full-signature">
+<h3>Full signature<a class="headerlink" href="#full-signature" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">save_dataset</span><span class="p">(</span>
+    <span class="n">_adata</span><span class="p">:</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
+    <span class="n">output_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_obsm</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">obsm_keys</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adata_science_tools</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">adtl</span>
 
 <span class="n">adtl</span><span class="o">.</span><span class="n">save_dataset</span><span class="p">(</span>
@@ -685,6 +698,7 @@
 <span class="p">)</span>
 </pre></div>
 </div>
+</section>
 <section id="output-files">
 <h3>Output files<a class="headerlink" href="#output-files" title="Link to this heading"></a></h3>
 <p>If the output path is <code class="docutils literal notranslate"><span class="pre">results/corrected_dataset.h5ad</span></code>, the helper writes:</p>
@@ -744,6 +758,18 @@ reference and target source matrices in <code class="docutils literal notranslat
 <section id="make-df-obs-adatax">
 <h2><code class="docutils literal notranslate"><span class="pre">make_df_obs_adataX</span></code><a class="headerlink" href="#make-df-obs-adatax" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">make_df_obs_adataX(...)</span></code> builds a <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> from <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> expression data and, optionally, prepends <code class="docutils literal notranslate"><span class="pre">adata.obs</span></code>.</p>
+<section id="id1">
+<h3>Full signature<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">make_df_obs_adataX</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">,</span>
+    <span class="n">layer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">index</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">varcolumns</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">include_obs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">use_raw</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">):</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">make_df_obs_adataX</span><span class="p">(</span>
     <span class="n">adata</span><span class="p">,</span>
     <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
@@ -757,6 +783,7 @@ reference and target source matrices in <code class="docutils literal notranslat
 <li><p>inspect an expression matrix together with observation metadata,</p></li>
 <li><p>choose alternate feature labels or a different observation index.</p></li>
 </ul>
+</section>
 </section>
 <section id="data-source-selection">
 <h2>Data source selection<a class="headerlink" href="#data-source-selection" title="Link to this heading"></a></h2>

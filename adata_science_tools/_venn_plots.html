@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -670,6 +672,12 @@
 <section id="venn-plot-2list">
 <h2><code class="docutils literal notranslate"><span class="pre">venn_plot_2list</span></code><a class="headerlink" href="#venn-plot-2list" title="Link to this heading"></a></h2>
 <p>Creates a two-set Venn diagram and optionally returns a summary <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<section id="full-signature">
+<h3>Full signature<a class="headerlink" href="#full-signature" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">venn_plot_2list</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span>  <span class="n">set_label_list</span><span class="p">,</span> <span class="n">plot_title</span><span class="p">,</span><span class="n">show_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">return_df</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">overlap_df</span> <span class="o">=</span> <span class="n">venn_plot_2list</span><span class="p">(</span>
     <span class="n">list1</span><span class="o">=</span><span class="n">genes_a</span><span class="p">,</span>
     <span class="n">list2</span><span class="o">=</span><span class="n">genes_b</span><span class="p">,</span>
@@ -687,9 +695,16 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">show_plot=False</span></code> suppresses the Matplotlib rendering.</p></li>
 </ul>
 </section>
+</section>
 <section id="venn-plot-3list">
 <h2><code class="docutils literal notranslate"><span class="pre">venn_plot_3list</span></code><a class="headerlink" href="#venn-plot-3list" title="Link to this heading"></a></h2>
 <p>Creates a three-set Venn diagram and optionally returns an overlap summary <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<section id="id1">
+<h3>Full signature<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">venn_plot_3list</span><span class="p">(</span><span class="n">list1</span><span class="p">,</span> <span class="n">list2</span><span class="p">,</span> <span class="n">list3</span><span class="p">,</span> <span class="n">set_label_list</span><span class="p">,</span> <span class="n">plot_title</span><span class="p">,</span><span class="n">show_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">return_df</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+</pre></div>
+</div>
 <p>Important behavior:</p>
 <ul class="simple">
 <li><p>Inputs are converted to sets.</p></li>
@@ -697,9 +712,20 @@
 <li><p>The default arguments are <code class="docutils literal notranslate"><span class="pre">show_plot=False</span></code> and <code class="docutils literal notranslate"><span class="pre">return_df=False</span></code>.</p></li>
 </ul>
 </section>
+</section>
 <section id="geneset-enrichment-venn">
 <h2><code class="docutils literal notranslate"><span class="pre">geneset_enrichment_venn</span></code><a class="headerlink" href="#geneset-enrichment-venn" title="Link to this heading"></a></h2>
 <p>Computes a hypergeometric enrichment p-value and displays a Venn diagram for:</p>
+<section id="id2">
+<h3>Full signature<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">geneset_enrichment_venn</span><span class="p">(</span><span class="n">universe</span><span class="p">,</span> <span class="n">geneset</span><span class="p">,</span> <span class="n">hits</span><span class="p">,</span>
+                            <span class="n">dataset_label</span><span class="o">=</span><span class="s2">&quot;DEGs&quot;</span><span class="p">,</span>
+                            <span class="n">geneset_label</span><span class="o">=</span><span class="s2">&quot;GeneSet&quot;</span><span class="p">,</span>
+                            <span class="n">plot_title</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                            <span class="n">shift_overlap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                            <span class="n">shift_overlap_labely</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+</pre></div>
+</div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">universe</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">geneset</span></code></p></li>
@@ -721,9 +747,22 @@
 <li><p>The function always shows the plot.</p></li>
 </ul>
 </section>
+</section>
 <section id="geneset-enrichemnt-ol-ven-m-n-n-x">
 <h2><code class="docutils literal notranslate"><span class="pre">geneset_enrichemnt_ol_ven_M_n_N_x</span></code><a class="headerlink" href="#geneset-enrichemnt-ol-ven-m-n-n-x" title="Link to this heading"></a></h2>
 <p>This legacy helper also computes a hypergeometric enrichment display from three sets.</p>
+<section id="id3">
+<h3>Full signature<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">geneset_enrichemnt_ol_ven_M_n_N_x</span><span class="p">(</span>
+    <span class="n">M_set</span><span class="p">,</span> <span class="n">n_set</span><span class="p">,</span> <span class="n">N_set</span><span class="p">,</span>
+    <span class="n">dataset_label</span><span class="o">=</span><span class="s2">&quot;dataset_label&quot;</span><span class="p">,</span>
+    <span class="n">geneset_label</span><span class="o">=</span><span class="s2">&quot;geneset_label&quot;</span><span class="p">,</span>
+    <span class="n">plot_title</span><span class="o">=</span><span class="s2">&quot;plot_title&quot;</span><span class="p">,</span>
+    <span class="n">shift_overlap</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">shift_overlap_labely</span><span class="o">=</span><span class="mf">0.1</span>
+        <span class="p">):</span>
+</pre></div>
+</div>
 <p>Important behavior:</p>
 <ul class="simple">
 <li><p>The function name is misspelled in the source and docs to match the current API.</p></li>
@@ -731,6 +770,7 @@
 <li><p>It shows the plot.</p></li>
 <li><p>The current implementation does not return a value.</p></li>
 </ul>
+</section>
 </section>
 <section id="coverage-note">
 <h2>Coverage note<a class="headerlink" href="#coverage-note" title="Link to this heading"></a></h2>

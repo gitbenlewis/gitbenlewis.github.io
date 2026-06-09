@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -670,6 +672,34 @@
 <section id="ols-workflow">
 <h2>OLS workflow<a class="headerlink" href="#ols-workflow" title="Link to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_adata(...)</span></code> to fit one OLS model per feature.</p>
+<section id="full-signature">
+<h3>Full signature<a class="headerlink" href="#full-signature" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
+        <span class="n">adata</span><span class="p">,</span>
+        <span class="n">layer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">use_raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">feature_columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">predictors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;OLS_predictors&#39;</span><span class="p">,</span>
+        <span class="n">add_adata_var_column_key_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">save_table</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">save_model_spec_yaml</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">save_result_to_adata_uns_as_dict</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">include_fdr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># --- new filter args ---</span>
+        <span class="n">dataset_cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_obs_boolean_column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_obs_column_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_obs_column_values_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_obs_copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># when filtered internally, optionally also write results into the original adata.uns</span>
+        <span class="n">save_results_to_original_adata_uns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="c1"># whether to return the filtered adata (work_adata) in addition to results</span>
+        <span class="n">return_filtered_adata</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adata_science_tools</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">adtl</span>
 
 <span class="n">ols_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
@@ -693,9 +723,40 @@
 <li><p>If <code class="docutils literal notranslate"><span class="pre">include_fdr=True</span></code>, per-term FDR columns are added with the <code class="docutils literal notranslate"><span class="pre">_FDR</span></code> suffix.</p></li>
 </ul>
 </section>
+</section>
 <section id="mixedlm-workflow">
 <h2>MixedLM workflow<a class="headerlink" href="#mixedlm-workflow" title="Link to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_adata(...)</span></code> to fit one mixed-effects model per feature.</p>
+<section id="id1">
+<h3>Full signature<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fit_smf_mixedlm_models_and_summarize_adata</span><span class="p">(</span>
+        <span class="n">adata</span><span class="p">,</span>
+        <span class="n">layer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">use_raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">feature_columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">predictors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;mixedlm_predictors&#39;</span><span class="p">,</span>
+        <span class="n">reml</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">add_adata_var_column_key_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">save_table</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">save_model_spec_yaml</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">save_result_to_adata_uns_as_dict</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">include_fdr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># --- new filter args ---</span>
+        <span class="n">dataset_cfg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_obs_boolean_column</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_obs_column_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_obs_column_values_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">filter_obs_copy</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># when filtered internally, optionally also write results into the original adata.uns</span>
+        <span class="n">save_results_to_original_adata_uns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="c1"># whether to return the filtered adata (work_adata) in addition to results</span>
+        <span class="n">return_filtered_adata</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">):</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mixedlm_results</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_mixedlm_models_and_summarize_adata</span><span class="p">(</span>
     <span class="n">adata</span><span class="p">,</span>
     <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
@@ -718,6 +779,7 @@
 <li><p>Per-term MixedLM p-value columns use the <code class="docutils literal notranslate"><span class="pre">P&gt;|z|</span></code> naming pattern.</p></li>
 <li><p>The summary includes grouping-specific fields such as <code class="docutils literal notranslate"><span class="pre">n_groups</span></code>, <code class="docutils literal notranslate"><span class="pre">Method</span></code>, random-effect variances, and, when available, per-group random effects.</p></li>
 </ul>
+</section>
 </section>
 <section id="filtering-before-fit">
 <h2>Filtering before fit<a class="headerlink" href="#filtering-before-fit" title="Link to this heading"></a></h2>
@@ -755,12 +817,35 @@
 <li><p>one column per feature, and</p></li>
 <li><p>one column per predictor, plus <code class="docutils literal notranslate"><span class="pre">group</span></code> for MixedLM.</p></li>
 </ul>
+<section id="full-signatures">
+<h3>Full signatures<a class="headerlink" href="#full-signatures" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fit_smf_ols_models_and_summarize_wide</span><span class="p">(</span>
+        <span class="n">obs_X_df</span><span class="p">,</span>
+        <span class="n">feature_columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">predictors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;OLS&#39;</span><span class="p">,</span>
+        <span class="n">include_fdr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fit_smf_mixedlm_models_and_summarize_wide</span><span class="p">(</span>
+        <span class="n">obs_X_df</span><span class="p">,</span>
+        <span class="n">feature_columns</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">predictors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">group</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;mixedlm&#39;</span><span class="p">,</span>
+        <span class="n">reml</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">include_fdr</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">):</span>
+</pre></div>
+</div>
 <p>Use them when the combined table already exists or when you want to bypass <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> handling:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_wide(obs_X_df,</span> <span class="pre">feature_columns,</span> <span class="pre">predictors,</span> <span class="pre">...)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">fit_smf_mixedlm_models_and_summarize_wide(obs_X_df,</span> <span class="pre">feature_columns,</span> <span class="pre">predictors,</span> <span class="pre">group=...,</span> <span class="pre">...)</span></code></p></li>
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">*_adata(...)</span></code> wrappers build this table internally with <code class="docutils literal notranslate"><span class="pre">make_df_obs_adataX(...)</span></code>, so most users should start with the <code class="docutils literal notranslate"><span class="pre">AnnData</span></code> APIs unless they already have the combined matrix.</p>
+</section>
 </section>
 <section id="result-table-schema">
 <h2>Result table schema<a class="headerlink" href="#result-table-schema" title="Link to this heading"></a></h2>

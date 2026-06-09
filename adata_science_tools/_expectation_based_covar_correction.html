@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -683,6 +685,29 @@
 <section id="calculate-expectations">
 <h2><code class="docutils literal notranslate"><span class="pre">calculate_expectations</span></code><a class="headerlink" href="#calculate-expectations" title="Link to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">calculate_expectations(...)</span></code> to fit the model and return the expectation coefficient table.</p>
+<section id="full-signature">
+<h3>Full signature<a class="headerlink" href="#full-signature" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_expectations</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">:</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
+    <span class="n">covariates</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">predictors</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">layer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">use_raw</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">fit_method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;ols&quot;</span><span class="p">,</span>
+    <span class="n">feature_columns</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">dataset_cfg</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">filter_obs_boolean_column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">filter_obs_column_key</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">filter_obs_column_values_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Any</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_result_to_adata_uns_as_dict</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">add_adata_var_column_key_list</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">include_metadata</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adata_science_tools</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">adtl</span>
 
 <span class="n">expectation_df</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">calculate_expectations</span><span class="p">(</span>
@@ -693,6 +718,7 @@
 <span class="p">)</span>
 </pre></div>
 </div>
+</section>
 <section id="important-behavior">
 <h3>Important behavior<a class="headerlink" href="#important-behavior" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -777,6 +803,17 @@ also includes the resolved provenance keys:</p>
 <section id="saving-and-reloading-artifacts">
 <h2>Saving and reloading artifacts<a class="headerlink" href="#saving-and-reloading-artifacts" title="Link to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">save_expectation_model_files(...)</span></code> to write both artifacts together:</p>
+<section id="id1">
+<h3>Full signature<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">save_expectation_model_files</span><span class="p">(</span>
+    <span class="n">expectation_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">csv_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">model_spec</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">model_spec_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Path</span><span class="p">,</span> <span class="n">Path</span><span class="p">]:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">csv_path</span><span class="p">,</span> <span class="n">model_spec_path</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">save_expectation_model_files</span><span class="p">(</span>
     <span class="n">expectation_df</span><span class="p">,</span>
     <span class="s2">&quot;results/expectation_table.csv&quot;</span><span class="p">,</span>
@@ -789,6 +826,16 @@ also includes the resolved provenance keys:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">results/expectation_table.model_spec.yaml</span></code></p></li>
 </ul>
 <p>Then either of these round-trips is valid:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">predict_expectation</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">:</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
+    <span class="n">expectation_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">model_spec</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">include_intercept</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">baseline</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">predicted</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">predict_expectation</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="s2">&quot;results/expectation_table.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -801,14 +848,28 @@ also includes the resolved provenance keys:</p>
 </div>
 <p>If you only reload the CSV into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and do not supply a <code class="docutils literal notranslate"><span class="pre">model_spec</span></code>, prediction will fail.</p>
 </section>
+</section>
 <section id="predict-expectation">
 <h2><code class="docutils literal notranslate"><span class="pre">predict_expectation</span></code><a class="headerlink" href="#predict-expectation" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">predict_expectation(...)</span></code> returns a dense <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> with shape <code class="docutils literal notranslate"><span class="pre">(adata.n_obs,</span> <span class="pre">adata.n_vars)</span></code>.</p>
+<section id="id2">
+<h3>Full signature<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">predict_expectation</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">:</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
+    <span class="n">expectation_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">model_spec</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">include_intercept</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">baseline</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">predicted</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">predict_expectation</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">expectation_df</span><span class="p">)</span>
 </pre></div>
 </div>
-<section id="id1">
-<h3>Important behavior<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+</section>
+<section id="id3">
+<h3>Important behavior<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>Features are aligned to <code class="docutils literal notranslate"><span class="pre">adata.var_names</span></code>.</p></li>
 <li><p>All required coefficient columns must be present and non-null.</p></li>
@@ -834,6 +895,21 @@ also includes the resolved provenance keys:</p>
 <section id="regress-out">
 <h2><code class="docutils literal notranslate"><span class="pre">regress_out</span></code><a class="headerlink" href="#regress-out" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">regress_out(...)</span></code> writes a corrected matrix into <code class="docutils literal notranslate"><span class="pre">adata.layers[output_layer]</span></code> and returns either a copy or the original object, depending on <code class="docutils literal notranslate"><span class="pre">inplace</span></code>.</p>
+<section id="id4">
+<h3>Full signature<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">regress_out</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">:</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
+    <span class="n">expectation_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">model_spec</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">baseline</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">flavor</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;obs_minus_exp_covar&quot;</span><span class="p">,</span>
+    <span class="n">input_layer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">output_layer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">:</span>
+</pre></div>
+</div>
 <p>Supported flavors:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">obs_minus_exp_covar</span></code></p></li>
@@ -861,6 +937,7 @@ also includes the resolved provenance keys:</p>
 <span class="p">)</span>
 </pre></div>
 </div>
+</section>
 <section id="flavor-definitions">
 <h3>Flavor definitions<a class="headerlink" href="#flavor-definitions" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -872,6 +949,23 @@ also includes the resolved provenance keys:</p>
 <section id="excess-expectation">
 <h2><code class="docutils literal notranslate"><span class="pre">excess_expectation</span></code><a class="headerlink" href="#excess-expectation" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">excess_expectation(...)</span></code> computes residual or ratio-based transforms and stores the result in <code class="docutils literal notranslate"><span class="pre">adata.layers[output_layer]</span></code>.</p>
+<section id="id5">
+<h3>Full signature<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">excess_expectation</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">:</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
+    <span class="n">expectation_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">model_spec</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">flavor</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;obs_minus_exp_val&quot;</span><span class="p">,</span>
+    <span class="n">input_layer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">output_layer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">inplace</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">ratio_input_transform</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">nonpositive_policy</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;raise&quot;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">:</span>
+</pre></div>
+</div>
 <p>Supported flavors:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">obs_minus_exp_val</span></code></p></li>
@@ -912,6 +1006,7 @@ the original scale, set <code class="docutils literal notranslate"><span class="
 <p>If a ratio run should continue past a small number of undefined cells instead of
 raising, set <code class="docutils literal notranslate"><span class="pre">nonpositive_policy=&quot;nan&quot;</span></code> so entries with non-positive expected
 values, or non-positive observed values for log outputs, are written as <code class="docutils literal notranslate"><span class="pre">NaN</span></code>.</p>
+</section>
 <section id="numeric-rules">
 <h3>Numeric rules<a class="headerlink" href="#numeric-rules" title="Link to this heading"></a></h3>
 <ul class="simple">
@@ -927,6 +1022,22 @@ values, or non-positive observed values for log outputs, are written as <code cl
 <section id="convert-ols-summary-to-expectation-df">
 <h2><code class="docutils literal notranslate"><span class="pre">convert_ols_summary_to_expectation_df</span></code><a class="headerlink" href="#convert-ols-summary-to-expectation-df" title="Link to this heading"></a></h2>
 <p>If you already have an OLS summary table from <code class="docutils literal notranslate"><span class="pre">fit_smf_ols_models_and_summarize_adata(...)</span></code>, you can convert it into an expectation table:</p>
+<section id="id6">
+<h3>Full signature<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">convert_ols_summary_to_expectation_df</span><span class="p">(</span>
+    <span class="n">ols_summary_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">predictors</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">layer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">use_raw</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">include_metadata</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">categorical_levels</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">reference_adata</span><span class="p">:</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">reference_obs_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ols_summary_df</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">fit_smf_ols_models_and_summarize_adata</span><span class="p">(</span>
     <span class="n">adata</span><span class="p">,</span>
     <span class="n">layer</span><span class="o">=</span><span class="s2">&quot;pgml&quot;</span><span class="p">,</span>
@@ -946,9 +1057,25 @@ values, or non-positive observed values for log outputs, are written as <code cl
 </div>
 <p>This is useful when model fitting and expectation export happen in separate steps.</p>
 </section>
+</section>
 <section id="reconstruct-expectation-model-spec">
 <h2><code class="docutils literal notranslate"><span class="pre">reconstruct_expectation_model_spec</span></code><a class="headerlink" href="#reconstruct-expectation-model-spec" title="Link to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">reconstruct_expectation_model_spec(...)</span></code> when you have a loaded expectation table but no saved YAML sidecar:</p>
+<section id="id7">
+<h3>Full signature<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">reconstruct_expectation_model_spec</span><span class="p">(</span>
+    <span class="n">expectation_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span>
+    <span class="n">predictors</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">layer</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">use_raw</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">categorical_levels</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">Any</span><span class="p">]]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">reference_adata</span><span class="p">:</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">reference_obs_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model_spec</span> <span class="o">=</span> <span class="n">adtl</span><span class="o">.</span><span class="n">reconstruct_expectation_model_spec</span><span class="p">(</span>
     <span class="n">loaded_df</span><span class="p">,</span>
     <span class="n">predictors</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;NHS_Case&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender&quot;</span><span class="p">],</span>
@@ -960,9 +1087,27 @@ values, or non-positive observed values for log outputs, are written as <code cl
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">reference_adata</span></code> or <code class="docutils literal notranslate"><span class="pre">reference_obs_df</span></code> is especially important when categorical predictor levels must be reconstructed.</p>
 </section>
+</section>
 <section id="wrapper-workflow">
 <h2>Wrapper workflow<a class="headerlink" href="#wrapper-workflow" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">regression_expectation_correction_adata(...)</span></code> is the config-oriented wrapper for fit-plus-correct workflows.</p>
+<section id="id8">
+<h3>Full signature<a class="headerlink" href="#id8" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">regression_expectation_correction_adata</span><span class="p">(</span>
+    <span class="n">adata</span><span class="p">:</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">calculate_expectations_params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">regress_out_params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">predict_expectation_params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">excess_expectation_params</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">expectation_save_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">output_h5ad_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">dataset_cfg</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">:</span>
+</pre></div>
+</div>
 <p>Minimal dict-driven example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_cfg</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;run_out_dir&quot;</span><span class="p">:</span> <span class="s2">&quot;results&quot;</span><span class="p">,</span>
@@ -990,6 +1135,7 @@ values, or non-positive observed values for log outputs, are written as <code cl
 <span class="p">)</span>
 </pre></div>
 </div>
+</section>
 <section id="wrapper-behavior">
 <h3>Wrapper behavior<a class="headerlink" href="#wrapper-behavior" title="Link to this heading"></a></h3>
 <ul class="simple">

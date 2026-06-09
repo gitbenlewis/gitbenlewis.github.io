@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -667,6 +669,37 @@
 <li><p>optionally writes output datasets to <code class="docutils literal notranslate"><span class="pre">.h5ad</span></code> plus CSV bundles.</p></li>
 </ul>
 <p>This page is based on the current implementation in <a class="reference external" href="https://github.com/gitbenlewis/adata_science_tools/blob/main/_io/_metab_IO.py">_metab_IO.py</a>. There do not appear to be direct <code class="docutils literal notranslate"><span class="pre">_io</span></code> regression tests for this function in this repo.</p>
+<section id="full-signature">
+<h2>Full signature<a class="headerlink" href="#full-signature" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">metabolon_excel_2_adata_h5ad_csv</span><span class="p">(</span>
+    <span class="n">metabolon_excel_file</span><span class="p">:</span>  <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">excel_sheet_for_assay_data</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Batch-norm Imputed Data&quot;</span><span class="p">,</span>
+    <span class="n">excel_sheet_for_obs_metadata</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Sample Meta Data&quot;</span><span class="p">,</span>
+    <span class="n">excel_sheet_for_var_metadata</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Chemical Annotation&quot;</span><span class="p">,</span>
+    <span class="n">index_col_for_var_metadata</span><span class="o">=</span><span class="s1">&#39;CHEM_ID&#39;</span><span class="p">,</span>
+    <span class="n">excel_sheet_list_for_layers</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Volume-normalized Data&quot;</span><span class="p">,</span><span class="s2">&quot;Log Transformed Data&quot;</span><span class="p">,</span> <span class="s2">&quot;Batch-normalized Data&quot;</span><span class="p">,</span> <span class="s2">&quot;Batch-norm Imputed Data&quot;</span><span class="p">,</span> <span class="s2">&quot;Peak Area Data&quot;</span><span class="p">],</span>
+    <span class="n">output_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">save_h5ad</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">output_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span><span class="s1">&#39;dataset.metab&#39;</span><span class="p">,</span>
+    <span class="n">also_save_csvs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">logger</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">Logger</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="c1">######## new parameters for mergeing external metadata to adata.obs can be added here ########</span>
+    <span class="n">merge_external_metadata</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">save_plus_metadata_h5ad</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">also_plus_metadata_save_csvs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">external_obs_metadata_2_merge_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">external_var_metadata_2_merge_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">merge_key_in_external_obs_metadata</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">merge_key_in_raw_obs_metadata</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">column_in_metadata_to_set_as_index</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">merge_key_in_external_var_metadata</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">merge_key_in_raw_var_metadata</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">columns_in_external_var_metadata_to_use</span><span class="p">:</span> <span class="nb">list</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">plus_metadata_file_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="s1">&#39;dataset.plus_metadata&#39;</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ad</span><span class="o">.</span><span class="n">AnnData</span><span class="p">:</span>
+</pre></div>
+</div>
+</section>
 <section id="basic-parsing-workflow">
 <h2>Basic parsing workflow<a class="headerlink" href="#basic-parsing-workflow" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>

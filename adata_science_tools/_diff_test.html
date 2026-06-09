@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -665,6 +667,33 @@
 <li><p>nested paired comparisons such as <code class="docutils literal notranslate"><span class="pre">(target</span> <span class="pre">-</span> <span class="pre">target_control)</span></code> vs <code class="docutils literal notranslate"><span class="pre">(ref</span> <span class="pre">-</span> <span class="pre">ref_control)</span></code>.</p></li>
 </ul>
 <p>It returns a feature-indexed <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> and can optionally save results to CSV, write a log file, and store a copy in <code class="docutils literal notranslate"><span class="pre">adata.uns</span></code>.</p>
+<section id="full-signature">
+<h2>Full signature<a class="headerlink" href="#full-signature" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">diff_test</span><span class="p">(</span><span class="n">adata</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">use_raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">groupby_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">groupby_key_target_values</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">],</span> <span class="n">groupby_key_ref_values</span><span class="o">=</span><span class="p">[</span><span class="kc">None</span><span class="p">],</span>
+            <span class="n">comparison_col_tag</span><span class="o">=</span><span class="s1">&#39;_target_ref&#39;</span><span class="p">,</span>
+            <span class="n">nested_groupby_key_target_values</span><span class="o">=</span><span class="p">[(</span><span class="kc">None</span><span class="p">,</span><span class="kc">None</span><span class="p">)],</span> <span class="n">nested_groupby_key_ref_values</span><span class="o">=</span> <span class="p">[(</span><span class="kc">None</span><span class="p">,</span><span class="kc">None</span><span class="p">)],</span>
+            <span class="n">nested_comparison_col_tag</span><span class="o">=</span><span class="s1">&#39;_target_con_ref_con&#39;</span><span class="p">,</span>
+            <span class="n">sortby</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">tests</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;ttest_ind&#39;</span><span class="p">,</span> <span class="s1">&#39;ttest_rel&#39;</span><span class="p">,</span><span class="s1">&#39;mannwhitneyu&#39;</span><span class="p">,</span> <span class="s1">&#39;WilcoxonSigned&#39;</span><span class="p">,</span><span class="s1">&#39;ttest_rel_nested&#39;</span><span class="p">,</span><span class="s1">&#39;WilcoxonSigned_nested&#39;</span><span class="p">],</span>
+            <span class="n">pair_by_key</span><span class="o">=</span><span class="kc">None</span> <span class="p">,</span>
+            <span class="n">add_values2results</span><span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="n">add_adata_var_column_key_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">save_table</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">save_path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">save_result_to_adata_uns_as_dict</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">logger</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">log_inputs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">log_level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span>
+            <span class="n">save_log</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">x_df</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">var_df</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">obs_df</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+
+            <span class="p">):</span>
+</pre></div>
+</div>
+</section>
 <section id="supported-test-families">
 <h2>Supported test families<a class="headerlink" href="#supported-test-families" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">tests</span></code> argument accepts these values:</p>

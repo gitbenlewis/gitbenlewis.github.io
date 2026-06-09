@@ -236,6 +236,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_diff_test.html"><code class="docutils literal notranslate"><span class="pre">_diff_test</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_diff_test.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#supported-test-families">Supported test families</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#input-modes">Input modes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_diff_test.html#required-keys-and-pairing-rules">Required keys and pairing rules</a></li>
@@ -276,6 +277,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="_metab_IO.html"><code class="docutils literal notranslate"><span class="pre">_metab_IO</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#full-signature">Full signature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#basic-parsing-workflow">Basic parsing workflow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#layer-creation">Layer creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_metab_IO.html#returned-anndata">Returned <code class="docutils literal notranslate"><span class="pre">AnnData</span></code></a></li>
@@ -665,6 +667,11 @@
 <section id="show-tol-colors">
 <h2><code class="docutils literal notranslate"><span class="pre">show_tol_colors</span></code><a class="headerlink" href="#show-tol-colors" title="Link to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">show_tol_colors(...)</span></code> to preview Paul Tol’s 10-color palette, or a supplied list of colors, as a labeled bar strip.</p>
+<section id="full-signature">
+<h3>Full signature<a class="headerlink" href="#full-signature" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">show_tol_colors</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">adata_science_tools</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">adtl</span>
 
 <span class="n">adtl</span><span class="o">.</span><span class="n">show_tol_colors</span><span class="p">()</span>
@@ -678,9 +685,19 @@
 <li><p>The current implementation does not return the figure.</p></li>
 </ul>
 </section>
+</section>
 <section id="show-colors">
 <h2><code class="docutils literal notranslate"><span class="pre">show_colors</span></code><a class="headerlink" href="#show-colors" title="Link to this heading"></a></h2>
 <p>Use <code class="docutils literal notranslate"><span class="pre">show_colors(...)</span></code> to preview an arbitrary color list and optionally save the figure.</p>
+<section id="id1">
+<h3>Full signature<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">show_colors</span><span class="p">(</span><span class="n">colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">title_text</span><span class="o">=</span><span class="s1">&#39; Color Palette&#39;</span><span class="p">,</span>
+                <span class="n">save_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">save_file_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="n">save_file_name</span><span class="o">=</span><span class="s1">&#39;color_palette.png&#39;</span><span class="p">):</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">adtl</span><span class="o">.</span><span class="n">show_colors</span><span class="p">(</span>
     <span class="n">colors</span><span class="o">=</span><span class="n">adtl</span><span class="o">.</span><span class="n">palettes</span><span class="o">.</span><span class="n">vega_10_scanpy</span><span class="p">,</span>
     <span class="n">title_text</span><span class="o">=</span><span class="s2">&quot;Scanpy Vega 10&quot;</span><span class="p">,</span>
@@ -697,6 +714,7 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">save_file_dir</span></code> is used with the <code class="docutils literal notranslate"><span class="pre">/</span></code> operator, so passing a <code class="docutils literal notranslate"><span class="pre">pathlib.Path</span></code> is the safest option.</p></li>
 <li><p>The function does not explicitly return the figure.</p></li>
 </ul>
+</section>
 </section>
 <section id="coverage-note">
 <h2>Coverage note<a class="headerlink" href="#coverage-note" title="Link to this heading"></a></h2>
